@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tomáš Frank - Webový vývojář na volné noze. Vývoj webových stránek, e-shopů a webových aplikací.">
+    <title>Tomáš Frank | Webový vývojář</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP for scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <svg class="preloader-logo-svg" viewBox="0 0 100 100" width="80" height="80">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"/>
+                            <stop offset="50%" style="stop-color:#8b5cf6"/>
+                            <stop offset="100%" style="stop-color:#ec4899"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="logo-circle" cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+                    <text x="50" y="58" text-anchor="middle" fill="url(#logoGradient)" font-family="Space Grotesk" font-size="28" font-weight="700">TF</text>
+                    <circle class="logo-dot" cx="72" cy="62" r="4" fill="#6366f1"/>
+                </svg>
+            </div>
+            <div class="preloader-text">Načítám portfolio...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">TF<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">O mně</a></li>
+                <li><a href="#services">Služby</a></li>
+                <li><a href="#projects">Projekty</a></li>
+                <li><a href="#testimonials">Reference</a></li>
+                <li><a href="#contact" class="btn btn-nav magnetic-btn">Kontakt</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Přepnout téma">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge animate-in">
+                    <span class="pulse"></span>
+                    <span class="availability-text">Volná kapacita: <strong>2 projekty</strong> v únoru</span>
+                </div>
+                <h1 class="hero-title animate-in delay-1">
+                    <span class="line">Vytvářím weby,</span>
+                    <span class="line gradient-text">které prodávají.</span>
+                </h1>
+                <p class="hero-description animate-in delay-2">
+                    Jsem <strong>Tomáš Frank</strong> — webový vývojář z Hodonína. 
+                    Specializuji se na <span class="highlight">moderní webové stránky</span>, 
+                    <span class="highlight">e-shopy</span> a <span class="highlight">webové aplikace</span> 
+                    na míru vašim potřebám a rozpočtu.
+                </p>
+                <div class="hero-buttons animate-in delay-3">
+                    <a href="#projects" class="btn btn-primary btn-glow magnetic-btn">
+                        <span>Prohlédnout projekty</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary magnetic-btn">
+                        Nezávazná konzultace
+                    </a>
+                </div>
+                <div class="hero-stats animate-in delay-4">
+                    <div class="hero-stat">
+                        <span class="stat-number" data-count="7">0</span>
+                        <span class="stat-label">Dokončených projektů</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Spokojenost</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Roky zkušeností</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-in delay-2">
+                <div class="hero-avatar-wrapper">
+                    <div class="hero-avatar-glow"></div>
+                    <img src="img/avatar.jpg" alt="Tomáš Frank" class="hero-avatar">
+                    <div class="hero-avatar-ring"></div>
+                    <!-- Orbit icons -->
+                    <div class="orbit-icons">
+                        <div class="orbit-icon orbit-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div class="orbit-icon orbit-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <div class="orbit-icon orbit-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <div class="orbit-icon orbit-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-tabs">
+                            <div class="code-tab active">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-8c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/>
+                                    <path d="M12 5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#3776ab"/>
+                                </svg>
+                                <span>developer.py</span>
+                                <button class="code-tab-close">×</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-wrapper">
+                        <div class="code-line-numbers"></div>
+                        <pre class="code-content"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scrollujte dolů</span>
+        </div>
+    </header>
+
+    <!-- Tech Stack Marquee -->
+    <section class="tech-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Django</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">Tailwind</span>
+                <span class="tech-item">SQL</span>
+                <span class="tech-item">Git</span>
+                <span class="tech-item">REST API</span>
+            </div>
+            <div class="marquee-content">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Django</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">Tailwind</span>
+                <span class="tech-item">SQL</span>
+                <span class="tech-item">Git</span>
+                <span class="tech-item">REST API</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">O mně</span>
+                <h2>Vášeň pro webový vývoj</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="lead">
+                        Jsem webový vývojář s vášní pro tvorbu kvalitních a funkčních webových řešení. 
+                        Specializuji se na vývoj v <strong>Pythonu</strong> a frameworku <strong>Django</strong>, 
+                        doplněný o moderní <strong>JavaScript</strong> pro dynamické uživatelské rozhraní.
+                    </p>
+                    <p>
+                        Věřím, že kvalitní web je základem každého úspěšného podnikání. Ať už potřebujete 
+                        jednoduchou prezentaci, funkční e-shop nebo složitou webovou aplikaci – najdeme 
+                        řešení, které odpovídá vašemu rozpočtu i ambicím.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <span>Čistý a moderní kód</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <span>Responzivní na všech zařízeních</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <span>SEO optimalizace</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <span>Rychlá komunikace</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills reveal">
+                    <h3>Technologie</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card glass">
+                            <div class="skill-icon-wrapper">
+                                <span class="skill-emoji">🐍</span>
+                            </div>
+                            <h4>Python</h4>
+                            <p>Backend, automatizace</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass">
+                            <div class="skill-icon-wrapper">
+                                <span class="skill-emoji">🎯</span>
+                            </div>
+                            <h4>Django</h4>
+                            <p>Web framework</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass">
+                            <div class="skill-icon-wrapper">
+                                <span class="skill-emoji">⚡</span>
+                            </div>
+                            <h4>JavaScript</h4>
+                            <p>Interaktivita, Ajax</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass">
+                            <div class="skill-icon-wrapper">
+                                <span class="skill-emoji">🎨</span>
+                            </div>
+                            <h4>HTML/CSS</h4>
+                            <p>Moderní layouty</p>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Služby</span>
+                <h2>Co pro vás mohu udělat</h2>
+                <p class="section-desc">Od jednoduchých webových stránek po komplexní aplikace – nabízím řešení pro každý rozpočet.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <span class="service-badge budget">Od 5 000 Kč</span>
+                    <h3>Webové prezentace</h3>
+                    <p>Jednoduché a elegantní webové stránky pro malé firmy, živnostníky nebo osobní prezentaci.</p>
+                    <ul class="service-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Moderní design</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>SEO optimalizace</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Responzivita</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Chci web <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                </div>
+                <div class="service-card glass featured reveal">
+                    <div class="popular-badge">⭐ Nejžádanější</div>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    </div>
+                    <span class="service-badge popular">Od 15 000 Kč</span>
+                    <h3>E-shopy</h3>
+                    <p>Kompletní e-commerce řešení postavené na Django. Správa produktů, košík, platební brány.</p>
+                    <ul class="service-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Plně funkční e-shop</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Admin panel</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Platební integrace</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Chci e-shop <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <span class="service-badge enterprise">Individuální</span>
+                    <h3>Webové aplikace</h3>
+                    <p>Složité webové aplikace na míru – rezervační systémy, správa dat, interní nástroje.</p>
+                    <ul class="service-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Na míru</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Databázová řešení</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>API integrace</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Konzultace zdarma <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2>Vybrané projekty</h2>
+                <p class="section-desc">Ukázky mé práce – od jednoduchých webů po komplexní aplikace.</p>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Vše</button>
+                <button class="filter-btn" data-filter="web">Weby</button>
+                <button class="filter-btn" data-filter="app">Aplikace</button>
+                <button class="filter-btn" data-filter="eshop">E-shopy</button>
+            </div>
+            <div class="projects-grid">
+                <!-- GeomeTry -->
+                <article class="project-card glass reveal" data-category="app">
+                    <div class="project-image">
+                        <div class="project-placeholder geometry">
+                            <div class="project-mockup">
+                                <div class="mockup-screen">
+                                    <div class="mockup-header"></div>
+                                    <div class="mockup-content">
+                                        <div class="mockup-shape triangle"></div>
+                                        <div class="mockup-shape circle"></div>
+                                        <div class="mockup-shape square"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn" data-project="geometry">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Webová aplikace</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>GeomeTry</h3>
+                        <p>Interaktivní vzdělávací aplikace pro výuku geometrie.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/GeomeTry" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PerfectBody -->
+                <article class="project-card glass reveal" data-category="eshop">
+                    <div class="project-image">
+                        <div class="project-slider" data-images='["img/perfectbody/pb1.jpg", "img/perfectbody/pb2.jpg", "img/perfectbody/pb3.jpg", "img/perfectbody/pb4.jpg"]'>
+                            <img src="img/perfectbody/pb1.jpg" alt="PerfectBody - screenshot 1" class="project-img active">
+                            <img src="img/perfectbody/pb2.jpg" alt="PerfectBody - screenshot 2" class="project-img">
+                            <img src="img/perfectbody/pb3.jpg" alt="PerfectBody - screenshot 3" class="project-img">
+                            <img src="img/perfectbody/pb4.jpg" alt="PerfectBody - screenshot 4" class="project-img">
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn magnetic-btn" data-project="perfectbody">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">E-shop</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3>PerfectBody</h3>
+                        <p>Plnohodnotný e-shop pro fitness produkty.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/perfectbody" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- TicketPass -->
+                <article class="project-card glass reveal" data-category="app">
+                    <div class="project-image">
+                        <div class="project-placeholder ticketpass">
+                            <div class="project-mockup">
+                                <div class="mockup-screen">
+                                    <div class="mockup-header"></div>
+                                    <div class="mockup-content tickets">
+                                        <div class="mockup-ticket">🎫</div>
+                                        <div class="mockup-ticket">🎫</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn" data-project="ticketpass">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Webová aplikace</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3>TicketPass</h3>
+                        <p>Rezervační systém pro správu vstupenek.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/ticketpass" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hospůdka na Kurtech -->
+                <article class="project-card glass reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder hospudka">
+                            <div class="project-mockup">
+                                <div class="mockup-screen">
+                                    <div class="mockup-header"></div>
+                                    <div class="mockup-content restaurant">
+                                        <div class="mockup-hero-img"></div>
+                                        <div class="mockup-menu">🍺</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn" data-project="hospudka">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Prezentační web</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>Hospůdka na Kurtech</h3>
+                        <p>Web pro restauraci s menu a rezervacemi.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/HospudkaNaKurtech" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BZ Instal -->
+                <article class="project-card glass reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-slider" data-images='["img/bzinstal/bz1.png", "img/bzinstal/bz2.png", "img/bzinstal/bz3.png"]'>
+                            <img src="img/bzinstal/bz1.png" alt="BZ Instal - screenshot 1" class="project-img active">
+                            <img src="img/bzinstal/bz2.png" alt="BZ Instal - screenshot 2" class="project-img">
+                            <img src="img/bzinstal/bz3.png" alt="BZ Instal - screenshot 3" class="project-img">
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn magnetic-btn" data-project="bzinstal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Firemní web</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>BZ Instal</h3>
+                        <p>Web pro instalatérskou firmu.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/BZinstal" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- KovoBuráň -->
+                <article class="project-card glass reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-slider" data-images='["img/kovoburan/kb1.png", "img/kovoburan/kb2.png", "img/kovoburan/kb3.png"]'>
+                            <img src="img/kovoburan/kb1.png" alt="KovoBuráň - screenshot 1" class="project-img active">
+                            <img src="img/kovoburan/kb2.png" alt="KovoBuráň - screenshot 2" class="project-img">
+                            <img src="img/kovoburan/kb3.png" alt="KovoBuráň - screenshot 3" class="project-img">
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-detail-btn magnetic-btn" data-project="kovoburan">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Firemní web</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3>KovoBuráň</h3>
+                        <p>Web pro kovoobrábění s galerií.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tanatos09/kovo-buran" target="_blank" rel="noopener" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="projects-more">
+                <a href="https://github.com/tanatos09?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
+                    Všechny projekty na GitHubu
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reference</span>
+                <h2>Co říkají klienti</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Tomáš vytvořil přesně to, co jsme potřebovali. Web je rychlý, moderní a zákazníci jsou nadšení!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JN</div>
+                        <div class="author-info">
+                            <strong>Jan Novák</strong>
+                            <span>Hospůdka na Kurtech</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Profesionální přístup, skvělá komunikace. E-shop funguje bezchybně a prodeje rostou."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PK</div>
+                        <div class="author-info">
+                            <strong>Petra Králová</strong>
+                            <span>PerfectBody Fitness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Spolehlivý partner pro webové projekty. Dodržuje termíny a výsledek předčil očekávání."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MB</div>
+                        <div class="author-info">
+                            <strong>Martin Bureš</strong>
+                            <span>BZ Instal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Proces</span>
+                <h2>Jak spolupráce probíhá</h2>
+                <p class="section-desc">Od první konzultace po spuštění webu – transparentní proces krok za krokem.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-icon">💬</div>
+                        <h3>Konzultace zdarma</h3>
+                        <p>Probereme vaše potřeby, cíle a rozpočet. Navrhneme optimální řešení.</p>
+                        <span class="timeline-duration">30-60 minut</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-icon">📋</div>
+                        <h3>Návrh & Nabídka</h3>
+                        <p>Připravím detailní návrh projektu s časovým harmonogramem a cenou.</p>
+                        <span class="timeline-duration">1-2 dny</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-icon">🎨</div>
+                        <h3>Design & Vývoj</h3>
+                        <p>Vytvořím design a naprogramuji váš web. Průběžně vás informuji o pokroku.</p>
+                        <span class="timeline-duration">1-4 týdny</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-icon">🔍</div>
+                        <h3>Testování & Revize</h3>
+                        <p>Důkladně otestujeme vše a zapracujeme vaše připomínky.</p>
+                        <span class="timeline-duration">2-5 dní</span>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-icon">🚀</div>
+                        <h3>Spuštění</h3>
+                        <p>Web nasadíme na váš hosting a zaškolíme vás v jeho správě.</p>
+                        <span class="timeline-duration">1 den</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Configurator -->
+    <section id="configurator" class="configurator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kalkulačka</span>
+                <h2>Spočítejte si cenu</h2>
+                <p class="section-desc">Orientační cena na základě vašich požadavků. Finální cenu určíme po konzultaci.</p>
+            </div>
+            <div class="configurator-wrapper glass reveal">
+                <div class="config-options">
+                    <div class="config-group">
+                        <h4>Typ projektu</h4>
+                        <div class="config-buttons" data-name="type">
+                            <button class="config-btn active" data-value="5000" data-label="Jednoduchý web">
+                                <span class="config-icon">📄</span>
+                                <span class="config-label">Jednoduchý web</span>
+                                <span class="config-price">od 5 000 Kč</span>
+                            </button>
+                            <button class="config-btn" data-value="10000" data-label="Firemní web">
+                                <span class="config-icon">🏢</span>
+                                <span class="config-label">Firemní web</span>
+                                <span class="config-price">od 10 000 Kč</span>
+                            </button>
+                            <button class="config-btn" data-value="15000" data-label="E-shop">
+                                <span class="config-icon">🛒</span>
+                                <span class="config-label">E-shop</span>
+                                <span class="config-price">od 15 000 Kč</span>
+                            </button>
+                            <button class="config-btn" data-value="25000" data-label="Webová aplikace">
+                                <span class="config-icon">⚡</span>
+                                <span class="config-label">Webová aplikace</span>
+                                <span class="config-price">od 25 000 Kč</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="config-group">
+                        <h4>Počet stránek</h4>
+                        <div class="config-buttons" data-name="pages">
+                            <button class="config-btn active" data-value="0" data-label="1-5 stránek">1-5</button>
+                            <button class="config-btn" data-value="3000" data-label="6-10 stránek">6-10</button>
+                            <button class="config-btn" data-value="7000" data-label="11-20 stránek">11-20</button>
+                            <button class="config-btn" data-value="12000" data-label="20+ stránek">20+</button>
+                        </div>
+                    </div>
+                    <div class="config-group">
+                        <h4>Doplňkové služby</h4>
+                        <div class="config-checkboxes">
+                            <label class="config-checkbox">
+                                <input type="checkbox" data-value="2000">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">SEO optimalizace</span>
+                                <span class="checkbox-price">+2 000 Kč</span>
+                            </label>
+                            <label class="config-checkbox">
+                                <input type="checkbox" data-value="1500">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Napojení na sociální sítě</span>
+                                <span class="checkbox-price">+1 500 Kč</span>
+                            </label>
+                            <label class="config-checkbox">
+                                <input type="checkbox" data-value="3000">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Vícejazyčnost</span>
+                                <span class="checkbox-price">+3 000 Kč</span>
+                            </label>
+                            <label class="config-checkbox">
+                                <input type="checkbox" data-value="2500">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Kontaktní formulář s emaily</span>
+                                <span class="checkbox-price">+2 500 Kč</span>
+                            </label>
+                            <label class="config-checkbox">
+                                <input type="checkbox" data-value="4000">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Admin panel pro správu</span>
+                                <span class="checkbox-price">+4 000 Kč</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-summary">
+                    <div class="summary-card glass">
+                        <h4>Vaše konfigurace</h4>
+                        <ul class="summary-list" id="summaryList">
+                            <li><span>Typ:</span> <strong>Jednoduchý web</strong></li>
+                            <li><span>Stránek:</span> <strong>1-5</strong></li>
+                        </ul>
+                        <div class="summary-divider"></div>
+                        <div class="summary-total">
+                            <span>Orientační cena:</span>
+                            <div class="total-price">
+                                <span class="price-from">od</span>
+                                <span class="price-value" id="totalPrice">5 000</span>
+                                <span class="price-currency">Kč</span>
+                            </div>
+                        </div>
+                        <p class="summary-note">* Finální cena může být nižší i vyšší podle složitosti projektu</p>
+                        <a href="#contact" class="btn btn-primary btn-glow btn-full magnetic-btn">
+                            Nezávazná poptávka
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>Často kladené dotazy</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Jak dlouho trvá vytvoření webu?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Záleží na složitosti projektu. Jednoduchý prezentační web zvládnu do <strong>1-2 týdnů</strong>. Firemní web s více stránkami <strong>2-3 týdny</strong>. E-shop nebo webová aplikace obvykle <strong>3-6 týdnů</strong>.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Kolik stojí web?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Jednoduchý web od <strong>5 000 Kč</strong>, firemní prezentace od <strong>10 000 Kč</strong>, e-shop od <strong>15 000 Kč</strong>. Přesnou cenu určíme po konzultaci na základě vašich požadavků.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Potřebuji vlastní hosting?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nemusíte mít. Pomohu vám s výběrem vhodného hostingu a doménu. Poradím nejlevnější i nejspolehlivější varianty podle vašeho rozpočtu.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Budu moct web sám upravovat?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ano! Pokud je potřeba, připravím admin panel pro snadnou správu obsahu. Zaškolím vás, jak přidávat texty, fotky nebo produkty bez znalosti programování.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Jak probíhá platba?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standardně <strong>50% záloha</strong> před začátkem práce, zbytek po dokončení a schválení projektu. U menších projektů je možná i platba jednorázově po dokončení.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass reveal">
+                    <button class="faq-question">
+                        <span>Poskytujete podporu po spuštění?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ano, nabízím <strong>30 dní bezplatné podpory</strong> po spuštění. Poté je možné sjednat pravidelnou údržbu nebo jednorázové úpravy podle potřeby.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass reveal">
+                <h2>Máte projekt na mysli?</h2>
+                <p>Pojďme společně vytvořit něco skvělého. První konzultace je zdarma.</p>
+                <a href="#contact" class="btn btn-primary btn-glow btn-lg magnetic-btn">
+                    Začněme spolupracovat
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <span class="section-tag">Kontakt</span>
+                    <h2>Pojďme spolupracovat</h2>
+                    <p>Máte projekt na mysli? Rád si s vámi popovídám o vašich potřebách.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item glass">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h4>Lokalita</h4>
+                                <p>Hodonín, Česká republika</p>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/tomasfrank/" target="_blank" rel="noopener" class="contact-item glass">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>in/tomasfrank</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/tanatos09" target="_blank" rel="noopener" class="contact-item glass">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </div>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>tanatos09</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper glass reveal">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-header">
+                            <h3>Napište mi</h3>
+                            <p>Odpovídám do 24 hodin</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name" name="name" required placeholder="Vaše jméno">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="vas@email.cz">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project">Typ projektu</label>
+                                <select id="project" name="project">
+                                    <option value="">Vyberte...</option>
+                                    <option value="web">Web (od 5 000 Kč)</option>
+                                    <option value="eshop">E-shop (od 15 000 Kč)</option>
+                                    <option value="app">Aplikace</option>
+                                    <option value="other">Jiné</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Rozpočet</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Vyberte...</option>
+                                    <option value="5-10">5-10 tis. Kč</option>
+                                    <option value="10-20">10-20 tis. Kč</option>
+                                    <option value="20-50">20-50 tis. Kč</option>
+                                    <option value="50+">50+ tis. Kč</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Zpráva</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Popište váš projekt..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">
+                            <span>Odeslat zprávu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">TF<span class="accent">.</span></a>
+                    <p>Webový vývojář na volné noze.<br>Vytvářím moderní weby a aplikace.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/tanatos09" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tomasfrank/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigace</h4>
+                    <ul>
+                        <li><a href="#about">O mně</a></li>
+                        <li><a href="#services">Služby</a></li>
+                        <li><a href="#projects">Projekty</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Služby</h4>
+                    <ul>
+                        <li><a href="#services">Webové stránky</a></li>
+                        <li><a href="#services">E-shopy</a></li>
+                        <li><a href="#services">Webové aplikace</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tomáš Frank. Všechna práva vyhrazena.</p>
+                <p class="footer-made">Vytvořeno s ❤️ v Hodoníně</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="#contact" class="btn btn-primary btn-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Kontakt
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
