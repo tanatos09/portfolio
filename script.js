@@ -11,31 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('load', () => {
         setTimeout(() => {
-            preloader.classList.add('hidden');
+            if (preloader) {
+                preloader.classList.add('hidden');
+            }
             // Initialize GSAP animations after preloader
             initGSAPAnimations();
-        }, 2000);
+        }, 1500);
     });
-
-    // ========================================
-    // Dark/Light Mode Toggle
-    // ========================================
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            document.body.style.transition = 'background 0.5s ease, color 0.5s ease';
-        });
-    }
 
     // ========================================
     // Particles
@@ -448,19 +430,19 @@ document.addEventListener('DOMContentLoaded', () => {
             features: ['Interaktivní geometrické vizualizace', 'Procedurálně generovaná grafika', 'Responzivní design'],
             link: 'https://github.com/tanatos09/GeomeTry'
         },
-        perfectbody: {
-            title: 'PerfectBody',
-            category: 'E-shop / Platforma',
-            year: '2025',
+        realityplus: {
+            title: 'Reality Plus',
+            category: 'Realitní kancelář',
+            year: '2026',
             status: 'Dokončeno',
-            description: 'Komplexní fitness platforma spojující e-shop s prostředím pro trenéry. Zaměřeno na robustní backend logiku s jednoduchým frontendem pro testování.',
-            challenge: 'Propojit admin prostředí s uživateli a trenéry, kde každá služba trenéra musí být schválena adminem před zveřejněním.',
-            solution: 'Víceúrovňový systém oprávnění s workflow pro schvalování služeb. Trenéři mohou přidávat vlastní služby, které procházejí schvalovacím procesem.',
-            results: ['Plnohodnotná platforma pro trenéry', 'Bezpečný schvalovací workflow', 'Kompletní e-commerce funkcionalita'],
-            tech: ['Python', 'Django', 'Stripe', 'PostgreSQL'],
-            features: ['Správa produktů a služeb', 'Systém pro trenéry', 'Admin schvalování', 'Platební brána Stripe'],
-            link: 'https://github.com/tanatos09/perfectbody',
-            images: ['img/perfectbody/pb1.jpg', 'img/perfectbody/pb2.jpg', 'img/perfectbody/pb3.jpg', 'img/perfectbody/pb4.jpg']
+            description: 'Profesionální web pro realitní kancelář s administrací a správou nemovitostí.',
+            challenge: 'Vytvořit web, který umožní správu nemovitostí a prezentaci nabídky online.',
+            solution: 'Admin panel pro správu nemovitostí, galerie, pokročilé SEO a možnost rozšíření o e-shop modul.',
+            results: ['Moderní prezentace nemovitostí', 'Admin správa', 'Pokročilá SEO optimalizace'],
+            tech: ['HTML5', 'CSS3', 'JavaScript'],
+            features: ['Správa nemovitostí', 'Galerie', 'Admin panel', 'Responzivní design'],
+            link: '#',
+            images: ['img/realityplus/rp1.jpg', 'img/realityplus/rp2.jpg', 'img/realityplus/rp3.jpg', 'img/realityplus/rp4.jpg']
         },
         ticketpass: {
             title: 'TicketPass',
@@ -475,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
             features: ['Správa událostí', 'Online prodej vstupenek', 'QR kódy pro vstupenky', 'Reporting a statistiky'],
             link: 'https://github.com/tanatos09/ticketpass'
         },
-        hospudka: {
+        pubhouse: {
             title: 'Hospůdka na Kurtech',
             category: 'Prezentační web',
             year: '2026',
@@ -488,33 +470,33 @@ document.addEventListener('DOMContentLoaded', () => {
             features: ['Online menu', 'Galerie interiéru', 'Kontaktní formulář', 'Responzivní design'],
             link: 'https://github.com/tanatos09/HospudkaNaKurtech'
         },
-        bzinstal: {
-            title: 'BZ Instal',
-            category: 'Firemní web',
+        motogarage: {
+            title: 'Motogarage',
+            category: 'Web pro dílnu',
             year: '2026',
             status: 'Dokončeno',
-            description: 'Web pro instalatérskou firmu s důrazem na rychlost dodání a nízkou cenu. Využití šablony pro úsporu nákladů.',
-            challenge: 'Dodat kvalitní web do druhého dne s rozpočtem pod základní sazbu.',
-            solution: 'Použití předpřipravené šablony s úpravou podle potřeb klienta. Důraz na rychlost a efektivitu.',
-            results: ['Dodání do 24 hodin', 'Cena pod základní sazbou', 'Spokojený klient'],
+            description: 'Jednoduchý web pro malou dílnu na opravy motorek. Rychlé dodání a nízká cena.',
+            challenge: 'Vytvořit web pro malou dílnu s důrazem na jednoduchost a rychlost.',
+            solution: 'Použití šablony s úpravou na míru, kontaktní formulář, základní SEO.',
+            results: ['Rychlé dodání', 'Nízká cena', 'Spokojený klient'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
             features: ['Přehled služeb', 'Galerie realizací', 'Kontaktní formulář', 'SEO optimalizace'],
-            link: 'https://github.com/tanatos09/BZinstal',
-            images: ['img/bzinstal/bz1.png', 'img/bzinstal/bz2.png', 'img/bzinstal/bz3.png']
+            link: '#',
+            images: ['img/motogarage/mg1.png', 'img/motogarage/mg2.png', 'img/motogarage/mg3.png']
         },
-        kovoburan: {
-            title: 'KovoBuráň',
-            category: 'Firemní web',
-            year: '2025',
+        pubhouse: {
+            title: 'Hospůdka na Kurtech',
+            category: 'Prezentační web',
+            year: '2026',
             status: 'Dokončeno',
-            description: 'Web pro firmu zabývající se kovoobrábění. Prioritou zákazníka byla maximální jednoduchost bez zbytečných efektů.',
-            challenge: 'Vytvořit jednoduchý, ale profesionální web bez složitých animací a efektů.',
-            solution: 'Minimalistický design zaměřený na prezentaci služeb a galerii výrobků. Čistá struktura bez rušivých prvků.',
-            results: ['Jednoduchý a přehledný web', 'Rychlé načítání', 'Cena lehce pod základní sazbou'],
+            description: 'Moderní webová prezentace pro restauraci s galerií a online menu.',
+            challenge: 'Vytvořit web, který přenese atmosféru pivnice do digitálního prostředí a přiláká nové zákazníky.',
+            solution: 'Čistý design s důrazem na fotografie interiéru, přehledné menu a jednoduchou navigaci.',
+            results: ['Zvýšení povědomí o restauraci', 'Online menu s cenami', 'Kontaktní formulář pro rezervace'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
-            features: ['Prezentace výrobků', 'Galerie realizací', 'Kontaktní formulář', 'Mobilní verze'],
-            link: 'https://github.com/tanatos09/kovo-buran',
-            images: ['img/kovoburan/kb1.png', 'img/kovoburan/kb2.png', 'img/kovoburan/kb3.png']
+            features: ['Online menu', 'Galerie interiéru', 'Kontaktní formulář', 'Responzivní design'],
+            link: '#',
+            images: ['img/pubhouse/ph1.png', 'img/pubhouse/ph2.png', 'img/pubhouse/ph3.png']
         }
     };
 
@@ -805,13 +787,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryList = document.getElementById('summaryList');
     
     let configState = {
-        type: { value: 5000, label: 'Jednoduchý web' },
-        pages: { value: 0, label: '1-5 stránek' },
+        pages: { value: 3000, label: '1-3 stránky' },
+        design: { value: 0, label: 'Základní' },
         extras: []
     };
 
     function updatePrice() {
-        let total = configState.type.value + configState.pages.value;
+        let total = configState.pages.value + configState.design.value;
         configState.extras.forEach(e => total += e.value);
         
         // Animate price change
@@ -823,8 +805,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update summary
         if (summaryList) {
             let summaryHTML = `
-                <li><span>Typ:</span> <strong>${configState.type.label}</strong></li>
-                <li><span>Stránek:</span> <strong>${configState.pages.label}</strong></li>
+                <li><span>Stránky:</span> <strong>${configState.pages.label}</strong></li>
+                <li><span>Design:</span> <strong>${configState.design.label}</strong></li>
             `;
             configState.extras.forEach(e => {
                 summaryHTML += `<li><span>Extra:</span> <strong>${e.label}</strong></li>`;
@@ -860,10 +842,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const value = parseInt(btn.dataset.value);
             const label = btn.dataset.label || btn.textContent.trim();
             
-            if (name === 'type') {
-                configState.type = { value, label };
-            } else if (name === 'pages') {
+            if (name === 'pages') {
                 configState.pages = { value, label };
+            } else if (name === 'design') {
+                configState.design = { value, label };
             }
             
             updatePrice();

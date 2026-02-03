@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reality Plus - Realitní kancelář v Hodoníně. Prodej a pronájem nemovitostí. Profesionální přístup a rozsáhlá nabídka bytů, domů a pozemků.">
+    <meta name="keywords" content="realitní kancelář, prodej bytů, pronájem, nemovitosti, Hodonín, domy, pozemky">
+    <meta name="author" content="Reality Plus">
+    <title>Reality Plus | Realitní kancelář Hodonín</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="realityplus.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-quick">
+                    <a href="tel:+420777888999"><i class="fas fa-phone"></i> +420 777 888 999</a>
+                    <a href="mailto:info@realityplus.cz"><i class="fas fa-envelope"></i> info@realityplus.cz</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-home"></i> Reality Plus
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Domů</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#properties">Nabídka</a></li>
+                <li><a href="#services">Služby</a></li>
+                <li><a href="#calculator">Kalkulačka</a></li>
+                <li><a href="#team">Tým</a></li>
+                <li><a href="#testimonials">Reference</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Najděte si svůj vysněný domov</h1>
+                        <p class="hero-subtitle">Pomůžeme vám koupit, prodat nebo pronajmout nemovitost snů</p>
+                        <a href="#properties" class="btn btn-primary btn-lg">Prohlédnout nabídku</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar-wrapper">
+            <div class="container">
+                <form class="property-search">
+                    <div class="search-group">
+                        <select name="type">
+                            <option value="">Typ nemovitosti</option>
+                            <option value="byt">Byt</option>
+                            <option value="dum">Dům</option>
+                            <option value="pozemek">Pozemek</option>
+                            <option value="komercni">Komerční</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <select name="transaction">
+                            <option value="">Prodej / Pronájem</option>
+                            <option value="prodej">Prodej</option>
+                            <option value="pronajem">Pronájem</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <input type="text" placeholder="Lokalita" name="location">
+                    </div>
+                    <div class="search-group">
+                        <input type="number" placeholder="Min. cena" name="min-price">
+                    </div>
+                    <div class="search-group">
+                        <input type="number" placeholder="Max. cena" name="max-price">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Hledat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="stat-number" data-target="450">0</div>
+                    <div class="stat-label">Úspěšných transakcí</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" data-target="320">0</div>
+                    <div class="stat-label">Spokojených klientů</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-building"></i></div>
+                    <div class="stat-number" data-target="85">0</div>
+                    <div class="stat-label">Aktuálních nabídek</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Let na trhu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <img src="img/realityplus/rp1.jpg" alt="Reality Plus kancelář">
+                    <div class="about-badge">
+                        <i class="fas fa-star"></i>
+                        <span>15 let<br>na trhu</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">O nás</span>
+                    <h2>Váš partner pro nemovitosti v Hodoníně</h2>
+                    <p class="lead">Reality Plus je moderní realitní kancelář s dlouholetou tradicí a zkušenostmi v oblasti prodeje a pronájmu nemovitostí.</p>
+                    <p>Specializujeme se na komplexní realitní služby v regionu Hodonínska. Naše portfolio zahrnuje byty, rodinné domy, pozemky i komerční objekty. Každému klientovi poskytujeme individuální přístup a profesionální poradenství.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Profesionalita</h4>
+                                <p>Certifikovaní realitní makléři s licencí</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Transparentnost</h4>
+                                <p>Jasné podmínky bez skrytých poplatků</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Individuální přístup</h4>
+                                <p>Řešení šité na míru vašim potřebám</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="properties">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Aktuální nabídka</span>
+                <h2>Vybrané nemovitosti</h2>
+                <p>Prohlédněte si naši aktuální nabídku bytů, domů a pozemků</p>
+            </div>
+
+            <!-- Property Filters -->
+            <div class="property-filters">
+                <button class="filter-btn active" data-filter="all">Vše</button>
+                <button class="filter-btn" data-filter="prodej">Prodej</button>
+                <button class="filter-btn" data-filter="pronajem">Pronájem</button>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-category="prodej">
+                    <div class="property-image">
+                        <img src="img/realityplus/rp1.jpg" alt="Moderní byt 3+kk">
+                        <div class="property-badge">Prodej</div>
+                        <button class="favorite-btn" aria-label="Přidat do oblíbených">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">3 490 000 Kč</div>
+                        <h3>Moderní byt 3+kk, Hodonín</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Hodonín - centrum
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 pokoje</span>
+                            <span><i class="fas fa-bath"></i> 1 koupelna</span>
+                            <span><i class="fas fa-ruler-combined"></i> 75 m²</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">Detail nemovitosti</a>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" data-category="prodej">
+                    <div class="property-image">
+                        <img src="img/realityplus/rp2.jpg" alt="Rodinný dům">
+                        <div class="property-badge">Prodej</div>
+                        <button class="favorite-btn" aria-label="Přidat do oblíbených">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">5 890 000 Kč</div>
+                        <h3>Rodinný dům 5+1, zahrada</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Hodonín - Pánov
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 5 pokojů</span>
+                            <span><i class="fas fa-bath"></i> 2 koupelny</span>
+                            <span><i class="fas fa-ruler-combined"></i> 180 m²</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">Detail nemovitosti</a>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-category="pronajem">
+                    <div class="property-image">
+                        <img src="img/realityplus/rp3.jpg" alt="Byt 2+kk k pronájmu">
+                        <div class="property-badge pronajem">Pronájem</div>
+                        <button class="favorite-btn" aria-label="Přidat do oblíbených">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">12 000 Kč/měs</div>
+                        <h3>Byt 2+kk, novostavba</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Hodonín - Bažantnice
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 2 pokoje</span>
+                            <span><i class="fas fa-bath"></i> 1 koupelna</span>
+                            <span><i class="fas fa-ruler-combined"></i> 55 m²</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">Detail nemovitosti</a>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card" data-category="prodej">
+                    <div class="property-image">
+                        <img src="img/realityplus/rp4.jpg" alt="Stavební pozemek">
+                        <div class="property-badge">Prodej</div>
+                        <button class="favorite-btn" aria-label="Přidat do oblíbených">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">890 000 Kč</div>
+                        <h3>Stavební pozemek, Hodonín</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Hodonín - Mikulčice
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-ruler-combined"></i> 850 m²</span>
+                            <span><i class="fas fa-tree"></i> Rovinatý</span>
+                            <span><i class="fas fa-plug"></i> IS na hranici</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">Detail nemovitosti</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="#" class="btn btn-primary">Zobrazit všechny nemovitosti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Služby</span>
+                <h2>Komplexní realitní služby</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Prodej nemovitostí</h3>
+                    <p>Pomůžeme vám prodat vaši nemovitost za nejlepší cenu. Zajistíme marketing, prohlídky a celý proces prodeje.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Ocenění nemovitosti</li>
+                        <li><i class="fas fa-check"></i> Profesionální fotografie</li>
+                        <li><i class="fas fa-check"></i> Právní servis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon"><i class="fas fa-key"></i></div>
+                    <h3>Pronájem nemovitostí</h3>
+                    <p>Správa pronájmu od A do Z. Hledání nájemníků, zpracování smluv a péče o nemovitost.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Hledání nájemců</li>
+                        <li><i class="fas fa-check"></i> Správa pronájmu</li>
+                        <li><i class="fas fa-check"></i> Právní podpora</li>
+                    </ul>
+                    <div class="featured-badge">Oblíbené</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search-dollar"></i></div>
+                    <h3>Hledání nemovitosti</h3>
+                    <p>Pomůžeme vám najít ideální nemovitost podle vašich požadavků a rozpočtu.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Konzultace zdarma</li>
+                        <li><i class="fas fa-check"></i> Aktivní vyhledávání</li>
+                        <li><i class="fas fa-check"></i> Asistence při koupi</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Ocenění nemovitosti</h3>
+                    <p>Profesionální tržní ocenění vaší nemovitosti pro účely prodeje, hypotéky nebo dědictví.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Právní poradenství</h3>
+                    <p>Kompletní právní servis při prodeji, nákupu nebo pronájmu nemovitosti.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Investiční poradenství</h3>
+                    <p>Poradíme vám s investicí do nemovitostí. Najdeme nemovitost s nejvyšším potenciálem zhodnocení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mortgage Calculator -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kalkulačka</span>
+                <h2>Hypoteční kalkulačka</h2>
+                <p>Spočítejte si orientační výši měsíční splátky hypotéky</p>
+            </div>
+
+            <div class="calculator-wrapper">
+                <form class="calculator-form">
+                    <div class="calc-group">
+                        <label for="loanAmount">Výše úvěru</label>
+                        <input type="number" id="loanAmount" value="3000000" min="100000" step="100000">
+                        <span class="calc-unit">Kč</span>
+                    </div>
+
+                    <div class="calc-group">
+                        <label for="loanYears">Délka úvěru</label>
+                        <input type="number" id="loanYears" value="25" min="5" max="40">
+                        <span class="calc-unit">let</span>
+                    </div>
+
+                    <div class="calc-group">
+                        <label for="interestRate">Úroková sazba</label>
+                        <input type="number" id="interestRate" value="5.5" min="0.1" max="15" step="0.1">
+                        <span class="calc-unit">%</span>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="calculateBtn">Vypočítat</button>
+                </form>
+
+                <div class="calculator-result">
+                    <h3>Výsledek</h3>
+                    <div class="result-item">
+                        <span>Měsíční splátka:</span>
+                        <strong id="monthlyPayment">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Celková částka:</span>
+                        <strong id="totalPayment">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Celkový úrok:</span>
+                        <strong id="totalInterest">-</strong>
+                    </div>
+                    <p class="result-note">Výsledek je pouze orientační. Pro přesný výpočet kontaktujte našeho finančního poradce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Náš tým</span>
+                <h2>Poznejte naše makléře</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="img/realityplus/rp1.jpg" alt="Jana Nováková">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:novakova@realityplus.cz"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+420777111222"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Jana Nováková</h3>
+                    <p class="member-role">Vedoucí makléřka</p>
+                    <p class="member-bio">Specializace: Rodinné domy a pozemky</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="img/realityplus/rp2.jpg" alt="Petr Svoboda">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:svoboda@realityplus.cz"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+420777222333"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Petr Svoboda</h3>
+                    <p class="member-role">Senior makléř</p>
+                    <p class="member-bio">Specializace: Byty a investice</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="img/realityplus/rp3.jpg" alt="Lucie Dvořáková">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:dvorakova@realityplus.cz"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+420777333444"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Lucie Dvořáková</h3>
+                    <p class="member-role">Makléřka</p>
+                    <p class="member-bio">Specializace: Pronájmy a komerční</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reference</span>
+                <h2>Co říkají naši klienti</h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Skvělá komunikace, profesionální přístup. Byt se prodal rychleji než jsme čekali. Mohu jen doporučit!"</p>
+                    <div class="testimonial-author">
+                        <strong>Martin Král</strong>
+                        <span>Prodej bytu 3+1</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Paní Nováková nám pomohla najít skvělý dům za výbornou cenu. Celý proces byl hladký a bez problémů."</p>
+                    <div class="testimonial-author">
+                        <strong>Eva Procházková</strong>
+                        <span>Koupě rodinného domu</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Profesionální tým, který ví co dělá. Oceňuji hlavně jejich transparentnost a ochotu pomoci."</p>
+                    <div class="testimonial-author">
+                        <strong>Jan Novotný</strong>
+                        <span>Pronájem bytu</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Blog</span>
+                <h2>Aktuality a rady</h2>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/realityplus/rp1.jpg" alt="Blog článek">
+                        <span class="blog-category">Tipy & Rady</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28. Leden 2026</span>
+                            <span><i class="far fa-user"></i> Jana Nováková</span>
+                        </div>
+                        <h3>Jak připravit byt na prodej</h3>
+                        <p>10 praktických tipů, jak zvýšit hodnotu vašeho bytu před prodejem...</p>
+                        <a href="#" class="blog-link">Čít více <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/realityplus/rp2.jpg" alt="Blog článek">
+                        <span class="blog-category">Hypotéky</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15. Leden 2026</span>
+                            <span><i class="far fa-user"></i> Petr Svoboda</span>
+                        </div>
+                        <h3>Hypotéka v roce 2026</h3>
+                        <p>Aktuální trendy a změny v hypotečním financování. Co vás čeká...</p>
+                        <a href="#" class="blog-link">Číst více <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/realityplus/rp3.jpg" alt="Blog článek">
+                        <span class="blog-category">Trh</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 5. Leden 2026</span>
+                            <span><i class="far fa-user"></i> Lucie Dvořáková</span>
+                        </div>
+                        <h3>Stav realitního trhu</h3>
+                        <p>Analýza vývoje cen nemovitostí v regionu Hodonínska...</p>
+                        <a href="#" class="blog-link">Číst více <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kontakt</span>
+                <h2>Máte dotaz? Ozvěte se nám</h2>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Naše kancelář</h3>
+                        <p>Masarykovo náměstí 15<br>695 01 Hodonín</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Telefon</h3>
+                        <p><a href="tel:+420777888999">+420 777 888 999</a></p>
+                        <p><a href="tel:+420518654321">+420 518 654 321</a></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@realityplus.cz">info@realityplus.cz</a></p>
+                        <p><a href="mailto:prodej@realityplus.cz">prodej@realityplus.cz</a></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Otevírací doba</h3>
+                        <p>Po - Pá: 8:00 - 17:00<br>So: 9:00 - 12:00</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h3>Kontaktní formulář</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Jméno a příjmení" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefon">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Vyberte službu</option>
+                                <option value="prodej">Prodej nemovitosti</option>
+                                <option value="koupě">Koupě nemovitosti</option>
+                                <option value="pronájem">Pronájem</option>
+                                <option value="ocenění">Ocenění</option>
+                                <option value="jiné">Jiné</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Vaše zpráva" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>Souhlasím se zpracováním osobních údajů</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Odeslat zprávu</button>
+                </form>
+            </div>
+
+            <div class="map-section">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.776!2d17.1248!3d48.8488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUwJzU1LjciTiAxN8KwMDcnMjkuMyJF!5e0!3m2!1scs!2scz!4v1234567890"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4><i class="fas fa-home"></i> Reality Plus</h4>
+                    <p>Vaše důvěra je naší prioritou. Pomůžeme vám s prodejem, koupí nebo pronájmem nemovitosti.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Rychlé odkazy</h4>
+                    <ul>
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#properties">Nabídka</a></li>
+                        <li><a href="#services">Služby</a></li>
+                        <li><a href="#team">Tým</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Služby</h4>
+                    <ul>
+                        <li><a href="#">Prodej nemovitostí</a></li>
+                        <li><a href="#">Pronájem nemovitostí</a></li>
+                        <li><a href="#">Ocenění</a></li>
+                        <li><a href="#">Právní servis</a></li>
+                        <li><a href="#">Hypotéky</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Přihlaste se k odběru novinek a speciálních nabídek</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Váš email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Reality Plus. Všechna práva vyhrazena.</p>
+                <p class="footer-note">Ukázkový web vytvořený v rámci balíčku PLUS | <a href="#">Ochrana osobních údajů</a> | <a href="#">Podmínky použití</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="realityplus.js"></script>
+</body>
+</html>

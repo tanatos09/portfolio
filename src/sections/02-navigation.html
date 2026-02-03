@@ -1,0 +1,51 @@
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <svg class="preloader-logo-svg" viewBox="0 0 100 100" width="80" height="80">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"/>
+                            <stop offset="50%" style="stop-color:#8b5cf6"/>
+                            <stop offset="100%" style="stop-color:#ec4899"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="logo-circle" cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+                    <text x="50" y="58" text-anchor="middle" fill="url(#logoGradient)" font-family="Space Grotesk" font-size="28" font-weight="700">TF</text>
+                    <circle class="logo-dot" cx="72" cy="62" r="4" fill="#6366f1"/>
+                </svg>
+            </div>
+            <div class="preloader-text">Načítám portfolio...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">TF<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">O mně</a></li>
+                <li><a href="#packages">Balíčky</a></li>
+                <li><a href="#configurator">Konfigurátor</a></li>
+                <li><a href="#pricing">Ceník</a></li>
+                <li><a href="#projects">Reference</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn btn-nav magnetic-btn">Kontakt</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Přepnout téma">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
