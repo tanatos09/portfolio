@@ -786,14 +786,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPriceEl = document.getElementById('totalPrice');
     const summaryList = document.getElementById('summaryList');
     
+    // Base price is 5000 Kč (JEDNODUCHÝ WEB)
+    const BASE_PRICE = 5000;
+    
     let configState = {
-        pages: { value: 3000, label: '1-3 stránky' },
-        design: { value: 0, label: 'Základní' },
+        pages: { value: 0, label: '1–3 stránky (v ceně)' },
+        design: { value: 0, label: 'Základní šablona (v ceně)' },
+        admin: { value: 0, label: 'Bez admin panelu (v ceně)' },
         extras: []
     };
 
     function updatePrice() {
-        let total = configState.pages.value + configState.design.value;
+        let total = BASE_PRICE + configState.pages.value + configState.design.value + (configState.admin ? configState.admin.value : 0);
         configState.extras.forEach(e => total += e.value);
         
         // Animate price change
@@ -802,14 +806,20 @@ document.addEventListener('DOMContentLoaded', () => {
             animateValue(totalPriceEl, currentPrice, total, 500);
         }
         
-        // Update summary
+        // Update summary - only show items with additional cost
         if (summaryList) {
-            let summaryHTML = `
-                <li><span>Stránky:</span> <strong>${configState.pages.label}</strong></li>
-                <li><span>Design:</span> <strong>${configState.design.label}</strong></li>
-            `;
+            let summaryHTML = '';
+            if (configState.pages.value > 0) {
+                summaryHTML += `<li><span>Stránky:</span> <strong>+${configState.pages.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
+            }
+            if (configState.design.value > 0) {
+                summaryHTML += `<li><span>Design:</span> <strong>+${configState.design.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
+            }
+            if (configState.admin && configState.admin.value > 0) {
+                summaryHTML += `<li><span>Admin:</span> <strong>+${configState.admin.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
+            }
             configState.extras.forEach(e => {
-                summaryHTML += `<li><span>Extra:</span> <strong>${e.label}</strong></li>`;
+                summaryHTML += `<li><span>${e.label}:</span> <strong>+${e.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
             });
             summaryList.innerHTML = summaryHTML;
         }
@@ -846,6 +856,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 configState.pages = { value, label };
             } else if (name === 'design') {
                 configState.design = { value, label };
+            } else if (name === 'admin') {
+                configState.admin = { value, label };
             }
             
             updatePrice();
@@ -868,8 +880,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // FAQ Accordion
+    // FAQ - Using native <details> elements now
     // ========================================
+    // FAQ now uses native HTML <details> elements for accordion behavior
+    // No JavaScript needed for basic functionality
+    
+    // Optional: Close other details when one opens (single accordion behavior)
+    const faqDetails = document.querySelectorAll('.faq-details');
+    faqDetails.forEach(detail => {
+        detail.addEventListener('toggle', () => {
+            if (detail.open) {
+                faqDetails.forEach(other => {
+                    if (other !== detail && other.open) {
+                        other.open = false;
+                    }
+                });
+            }
+        });
+    });
+    
+    // Legacy FAQ support for old accordion style (if any remain)
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {

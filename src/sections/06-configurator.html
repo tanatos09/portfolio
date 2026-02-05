@@ -1,105 +1,142 @@
-    <!-- Configurator Section -->
+﻿    <!-- Configurator Section -->
     <section id="configurator" class="configurator">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Konfigurátor</span>
-                <h2>Sestavte si web podle svých potřeb</h2>
-                <p class="section-desc">Vyberte si, co má váš web obsahovat. Zobrazená cena je orientační a slouží pro lepší představu o rozsahu projektu.</p>
+                <span class="section-tag"> KONFIGURÁTOR CEN</span>
+                <h2>Spočítejte si orientační cenu</h2>
+                <p class="section-desc">
+                    Základní cena začíná na <strong>5 000 Kč</strong> (JEDNODUCHÝ WEB). Přidejte si funkce podle potřeby.
+                </p>
             </div>
-            <div class="configurator-wrapper glass reveal">
-                <div class="config-options">
-                    <div class="config-group">
-                        <h4>📄 Počet stránek</h4>
-                        <div class="config-buttons" data-name="pages">
-                            <button class="config-btn active" data-value="3000" data-label="1–3 stránky">1–3</button>
-                            <button class="config-btn" data-value="5000" data-label="4–6 stránek">4–6</button>
-                            <button class="config-btn" data-value="8000" data-label="7–10 stránek">7–10</button>
-                            <button class="config-btn" data-value="12000" data-label="11+ stránek">11+</button>
-                        </div>
-                    </div>
-                    <div class="config-group">
-                        <h4>🎨 Design</h4>
-                        <div class="config-buttons" data-name="design">
-                            <button class="config-btn active" data-value="0" data-label="Základní šablona">Základní</button>
-                            <button class="config-btn" data-value="3000" data-label="Prémiová šablona">Prémiový</button>
-                            <button class="config-btn" data-value="8000" data-label="Vlastní design">Na míru</button>
-                        </div>
-                    </div>
-                    <div class="config-group">
-                        <h4>✨ Funkce a doplňky</h4>
-                        <div class="config-checkboxes">
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="1500">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Galerie obrázků</span>
-                                <span class="checkbox-price">+1 500 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="800">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Google mapa</span>
-                                <span class="checkbox-price">+800 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="1200">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Kontaktní formulář</span>
-                                <span class="checkbox-price">+1 200 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="2500">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">SEO optimalizace</span>
-                                <span class="checkbox-price">+2 500 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="4500">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Backendless administrace obsahu</span>
-                                <span class="checkbox-price">+4 500 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="2000">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Úprava textů online</span>
-                                <span class="checkbox-price">+2 000 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="1500">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Integrace sociálních sítí</span>
-                                <span class="checkbox-price">+1 500 Kč</span>
-                            </label>
-                            <label class="config-checkbox">
-                                <input type="checkbox" data-value="3500">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Vícejazyčnost</span>
-                                <span class="checkbox-price">+3 500 Kč</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="config-summary">
-                    <div class="summary-card glass">
-                        <h4>Vaše konfigurace</h4>
-                        <ul class="summary-list" id="summaryList">
-                            <li><span>Stránky:</span> <strong>1–3</strong></li>
-                            <li><span>Design:</span> <strong>Základní</strong></li>
-                        </ul>
-                        <div class="summary-divider"></div>
-                        <div class="summary-total">
-                            <span>Orientační cena:</span>
-                            <div class="total-price">
-                                <span class="price-from">od</span>
-                                <span class="price-value" id="totalPrice">3 000</span>
-                                <span class="price-currency">Kč</span>
+            
+            <div class="configurator-container glass reveal">
+                <div class="config-main">
+                    <!-- Levá strana - Volby -->
+                    <div class="config-options">
+                        <div class="config-group">
+                            <h4> Počet stránek</h4>
+                            <p class="config-hint">Základní balíček obsahuje 1–3 stránky</p>
+                            <div class="config-buttons" data-name="pages">
+                                <button class="config-btn active" data-value="0" data-label="1–3 stránky (v ceně)">1–3 stránky</button>
+                                <button class="config-btn" data-value="3000" data-label="4–6 stránek (+3 000 Kč)">4–6 stránek</button>
+                                <button class="config-btn" data-value="6000" data-label="7–10 stránek (+6 000 Kč)">7–10 stránek</button>
+                                <button class="config-btn" data-value="10000" data-label="11+ stránek (+10 000 Kč)">11+ stránek</button>
                             </div>
                         </div>
-                        <p class="summary-note">* Finální cena se může lišit podle složitosti, rozsahu a konkrétních požadavků.</p>
-                        <a href="#contact" class="btn btn-primary btn-glow btn-full magnetic-btn">
-                            Nezávazná poptávka
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
+                        
+                        <div class="config-group">
+                            <h4> Design</h4>
+                            <p class="config-hint">Základní šablona je součástí ceny</p>
+                            <div class="config-buttons" data-name="design">
+                                <button class="config-btn active" data-value="0" data-label="Základní šablona (v ceně)">Základní</button>
+                                <button class="config-btn" data-value="5000" data-label="Prémiový design (+5 000 Kč)">Prémiový</button>
+                                <button class="config-btn" data-value="10000" data-label="Design na míru (+10 000 Kč)">Na míru</button>
+                            </div>
+                        </div>
+                        
+                        <div class="config-group">
+                            <h4> Správa obsahu</h4>
+                            <p class="config-hint">JEDNODUCHÝ WEB nepotřebuje admin panel</p>
+                            <div class="config-buttons" data-name="admin">
+                                <button class="config-btn active" data-value="0" data-label="Bez admin panelu (v ceně)">Bez adminu</button>
+                                <button class="config-btn" data-value="4500" data-label="Základní admin (+4 500 Kč)">Základní admin</button>
+                                <button class="config-btn" data-value="8000" data-label="Pokročilý admin (+8 000 Kč)">Pokročilý admin</button>
+                            </div>
+                        </div>
+                        
+                        <div class="config-group">
+                            <h4> Doplňkové funkce</h4>
+                            <div class="config-checkboxes-grid">
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="2500">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Galerie obrázků</span>
+                                        <span class="checkbox-price">+2 500 Kč</span>
+                                    </span>
+                                </label>
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="500">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Google mapa</span>
+                                        <span class="checkbox-price">+500 Kč</span>
+                                    </span>
+                                </label>
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="3000">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Pokročilé animace</span>
+                                        <span class="checkbox-price">+3 000 Kč</span>
+                                    </span>
+                                </label>
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="3500">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Vícejazyčnost</span>
+                                        <span class="checkbox-price">+3 500 Kč</span>
+                                    </span>
+                                </label>
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="1200">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Propojení sociálních sítí</span>
+                                        <span class="checkbox-price">+1 200 Kč</span>
+                                    </span>
+                                </label>
+                                <label class="config-checkbox">
+                                    <input type="checkbox" data-value="2500">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-label">Rozšířené SEO</span>
+                                        <span class="checkbox-price">+2 500 Kč</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pravá strana - Souhrn -->
+                    <div class="config-summary">
+                        <div class="summary-card">
+                            <div class="summary-header">
+                                <h4> Vaše konfigurace</h4>
+                            </div>
+                            
+                            <div class="summary-base">
+                                <span>Základní cena (JEDNODUCHÝ WEB)</span>
+                                <strong>5 000 Kč</strong>
+                            </div>
+                            
+                            <ul class="summary-list" id="summaryList">
+                                <!-- Dynamicky generováno -->
+                            </ul>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-total">
+                                <span>Celková orientační cena:</span>
+                                <div class="total-price">
+                                    <span class="price-value" id="totalPrice">5 000</span>
+                                    <span class="price-currency">Kč</span>
+                                </div>
+                            </div>
+                            
+                            <p class="summary-note">* Finální cena závisí na konkrétních požadavcích. Kontaktujte mě pro přesnou kalkulaci.</p>
+                            
+                            <a href="#contact" class="btn btn-primary btn-glow btn-full">
+                                Nezávazná poptávka
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                            
+                            <div class="summary-recommendation">
+                                <span></span>
+                                <p><strong>Tip:</strong> 90 % klientů si vystačí se základním JEDNODUCHÝM WEBEM za 5 000 Kč.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
