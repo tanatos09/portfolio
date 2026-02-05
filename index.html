@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč. Rychlé dodání, férové ceny, bez měsíčních poplatků.">
+    <meta name="keywords" content="tvorba webů, webové stránky, web pro firmu, webová vizitka, web Hodonín, levný web, web pro živnostníky">
+    <meta name="author" content="Tomáš Frank">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Czech">
+    <meta name="revisit-after" content="14 days">
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tomasfrank.cz">
+    <meta property="og:title" content="Tomáš Frank | Weby pro malé firmy a živnostníky">
+    <meta property="og:description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč. Rychlé dodání, férové ceny, bez měsíčních poplatků.">
+    <meta property="og:image" content="https://tomasfrank.cz/img/og-image.jpg">
+    <meta property="og:image:alt" content="Tomáš Frank - Web Design">
+    <meta property="og:locale" content="cs_CZ">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tomasfrank.cz">
+    <meta name="twitter:title" content="Tomáš Frank | Weby pro malé firmy a živnostníky">
+    <meta name="twitter:description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč.">
+    <meta name="twitter:image" content="https://tomasfrank.cz/img/og-image.jpg">
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>Tomáš Frank | Weby pro malé firmy a živnostníky</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +37,6 @@
 </head>
 <body>
 
-    <!-- Floating particles -->
-    <div class="particles" id="particles"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -224,6 +244,51 @@
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📋 POSTUP</span>
+                <h2>Jak spolupráce funguje?</h2>
+                <p class="section-desc">Od první zprávy k hotovému webu za 4 jednoduché kroky</p>
+            </div>
+            
+            <div class="process-grid reveal">
+                <div class="process-step glass">
+                    <div class="step-number">1</div>
+                    <h3>Nezávazná konzultace</h3>
+                    <p>Napíšete mi, co potřebujete. Do 24 hodin se ozvu a probereme váš projekt — zdarma a bez závazku.</p>
+                    <span class="step-time">⏱️ 15 minut</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">2</div>
+                    <h3>Návrh a kalkulace</h3>
+                    <p>Pošlu vám konkrétní nabídku s přesnou cenou a termínem dodání. Odsouhlasíte, až když budete spokojeni.</p>
+                    <span class="step-time">⏱️ Do 24 hodin</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">3</div>
+                    <h3>Tvorba webu</h3>
+                    <p>Po odsouhlasení začnu pracovat. Průběžně vám posílám ukázky a zapracovávám vaše připomínky.</p>
+                    <span class="step-time">⏱️ 5–14 dní</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">4</div>
+                    <h3>Předání a spuštění</h3>
+                    <p>Web vám předám, vysvětlím vše potřebné a pomohu se spuštěním. Platíte až po dokončení.</p>
+                    <span class="step-time">✅ Hotovo!</span>
+                </div>
+            </div>
+            
+            <div class="process-cta reveal">
+                <a href="#contact" class="btn btn-primary btn-glow magnetic-btn">
+                    Začít konzultací zdarma
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
 ﻿    <!-- Packages Section -->
     <section id="packages" class="packages">
         <div class="container">
@@ -369,386 +434,9 @@
         </div>
     </section>
 
-﻿    <!-- Configurator Section - HIDDEN -->
-    <section id="configurator" class="configurator" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> KONFIGURÁTOR CEN</span>
-                <h2>Spočítejte si orientační cenu</h2>
-                <p class="section-desc">
-                    Základní cena začíná na <strong>5 000 Kč</strong> (JEDNODUCHÝ WEB). Přidejte si funkce podle potřeby.
-                </p>
-            </div>
-            
-            <div class="configurator-container glass reveal">
-                <div class="config-main">
-                    <!-- Levá strana - Volby -->
-                    <div class="config-options">
-                        <div class="config-group">
-                            <h4> Počet stránek</h4>
-                            <p class="config-hint">Základní balíček obsahuje 1–3 stránky</p>
-                            <div class="config-buttons" data-name="pages">
-                                <button class="config-btn active" data-value="0" data-label="1–3 stránky (v ceně)">1–3 stránky</button>
-                                <button class="config-btn" data-value="3000" data-label="4–6 stránek (+3 000 Kč)">4–6 stránek</button>
-                                <button class="config-btn" data-value="6000" data-label="7–10 stránek (+6 000 Kč)">7–10 stránek</button>
-                                <button class="config-btn" data-value="10000" data-label="11+ stránek (+10 000 Kč)">11+ stránek</button>
-                            </div>
-                        </div>
-                        
-                        <div class="config-group">
-                            <h4> Design</h4>
-                            <p class="config-hint">Základní šablona je součástí ceny</p>
-                            <div class="config-buttons" data-name="design">
-                                <button class="config-btn active" data-value="0" data-label="Základní šablona (v ceně)">Základní</button>
-                                <button class="config-btn" data-value="5000" data-label="Prémiový design (+5 000 Kč)">Prémiový</button>
-                                <button class="config-btn" data-value="10000" data-label="Design na míru (+10 000 Kč)">Na míru</button>
-                            </div>
-                        </div>
-                        
-                        <div class="config-group">
-                            <h4> Správa obsahu</h4>
-                            <p class="config-hint">JEDNODUCHÝ WEB nepotřebuje admin panel</p>
-                            <div class="config-buttons" data-name="admin">
-                                <button class="config-btn active" data-value="0" data-label="Bez admin panelu (v ceně)">Bez adminu</button>
-                                <button class="config-btn" data-value="4500" data-label="Základní admin (+4 500 Kč)">Základní admin</button>
-                                <button class="config-btn" data-value="8000" data-label="Pokročilý admin (+8 000 Kč)">Pokročilý admin</button>
-                            </div>
-                        </div>
-                        
-                        <div class="config-group">
-                            <h4> Doplňkové funkce</h4>
-                            <div class="config-checkboxes-grid">
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="2500">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Galerie obrázků</span>
-                                        <span class="checkbox-price">+2 500 Kč</span>
-                                    </span>
-                                </label>
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="500">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Google mapa</span>
-                                        <span class="checkbox-price">+500 Kč</span>
-                                    </span>
-                                </label>
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="3000">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Pokročilé animace</span>
-                                        <span class="checkbox-price">+3 000 Kč</span>
-                                    </span>
-                                </label>
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="3500">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Vícejazyčnost</span>
-                                        <span class="checkbox-price">+3 500 Kč</span>
-                                    </span>
-                                </label>
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="1200">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Propojení sociálních sítí</span>
-                                        <span class="checkbox-price">+1 200 Kč</span>
-                                    </span>
-                                </label>
-                                <label class="config-checkbox">
-                                    <input type="checkbox" data-value="2500">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-content">
-                                        <span class="checkbox-label">Rozšířené SEO</span>
-                                        <span class="checkbox-price">+2 500 Kč</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Pravá strana - Souhrn -->
-                    <div class="config-summary">
-                        <div class="summary-card">
-                            <div class="summary-header">
-                                <h4> Vaše konfigurace</h4>
-                            </div>
-                            
-                            <div class="summary-base">
-                                <span>Základní cena (JEDNODUCHÝ WEB)</span>
-                                <strong>5 000 Kč</strong>
-                            </div>
-                            
-                            <ul class="summary-list" id="summaryList">
-                                <!-- Dynamicky generováno -->
-                            </ul>
-                            
-                            <div class="summary-divider"></div>
-                            
-                            <div class="summary-total">
-                                <span>Celková orientační cena:</span>
-                                <div class="total-price">
-                                    <span class="price-value" id="totalPrice">5 000</span>
-                                    <span class="price-currency">Kč</span>
-                                </div>
-                            </div>
-                            
-                            <p class="summary-note">* Finální cena závisí na konkrétních požadavcích. Kontaktujte mě pro přesnou kalkulaci.</p>
-                            
-                            <a href="#contact" class="btn btn-primary btn-glow btn-full">
-                                Nezávazná poptávka
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                            
-                            <div class="summary-recommendation">
-                                <span></span>
-                                <p><strong>Tip:</strong> 90 % klientů si vystačí se základním JEDNODUCHÝM WEBEM za 5 000 Kč.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+﻿
 
-﻿    <!-- Pricing Table Section - HIDDEN -->
-    <section id="pricing" class="pricing-table-section" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> CENÍK</span>
-                <h2>Přehled služeb a cen</h2>
-                <p class="section-desc">Transparentní ceny bez skrytých poplatků</p>
-            </div>
-            
-            <!-- Hlavní pricing box -->
-            <div class="pricing-main-box glass reveal">
-                
-                <!-- Srovnávací tabulka -->
-                <div class="pricing-table-container">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th class="feature-column">Funkce</th>
-                                <th class="package-column featured-column">
-                                    <div class="th-content">
-                                        <span class="th-badge">🔥 Nejprodávanější</span>
-                                        <span class="th-name">JEDNODUCHÝ WEB</span>
-                                        <span class="th-price">5 000 Kč</span>
-                                    </div>
-                                </th>
-                                <th class="package-column">
-                                    <div class="th-content">
-                                        <span class="th-name">STANDARD</span>
-                                        <span class="th-price">15 000 – 19 990 Kč</span>
-                                    </div>
-                                </th>
-                                <th class="package-column">
-                                    <div class="th-content">
-                                        <span class="th-badge">💎</span>
-                                        <span class="th-name">PLUS</span>
-                                        <span class="th-price">22 000 – 29 990 Kč</span>
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Počet stránek</td>
-                                <td class="featured-cell"><strong>1–3</strong></td>
-                                <td><strong>4–8</strong></td>
-                                <td><strong>8–15</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Responzivní design</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Profesionální design</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>SEO optimalizace</td>
-                                <td class="featured-cell">Základní</td>
-                                <td>Rozšířené</td>
-                                <td><strong>Kompletní</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Kontaktní formulář</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>SSL certifikát</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Galerie obrázků</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span> + lightbox</td>
-                            </tr>
-                            <tr>
-                                <td>Google mapa</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Admin panel</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span> Základní</td>
-                                <td><span class="check">✓</span> Pokročilý</td>
-                            </tr>
-                            <tr>
-                                <td>Online úprava textů</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Úprava buňkami (CMS)</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Newsletter integrace</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Analytics & Tracking</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span> Základní</td>
-                                <td><span class="check">✓</span> Pokročilý</td>
-                            </tr>
-                            <tr>
-                                <td>Sociální sítě integrace</td>
-                                <td class="featured-cell"><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Mobilní optimalizace</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>GDPR compliance</td>
-                                <td class="featured-cell"><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td>Dodání</td>
-                                <td class="featured-cell"><strong>7–10 dní</strong></td>
-                                <td><strong>10–18 dní</strong></td>
-                                <td><strong>21–30 dní</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Podpora po spuštění</td>
-                                <td class="featured-cell">14 dní</td>
-                                <td>30 dní</td>
-                                <td>60 dní</td>
-                            </tr>
-                            <tr class="action-row">
-                                <td></td>
-                                <td class="featured-cell"><a href="#contact" class="btn btn-primary btn-sm">Objednat</a></td>
-                                <td><a href="#contact" class="btn btn-secondary btn-sm">Poptávka</a></td>
-                                <td><a href="#contact" class="btn btn-secondary btn-sm">Poptávka</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Doplňkové služby -->
-                <div class="extras-section">
-                    <h3> Doplňkové služby</h3>
-                    <div class="extras-grid">
-                        <div class="extra-item">
-                            <span class="extra-name">Další stránka</span>
-                            <span class="extra-price">+500 – 1 500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Galerie obrázků</span>
-                            <span class="extra-price">+2 500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Google mapa</span>
-                            <span class="extra-price">+500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Animace webu</span>
-                            <span class="extra-price">+2 000 – 6 000 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Admin panel</span>
-                            <span class="extra-price">+4 500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Rozšířené SEO</span>
-                            <span class="extra-price">+2 500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Vícejazyčnost</span>
-                            <span class="extra-price">+3 500 Kč</span>
-                        </div>
-                        <div class="extra-item">
-                            <span class="extra-name">Měsíční údržba</span>
-                            <span class="extra-price">od 500 Kč/měsíc</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Termíny dodání -->
-                <div class="delivery-section">
-                    <h3> Termíny dodání</h3>
-                    <div class="delivery-grid">
-                        <div class="delivery-item">
-                            <div class="delivery-icon"></div>
-                            <div class="delivery-info">
-                                <strong>EXPRESS</strong>
-                                <span>do 24 hodin</span>
-                            </div>
-                        </div>
-                        <div class="delivery-item featured">
-                            <div class="delivery-icon">🚀</div>
-                            <div class="delivery-info">
-                                <strong>JEDNODUCHÝ WEB</strong>
-                                <span>7–10 dní</span>
-                            </div>
-                        </div>
-                        <div class="delivery-item">
-                            <div class="delivery-icon">📦</div>
-                            <div class="delivery-info">
-                                <strong>STANDARD</strong>
-                                <span>10–18 dní</span>
-                            </div>
-                        </div>
-                        <div class="delivery-item">
-                            <div class="delivery-icon">💎</div>
-                            <div class="delivery-info">
-                                <strong>PLUS</strong>
-                                <span>21–30 dní</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+﻿
 
     <!-- Projects / References Section -->
     <section id="projects" class="projects">
@@ -806,6 +494,65 @@
                         <a href="realityplus.html" target="_blank" class="btn btn-outline btn-sm">Podívat se na web</a>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💬 REFERENCE</span>
+                <h2>Co říkají klienti</h2>
+                <p class="section-desc">Přečtěte si, jaké zkušenosti mají ostatní se spoluprací</p>
+            </div>
+            
+            <div class="testimonials-grid reveal">
+                <div class="testimonial-card glass">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>„Tomáš mi udělal web rychle a přesně podle mých představ. Komunikace byla perfektní, vždy odpověděl do pár hodin. Cena férová, žádné skryté poplatky. Jednoznačně doporučuji!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JN</div>
+                        <div class="author-info">
+                            <strong>Jan Novák</strong>
+                            <span>Instalatérství Novák, Hodonín</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass featured">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>„Konečně mám web, který vypadá profesionálně a zákazníci mě díky němu najdou na Google. Za týden jsem měla první objednávku přes web. Děkuji!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <strong>Marie Svobodová</strong>
+                            <span>Kosmetické studio Beauty</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>„Skvělá spolupráce. Web byl hotový za týden a funguje přesně tak, jak jsem potřeboval. Tomáš rozumí tomu, co malé firmy potřebují."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PK</div>
+                        <div class="author-info">
+                            <strong>Petr Kovář</strong>
+                            <span>Autoservis MotoGarage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-note reveal">
+                <p>💡 <strong>Tip:</strong> Chcete se přesvědčit sami? <a href="#projects">Prohlédněte si ukázky mé práce</a> nebo mi <a href="#contact">napište</a> a rád vám pošlu kontakty na spokojené klienty.</p>
             </div>
         </div>
     </section>
@@ -876,26 +623,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
-                <div class="faq-item glass reveal">
-                    <div class="faq-question-static">
-                        <span class="faq-icon-static"></span>
-                        <h4>Co všechno v balíčcích získám?</h4>
-                    </div>
-                    <div class="faq-answer-visible">
-                        <p><strong>Všechny balíčky:</strong> responzivní design, SEO, kontaktní formulář, SSL certifikát, technická podpora.</p>
-                        <details class="faq-details">
-                            <summary>Kompletní seznam</summary>
-                            <div class="faq-details-content">
-                                <p><strong>VIZITKA a FIREMNÍ WEB:</strong> Profesionální design, responzivní zobrazení, SEO optimalizace, kontaktní formulář, SSL certifikát, technická podpora.</p>
-                                <p><strong>Rozdíl:</strong> VIZITKA je jednodušší (1–3 stránky, bez panelu), FIREMNÍ WEB má admin panel a galerii.</p>
-                                <p><strong>WEB NA MÍRU:</strong> Vše dle vašich potřeb (e-shopy, integrace, vlastní funkce).</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
+                <!-- FAQ 4 - Colik stojí příplatky -->
                 <div class="faq-item glass reveal">
                     <div class="faq-question-static">
                         <span class="faq-icon-static"></span>
@@ -916,25 +644,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 7 -->
-                <div class="faq-item glass reveal">
-                    <div class="faq-question-static">
-                        <span class="faq-icon-static"></span>
-                        <h4>Můžu objednat individuální projekt?</h4>
-                    </div>
-                    <div class="faq-answer-visible">
-                        <p><strong>Ano.</strong> E-shopy, rezervační systémy, webové aplikace – WEB NA MÍRU od 20 000 Kč, individuální kalkulace.</p>
-                        <details class="faq-details">
-                            <summary>Více o individuálních projektech</summary>
-                            <div class="faq-details-content">
-                                <p>Tyto projekty vyžadují detailní konzultaci. Cenu a termín stanovím individuálně podle rozsahu.</p>
-                                <p>Napište mi popis projektu a do 24 hodin vám pošlu hrubý odhad ceny a termínu.</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- FAQ 8 -->
+                <!-- FAQ 5 - Jak probíhá platba -->
                 <div class="faq-item glass reveal">
                     <div class="faq-question-static">
                         <span class="faq-icon-static"></span>
@@ -1083,8 +793,10 @@
                     <h4>Navigace</h4>
                     <ul>
                         <li><a href="#about">O mně</a></li>
+                        <li><a href="#process">Jak to funguje</a></li>
                         <li><a href="#packages">Služby</a></li>
                         <li><a href="#projects">Ukázky</a></li>
+                        <li><a href="#testimonials">Reference</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
@@ -1100,7 +812,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Tomáš Frank. Všechna práva vyhrazena.</p>
-                <p class="footer-made">Vytvořeno s ❤️ v Hodoníně</p>
+                <p class="footer-made">Pracuji po celé ČR • Osobní schůzky možné v Hodoníně a okolí</p>
             </div>
         </div>
     </footer>
@@ -1117,8 +829,8 @@
     <!-- Mobile CTA -->
     <div class="mobile-cta">
         <a href="#contact" class="btn btn-primary btn-glow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            Objednat web
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            Konzultace zdarma
         </a>
     </div>
 

@@ -20,28 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // Particles
-    // ========================================
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 30;
-
-    function createParticles() {
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            particle.style.width = (2 + Math.random() * 4) + 'px';
-            particle.style.height = particle.style.width;
-            particlesContainer.appendChild(particle);
-        }
-    }
-    
-    createParticles();
-
-    // ========================================
     // Code Window Typing Effect
     // ========================================
     function initCodeAnimation() {
@@ -776,107 +754,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Here you would typically send the data to a server
         // For now, we'll just log it
         console.log('Form submitted:', data);
-    });
-
-    // ========================================
-    // Price Configurator
-    // ========================================
-    const configButtons = document.querySelectorAll('.config-btn');
-    const configCheckboxes = document.querySelectorAll('.config-checkbox input');
-    const totalPriceEl = document.getElementById('totalPrice');
-    const summaryList = document.getElementById('summaryList');
-    
-    // Base price is 5000 Kč (JEDNODUCHÝ WEB)
-    const BASE_PRICE = 5000;
-    
-    let configState = {
-        pages: { value: 0, label: '1–3 stránky (v ceně)' },
-        design: { value: 0, label: 'Základní šablona (v ceně)' },
-        admin: { value: 0, label: 'Bez admin panelu (v ceně)' },
-        extras: []
-    };
-
-    function updatePrice() {
-        let total = BASE_PRICE + configState.pages.value + configState.design.value + (configState.admin ? configState.admin.value : 0);
-        configState.extras.forEach(e => total += e.value);
-        
-        // Animate price change
-        if (totalPriceEl) {
-            const currentPrice = parseInt(totalPriceEl.textContent.replace(/\s/g, '')) || 0;
-            animateValue(totalPriceEl, currentPrice, total, 500);
-        }
-        
-        // Update summary - only show items with additional cost
-        if (summaryList) {
-            let summaryHTML = '';
-            if (configState.pages.value > 0) {
-                summaryHTML += `<li><span>Stránky:</span> <strong>+${configState.pages.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
-            }
-            if (configState.design.value > 0) {
-                summaryHTML += `<li><span>Design:</span> <strong>+${configState.design.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
-            }
-            if (configState.admin && configState.admin.value > 0) {
-                summaryHTML += `<li><span>Admin:</span> <strong>+${configState.admin.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
-            }
-            configState.extras.forEach(e => {
-                summaryHTML += `<li><span>${e.label}:</span> <strong>+${e.value.toLocaleString('cs-CZ')} Kč</strong></li>`;
-            });
-            summaryList.innerHTML = summaryHTML;
-        }
-    }
-
-    function animateValue(el, start, end, duration) {
-        const startTime = performance.now();
-        
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const easing = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(start + (end - start) * easing);
-            el.textContent = current.toLocaleString('cs-CZ');
-            
-            if (progress < 1) requestAnimationFrame(update);
-        }
-        
-        requestAnimationFrame(update);
-    }
-
-    configButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const group = btn.parentElement;
-            const name = group.dataset.name;
-            
-            group.querySelectorAll('.config-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const value = parseInt(btn.dataset.value);
-            const label = btn.dataset.label || btn.textContent.trim();
-            
-            if (name === 'pages') {
-                configState.pages = { value, label };
-            } else if (name === 'design') {
-                configState.design = { value, label };
-            } else if (name === 'admin') {
-                configState.admin = { value, label };
-            }
-            
-            updatePrice();
-        });
-    });
-
-    configCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            const value = parseInt(checkbox.dataset.value);
-            const label = checkbox.parentElement.querySelector('.checkbox-label').textContent;
-            
-            if (checkbox.checked) {
-                configState.extras.push({ value, label });
-            } else {
-                configState.extras = configState.extras.filter(e => e.label !== label);
-            }
-            
-            updatePrice();
-        });
     });
 
     // ========================================
