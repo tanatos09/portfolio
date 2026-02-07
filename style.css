@@ -1568,6 +1568,11 @@ body {
     to { transform: rotate(360deg); }
 }
 
+/* Spinning animation utility */
+.spinning {
+    animation: rotate 1s linear infinite;
+}
+
 .project-overlay {
     position: absolute;
     top: 0;

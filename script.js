@@ -722,38 +722,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // Contact Form
+    // Contact Form with FormSubmit
     // ========================================
     const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', async (e) => {
+        // NEBLOKUJEME default akci - FormSubmit se postará o odeslání
+        // e.preventDefault(); // ZAKOMENTOVÁNO
 
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-
-        // Show success message
+        // Show loading state
         const btn = contactForm.querySelector('button[type="submit"]');
         const originalText = btn.innerHTML;
         
         btn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Odesláno!
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spinning">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            Odesílám...
         `;
-        btn.style.background = 'var(--success)';
         btn.disabled = true;
 
-        // Reset after delay
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-            contactForm.reset();
-        }, 3000);
+        // FormSubmit se postará o vše - jen zobrazíme loading stav
+        // Formulář se odešle normálně (native HTML form submission)
+        console.log('Odesílám formulář přes FormSubmit...');
 
-        // Here you would typically send the data to a server
-        // For now, we'll just log it
-        console.log('Form submitted:', data);
+        // Formulář se odešle přes FormSubmit endpoint
+        // Uživatel bude přesměrován na děkovací stránku
     });
 
     // ========================================

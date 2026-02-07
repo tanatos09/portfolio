@@ -34,6 +34,15 @@
     <!-- GSAP for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- EmailJS for contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "YOUR_PUBLIC_KEY", // Změňte po registraci
+            });
+        })();
+    </script>
 </head>
 <body>
 
@@ -681,7 +690,14 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper glass reveal">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/franktomas@seznam.cz" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Nová poptávka z portfolia">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_next" value="https://tomasfrank.cz#contact">
+                        
                         <div class="form-header">
                             <h3>Objednat JEDNODUCHÝ WEB</h3>
                             <p>Vyplňte údaje a já se vám ozvu do 24 hodin</p>
