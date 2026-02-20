@@ -36,7 +36,14 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper glass reveal">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/franktomas@seznam.cz" method="POST">
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_subject" value="Nová poptávka z webu">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_next" value="">
+
                         <div class="form-header">
                             <h3>Objednat JEDNODUCHÝ WEB</h3>
                             <p>Vyplňte údaje a já se vám ozvu do 24 hodin</p>
@@ -53,9 +60,9 @@
                             <div class="form-group">
                                 <label for="project">Typ projektu <span class="required">*</span></label>
                                 <select id="project" name="project" required>
-                                    <option value="vizitka" selected>VIZITKA (5 000 Kč) ✅</option>
-                                    <option value="firemni">FIREMNÍ WEB (12 000–15 000 Kč)</option>
-                                    <option value="namiru">WEB NA MÍRU (od 20 000 Kč)</option>
+                                    <option value="vizitka" selected>VIZITKA (5 000 Kč — sleva) ✅</option>
+                                    <option value="firemni">FIREMNÍ WEB (15 000 Kč)</option>
+                                    <option value="namiru">WEB NA MÍRU (od 22 000 Kč)</option>
                                     <option value="nevim">Ještě nevím – chci konzultaci</option>
                                 </select>
                             </div>
@@ -81,7 +88,12 @@
                                 <span class="checkmark"></span>
                                 <span>Souhlasím se zpracováním osobních údajů <span class="required">*</span></span>
                             </label>
+                            <p class="gdpr-note">* Vaše údaje (jméno, e-mail) použiji pouze pro zodpovězení vaší poptávky. Nebudou sdíleny s třetími stranami ani využity k marketingovým účelům.</p>
                         </div>
+
+                        <!-- Status messages -->
+                        <div class="form-status" id="formStatus" style="display:none;"></div>
+
                         <button type="submit" class="btn btn-primary btn-glow btn-full">
                             <span>Odeslat zprávu</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>

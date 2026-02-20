@@ -812,7 +812,7 @@ body {
     gap: 0;
     flex: 1;
     border-bottom: 1px solid #3e3e42;
-    overflow-x: auto;
+    overflow: hidden;
 }
 
 .code-tab {
@@ -845,7 +845,6 @@ body {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
-    color: #3776ab;
 }
 
 .code-tab-close {
@@ -864,6 +863,18 @@ body {
     color: #d4d4d4;
 }
 
+.code-panels {
+    position: relative;
+}
+
+.code-panel {
+    display: none;
+}
+
+.code-panel.active {
+    display: block;
+}
+
 .code-wrapper {
     display: flex;
     background: #1e1e1e;
@@ -879,6 +890,8 @@ body {
     font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
     font-size: 0.9rem;
     line-height: 1.6;
+    height: calc(15 * 1.6em + 32px);
+    overflow: hidden;
 }
 
 .line-number {
@@ -894,9 +907,8 @@ body {
     font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
     font-size: 0.9rem;
     line-height: 1.6;
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 350px;
+    overflow: hidden;
+    height: calc(15 * 1.6em + 32px);
     background: #1e1e1e;
     color: #d4d4d4;
     margin: 0;
@@ -933,8 +945,45 @@ body {
     font-weight: 500;
 }
 
+.code-content .tag {
+    color: #569cd6;
+}
+
+.code-content .attr {
+    color: #9cdcfe;
+}
+
+.code-content .attr-value {
+    color: #ce9178;
+}
+
+.code-content .comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.code-content .property {
+    color: #9cdcfe;
+}
+
+.code-content .value {
+    color: #ce9178;
+}
+
+.code-content .number {
+    color: #b5cea8;
+}
+
+.code-content .selector {
+    color: #d7ba7d;
+}
+
+.code-content .punctuation {
+    color: #808080;
+}
+
 /* Typing cursor animation */
-.code-content::after {
+.code-panel.active .code-content.typing::after {
     content: '|';
     animation: blink 1s infinite;
     color: #61afef;
@@ -1063,9 +1112,13 @@ body {
     }
 
     .code-content {
-        font-size: 0.75rem;
-        padding: 12px;
-        max-height: 200px;
+        font-size: 0.7rem;
+        padding: 10px;
+        height: calc(15 * 1.6em + 20px);
+    }
+
+    .code-line-numbers {
+        height: calc(15 * 1.6em + 20px);
     }
 }
 
@@ -1972,6 +2025,59 @@ body {
     min-height: 120px;
 }
 
+.form-checkbox .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.form-checkbox .checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--accent-primary);
+    cursor: pointer;
+}
+
+.form-checkbox .checkmark {
+    display: none;
+}
+
+.gdpr-note {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.form-status {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.form-status-success {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.form-status-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.form-status-error a {
+    color: #ef4444;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .contact-wrapper {
         grid-template-columns: 1fr;
@@ -2098,6 +2204,17 @@ body {
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     color: var(--text-secondary);
+}
+
+.package-upsell {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: rgba(99, 102, 241, 0.06);
+    border-left: 3px solid var(--accent-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
 /* Express Service */
@@ -3899,6 +4016,14 @@ body {
     font-size: 2rem;
     font-weight: 700;
     color: var(--accent-primary);
+}
+
+.packages-grid-three .price-old {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 0.5rem;
 }
 
 .packages-grid-three .price-range {

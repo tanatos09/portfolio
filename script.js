@@ -20,117 +20,188 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // Code Window Typing Effect
+    // Code Window Typing Effect (multi-tab: HTML → CSS → JS, then cycle tabs)
     // ========================================
     function initCodeAnimation() {
-        const codeContent = document.querySelector('.code-content');
-        if (!codeContent) return;
+        const codeWindow = document.querySelector('.code-window');
+        if (!codeWindow) return;
 
-        const codeElement = codeContent.querySelector('code');
-        if (!codeElement) return;
+        const tabs = codeWindow.querySelectorAll('.code-tab');
+        const panels = codeWindow.querySelectorAll('.code-panel');
 
-        // Define the code structure with inline HTML
-        const codeHTML = `<span class="keyword">class</span> <span class="class-name">WebDeveloper</span>:
-    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="self">self</span>):
-        <span class="self">self</span>.name = <span class="string">"Tomáš Frank"</span>
-        <span class="self">self</span>.skills = [
-            <span class="string">"Python"</span>, <span class="string">"Django"</span>,
-            <span class="string">"JavaScript"</span>, <span class="string">"React"</span>
-        ]
-        <span class="self">self</span>.passion = <span class="string">"Tvořit weby"</span>
+        // Define code for each tab
+        const codeData = {
+            html: `<span class="punctuation">&lt;!</span><span class="tag">DOCTYPE</span> <span class="attr">html</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;</span><span class="tag">html</span> <span class="attr">lang</span>=<span class="attr-value">"cs"</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;</span><span class="tag">head</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">meta</span> <span class="attr">charset</span>=<span class="attr-value">"UTF-8"</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">title</span><span class="punctuation">&gt;</span>Můj Web<span class="punctuation">&lt;/</span><span class="tag">title</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">link</span> <span class="attr">href</span>=<span class="attr-value">"webside.css"</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;/</span><span class="tag">head</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;</span><span class="tag">body</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">h1</span><span class="punctuation">&gt;</span>Vítejte!<span class="punctuation">&lt;/</span><span class="tag">h1</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">p</span><span class="punctuation">&gt;</span>Váš nový web<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">script</span> <span class="attr">src</span>=<span class="attr-value">"webside.js"</span><span class="punctuation">&gt;</span><span class="punctuation">&lt;/</span><span class="tag">script</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;/</span><span class="tag">body</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;/</span><span class="tag">html</span><span class="punctuation">&gt;</span>`,
 
-    <span class="keyword">def</span> <span class="function">create_project</span>(<span class="self">self</span>):
-        <span class="keyword">return</span> <span class="string">"🚀 Váš úspěšný web"</span>`;
+            css: `<span class="comment">/* Základní styly */</span>
+<span class="selector">body</span> {
+  <span class="property">margin</span>: <span class="number">0</span>;
+  <span class="property">font-family</span>: <span class="value">'Segoe UI'</span>;
+  <span class="property">background</span>: <span class="value">#0a0a0a</span>;
+  <span class="property">color</span>: <span class="value">#fff</span>;
+}
 
-        // Convert HTML to nodes that we can iterate through
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = codeHTML;
+<span class="selector">h1</span> {
+  <span class="property">font-size</span>: <span class="number">3rem</span>;
+  <span class="property">text-align</span>: <span class="value">center</span>;
+  <span class="property">color</span>: <span class="value">#00d4ff</span>;
+}`,
 
-        // Get all child nodes
-        const allNodes = [];
-        
-        function flattenNodes(node) {
-            for (let child of node.childNodes) {
-                if (child.nodeType === Node.TEXT_NODE) {
-                    // Split text node into individual characters
-                    for (let char of child.textContent) {
-                        allNodes.push({ type: 'text', char: char });
-                    }
-                } else if (child.nodeType === Node.ELEMENT_NODE) {
-                    // Add span with text
-                    const className = child.className;
-                    for (let char of child.textContent) {
-                        allNodes.push({ type: 'span', class: className, char: char });
+            js: `<span class="comment">// Interaktivní efekty</span>
+<span class="keyword">const</span> <span class="function">h1</span> = <span class="function">document</span>.<span class="function">querySelector</span>(<span class="string">'h1'</span>);
+
+<span class="function">h1</span>.<span class="function">addEventListener</span>(<span class="string">'mouseenter'</span>,
+  () <span class="keyword">=></span> {
+    <span class="function">h1</span>.style.<span class="property">transform</span> = <span class="string">'scale(1.05)'</span>;
+});
+
+<span class="function">h1</span>.<span class="function">addEventListener</span>(<span class="string">'mouseleave'</span>,
+  () <span class="keyword">=></span> {
+    <span class="function">h1</span>.style.<span class="property">transform</span> = <span class="string">'scale(1)'</span>;
+});
+
+<span class="function">console</span>.<span class="function">log</span>(<span class="string">'🚀 Web připraven!'</span>);`
+        };
+
+        const tabOrder = ['html', 'css', 'js'];
+
+        // Flatten code HTML into typeable characters
+        function parseCodeToNodes(html) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            const nodes = [];
+            function flatten(node) {
+                for (let child of node.childNodes) {
+                    if (child.nodeType === Node.TEXT_NODE) {
+                        for (let ch of child.textContent) {
+                            nodes.push({ type: 'text', char: ch });
+                        }
+                    } else if (child.nodeType === Node.ELEMENT_NODE) {
+                        const cls = child.className;
+                        for (let ch of child.textContent) {
+                            nodes.push({ type: 'span', class: cls, char: ch });
+                        }
                     }
                 }
             }
+            flatten(tempDiv);
+            return nodes;
         }
 
-        flattenNodes(tempDiv);
+        // Switch active tab and panel
+        function switchTab(tabName) {
+            tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+            panels.forEach(p => p.classList.toggle('active', p.dataset.panel === tabName));
+        }
 
-        // Initialize line numbers
-        const lineNumbersDiv = document.querySelector('.code-line-numbers');
-        lineNumbersDiv.innerHTML = '';
-        let lineNum = document.createElement('div');
-        lineNum.className = 'line-number';
-        lineNum.textContent = '1';
-        lineNumbersDiv.appendChild(lineNum);
+        // Type code into a panel
+        function typeCode(tabName, callback) {
+            switchTab(tabName);
+            const panel = codeWindow.querySelector(`.code-panel[data-panel="${tabName}"]`);
+            const codeEl = panel.querySelector('code');
+            const lineNumsDiv = panel.querySelector('.code-line-numbers');
+            const codeContentEl = panel.querySelector('.code-content');
 
-        let nodeIndex = 0;
-        let currentSpan = null;
-        let currentClass = null;
-        let lineCount = 1;
+            codeEl.innerHTML = '';
+            lineNumsDiv.innerHTML = '';
+            codeContentEl.classList.add('typing');
 
-        function typeNextChar() {
-            if (nodeIndex < allNodes.length) {
-                const node = allNodes[nodeIndex];
+            // First line number
+            const ln = document.createElement('div');
+            ln.className = 'line-number';
+            ln.textContent = '1';
+            lineNumsDiv.appendChild(ln);
 
+            const nodes = parseCodeToNodes(codeData[tabName]);
+            let i = 0;
+            let lineCount = 1;
+            let currentSpan = null;
+            let currentClass = null;
+
+            function typeNext() {
+                if (i >= nodes.length) {
+                    codeContentEl.classList.remove('typing');
+                    if (callback) setTimeout(callback, 600);
+                    return;
+                }
+
+                const node = nodes[i];
                 if (node.type === 'text') {
-                    // Add text to current span or directly to code
                     if (node.char === '\n') {
-                        codeElement.appendChild(document.createTextNode('\n'));
+                        codeEl.appendChild(document.createTextNode('\n'));
                         lineCount++;
-                        
-                        // Add new line number
-                        const newLineNum = document.createElement('div');
-                        newLineNum.className = 'line-number';
-                        newLineNum.textContent = lineCount;
-                        lineNumbersDiv.appendChild(newLineNum);
-                        
+                        const newLn = document.createElement('div');
+                        newLn.className = 'line-number';
+                        newLn.textContent = lineCount;
+                        lineNumsDiv.appendChild(newLn);
                         currentSpan = null;
                         currentClass = null;
                     } else {
                         if (!currentSpan || currentClass !== null) {
                             currentSpan = document.createTextNode('');
-                            codeElement.appendChild(currentSpan);
+                            codeEl.appendChild(currentSpan);
                             currentClass = null;
                         }
                         currentSpan.textContent += node.char;
                     }
                 } else if (node.type === 'span') {
-                    // Add colored text
                     if (!currentSpan || currentClass !== node.class) {
                         currentSpan = document.createElement('span');
                         currentSpan.className = node.class;
-                        codeElement.appendChild(currentSpan);
+                        codeEl.appendChild(currentSpan);
                         currentClass = node.class;
                     }
                     currentSpan.textContent += node.char;
                 }
 
-                nodeIndex++;
-                setTimeout(typeNextChar, 30);
+                i++;
+                setTimeout(typeNext, 25);
             }
+
+            setTimeout(typeNext, 400);
         }
 
-        // Start typing after a slight delay
-        setTimeout(typeNextChar, 500);
+        // After all tabs are typed, cycle between them
+        function startTabCycling() {
+            let cycleIndex = 0;
+            setInterval(() => {
+                cycleIndex = (cycleIndex + 1) % tabOrder.length;
+                switchTab(tabOrder[cycleIndex]);
+            }, 3000);
+        }
+
+        // Allow manual tab clicks at any time
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                switchTab(tab.dataset.tab);
+            });
+        });
+
+        // Sequence: type HTML → type CSS → type JS → cycle
+        typeCode('html', () => {
+            typeCode('css', () => {
+                typeCode('js', () => {
+                    startTabCycling();
+                });
+            });
+        });
     }
 
     // Initialize code animation when hero section is visible
     const codeWindow = document.querySelector('.code-window');
     if (codeWindow) {
-        // Start animation when element comes into view or immediately if already visible
         const codeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -722,34 +793,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // Contact Form with FormSubmit
+    // Contact Form with FormSubmit (AJAX)
     // ========================================
     const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', async (e) => {
-        // NEBLOKUJEME default akci - FormSubmit se postará o odeslání
-        // e.preventDefault(); // ZAKOMENTOVÁNO
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        // Show loading state
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        
-        btn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spinning">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-            </svg>
-            Odesílám...
-        `;
-        btn.disabled = true;
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            const formStatus = document.getElementById('formStatus');
 
-        // FormSubmit se postará o vše - jen zobrazíme loading stav
-        // Formulář se odešle normálně (native HTML form submission)
-        console.log('Odesílám formulář přes FormSubmit...');
+            // Show loading state
+            btn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spinning">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+                Odesílám...
+            `;
+            btn.disabled = true;
 
-        // Formulář se odešle přes FormSubmit endpoint
-        // Uživatel bude přesměrován na děkovací stránku
-    });
+            try {
+                const formData = new FormData(contactForm);
+                // Remove gdpr checkbox from submission data (not needed for email)
+                formData.delete('gdpr');
+
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'form-status form-status-success';
+                    formStatus.innerHTML = '✅ Zpráva byla úspěšně odeslána! Ozvu se vám do 24 hodin.';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Chyba odesílání');
+                }
+            } catch (error) {
+                formStatus.style.display = 'block';
+                formStatus.className = 'form-status form-status-error';
+                formStatus.innerHTML = '❌ Odeslání se nezdařilo. Zkuste to prosím znovu nebo mi napište přímo na <a href="mailto:franktomas@seznam.cz">franktomas@seznam.cz</a>.';
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+    }
 
     // ========================================
     // FAQ - Using native <details> elements now
