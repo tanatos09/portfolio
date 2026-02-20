@@ -5,18 +5,26 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ========================================
-    // Preloader
+    // Lazy-load GSAP for better mobile performance
     // ========================================
-    const preloader = document.getElementById('preloader');
-    
+    function loadGSAP() {
+        const s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+        s1.onload = () => {
+            const s2 = document.createElement('script');
+            s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
+            s2.onload = () => initGSAPAnimations();
+            document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+    }
+
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            if (preloader) {
-                preloader.classList.add('hidden');
-            }
-            // Initialize GSAP animations after preloader
-            initGSAPAnimations();
-        }, 1500);
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGSAP);
+        } else {
+            setTimeout(loadGSAP, 200);
+        }
     });
 
     // ========================================
@@ -261,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
 
     // Mobile menu toggle
     hamburger.addEventListener('click', () => {
