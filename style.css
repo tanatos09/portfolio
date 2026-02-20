@@ -1258,7 +1258,7 @@ body {
 
 .about-avatar {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .about-avatar img {
@@ -1267,6 +1267,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .about-text .lead {
