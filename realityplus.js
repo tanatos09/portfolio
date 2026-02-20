@@ -1,272 +1,325 @@
-// =============================================
-// Reality Plus - Premium Real Estate Website
-// WEB NA MÍRU Showcase
-// =============================================
+// Reality Plus — Premium Real Estate Agency Website JS
+// WEB NA MÍRU Package — Advanced Interactivity
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ─── Mobile Menu ───
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ==================== MOBILE MENU ====================
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-
+    
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+        hamburger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
+            hamburger.classList.toggle('active');
         });
     }
-
-    // ─── Scroll-based Navbar ───
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // ─── Smooth Scroll ───
+    
+    // ==================== SMOOTH SCROLLING ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                navLinks.classList.remove('active');
+                hamburger?.classList.remove('active');
             }
         });
     });
-
-    // ─── Stats Counter Animation ───
-    const statNumbers = document.querySelectorAll('.stat-number');
-    let statsAnimated = false;
-
-    function animateCounter(el) {
-        const target = parseInt(el.dataset.target);
+    
+    // ==================== NAVBAR SCROLL EFFECT ====================
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // ==================== COUNTER ANIMATION ====================
+    function animateCounter(element, target, suffix = '') {
         const duration = 2000;
-        const start = performance.now();
-
-        function update(now) {
-            const elapsed = now - start;
+        const start = 0;
+        const startTime = performance.now();
+        
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
-            el.textContent = Math.floor(target * eased);
-
+            
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(start + (target - start) * eased);
+            
+            element.textContent = current.toLocaleString('cs-CZ');
+            
             if (progress < 1) {
                 requestAnimationFrame(update);
-            } else {
-                el.textContent = target;
             }
         }
-
+        
         requestAnimationFrame(update);
     }
-
+    
+    // Observe stat numbers
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !statsAnimated) {
-                statsAnimated = true;
-                statNumbers.forEach((el, i) => {
-                    setTimeout(() => animateCounter(el), i * 200);
-                });
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target);
+                statsObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
-
-    const statsSection = document.querySelector('.stats');
-    if (statsSection) statsObserver.observe(statsSection);
-
-    // ─── Property Filter ───
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => statsObserver.observe(stat));
+    
+    // ==================== PROPERTY FILTERS ====================
     const filterBtns = document.querySelectorAll('.filter-btn');
     const propertyCards = document.querySelectorAll('.property-card');
-
+    
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
             filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.dataset.filter;
-
+            this.classList.add('active');
+            
+            // Filter properties with animation
             propertyCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+                const type = card.getAttribute('data-type');
+                
+                if (filter === 'all' || type === filter) {
                     card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.4s ease forwards';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    requestAnimationFrame(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
                 } else {
-                    card.classList.add('hidden');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.classList.add('hidden');
+                    }, 300);
                 }
             });
         });
     });
-
-    // ─── Favorite Button Toggle ───
-    document.querySelectorAll('.favorite-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('active');
-            const icon = btn.querySelector('i');
-            if (btn.classList.contains('active')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-            }
+    
+    // ==================== LIGHTBOX GALLERY ====================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+    const lightboxNext = lightbox.querySelector('.lightbox-next');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    let currentImageIndex = 0;
+    const images = Array.from(galleryItems).map(item => item.getAttribute('data-img'));
+    
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            currentImageIndex = index;
+            showLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     });
-
-    // ─── Mortgage Calculator ───
-    const calculateBtn = document.getElementById('calculateBtn');
-    if (calculateBtn) {
-        calculateBtn.addEventListener('click', () => {
-            const amount = parseFloat(document.getElementById('loanAmount').value);
-            const years = parseFloat(document.getElementById('loanYears').value);
-            const rate = parseFloat(document.getElementById('interestRate').value);
-
-            if (!amount || !years || !rate) {
-                alert('Prosím vyplňte všechna pole.');
-                return;
-            }
-
-            const monthlyRate = rate / 100 / 12;
-            const totalMonths = years * 12;
-            const monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
-                           (Math.pow(1 + monthlyRate, totalMonths) - 1);
-            const total = monthly * totalMonths;
-            const interest = total - amount;
-
-            document.getElementById('monthlyPayment').textContent =
-                Math.round(monthly).toLocaleString('cs-CZ') + ' Kč';
-            document.getElementById('totalPayment').textContent =
-                Math.round(total).toLocaleString('cs-CZ') + ' Kč';
-            document.getElementById('totalInterest').textContent =
-                Math.round(interest).toLocaleString('cs-CZ') + ' Kč';
-
-            // Animate results
-            document.querySelectorAll('.result-item strong').forEach(el => {
-                el.style.animation = 'none';
-                el.offsetHeight; // reflow
-                el.style.animation = 'fadeInUp 0.5s ease forwards';
-            });
-        });
-
-        // Auto-calculate on load
-        calculateBtn.click();
-    }
-
-    // ─── Testimonials Slider ───
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let autoSlide;
-
-    function goToSlide(index) {
-        testimonials.forEach(card => card.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        currentSlide = index;
-        testimonials[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-        goToSlide((currentSlide + 1) % testimonials.length);
-    }
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-            goToSlide(i);
-            resetAutoSlide();
-        });
+    
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
     });
-
-    function resetAutoSlide() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, 5000);
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
     }
-
-    if (testimonials.length > 0) {
-        autoSlide = setInterval(nextSlide, 5000);
+    
+    lightboxPrev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showLightboxImage();
+    });
+    
+    lightboxNext.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showLightboxImage();
+    });
+    
+    function showLightboxImage() {
+        lightboxImg.style.opacity = '0';
+        setTimeout(() => {
+            lightboxImg.src = images[currentImageIndex];
+            lightboxImg.style.transition = 'opacity 0.3s ease';
+            lightboxImg.style.opacity = '1';
+        }, 150);
     }
-
-    // ─── Scroll to Top ───
-    const scrollTopBtn = document.getElementById('scrollTop');
-    if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 600) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
+    
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showLightboxImage();
+            }
+            if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showLightboxImage();
+            }
+        }
+    });
+    
+    // ==================== SEARCH BAR INTERACTION ====================
+    const searchBtn = document.querySelector('.search-btn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Scroll to properties section
+            const propertiesSection = document.getElementById('properties');
+            if (propertiesSection) {
+                propertiesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     }
-
-    // ─── Contact Form ───
-    const contactForm = document.querySelector('.contact-form');
+    
+    // ==================== CONTACT FORM ====================
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-
-            const checkbox = contactForm.querySelector('input[type="checkbox"]');
-            if (!checkbox.checked) {
-                alert('Prosím potvrďte souhlas se zpracováním osobních údajů.');
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            if (!data.name || !data.email || !data.message) {
+                showFormMessage('Prosím vyplňte všechna povinná pole.', 'error');
                 return;
             }
-
-            alert('Děkujeme za vaši zprávu! Ozveme se vám co nejdříve.');
-            contactForm.reset();
-        });
-    }
-
-    // ─── Newsletter Form ───
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input[type="email"]').value;
-            if (email) {
-                alert('Děkujeme za přihlášení k odběru novinek!');
-                newsletterForm.reset();
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showFormMessage('Zadejte prosím platnou emailovou adresu.', 'error');
+                return;
             }
+            
+            // Success animation
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>✓ Odesláno!</span>';
+            submitBtn.style.background = '#059669';
+            submitBtn.style.borderColor = '#059669';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                submitBtn.style.borderColor = '';
+                submitBtn.disabled = false;
+                contactForm.reset();
+            }, 3000);
         });
     }
-
-    // ─── Property Search Form ───
-    const searchForm = document.querySelector('.property-search');
-    if (searchForm) {
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Vyhledávání... (funkce bude dostupná v ostrém provozu)');
-        });
+    
+    function showFormMessage(message, type) {
+        alert(message);
     }
-
-    // ─── Scroll Animations ───
-    const animateElements = document.querySelectorAll(
-        '.property-card, .service-card, .team-member, .blog-card, .contact-card, .feature-box, .stat-item'
-    );
-
-    animateElements.forEach(el => el.classList.add('animate-in'));
-
-    const scrollObserver = new IntersectionObserver((entries) => {
+    
+    // ==================== SCROLL ANIMATIONS ====================
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+    };
+    
+    const scrollObserver = new IntersectionObserver(function(entries) {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
+                // Stagger animation
+                const delay = entry.target.dataset.delay || 0;
                 setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 80);
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, delay);
                 scrollObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    animateElements.forEach(el => scrollObserver.observe(el));
-
+    }, observerOptions);
+    
+    // Apply scroll animations to elements
+    const animatedElements = document.querySelectorAll(
+        '.service-card, .property-card, .about-feature, .process-step, ' +
+        '.team-card, .testimonial-card, .contact-card, .gallery-item, ' +
+        '.stat-item'
+    );
+    
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+        
+        // Calculate stagger delay within same parent
+        const parent = el.parentElement;
+        const siblings = Array.from(parent.children).filter(child => 
+            child.matches('.service-card, .property-card, .about-feature, .process-step, .team-card, .testimonial-card, .contact-card, .gallery-item, .stat-item')
+        );
+        const siblingIndex = siblings.indexOf(el);
+        el.dataset.delay = siblingIndex * 80;
+        
+        scrollObserver.observe(el);
+    });
+    
+    // Section headers animation
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    const headerObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                headerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    sectionHeaders.forEach(header => {
+        header.style.opacity = '0';
+        header.style.transform = 'translateY(20px)';
+        header.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        headerObserver.observe(header);
+    });
+    
+    // ==================== ACTIVE NAV LINK HIGHLIGHT ====================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksAll = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
+            if (window.pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinksAll.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.color = 'var(--primary)';
+            }
+        });
+    });
+    
+    console.log('Reality Plus website loaded successfully!');
 });

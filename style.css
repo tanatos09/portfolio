@@ -10,7 +10,7 @@
     
     --text-primary: #ffffff;
     --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
+    --text-muted: #8b8b94;
     
     --accent-primary: #0ea5e9;
     --accent-secondary: #0284c7;
@@ -54,9 +54,39 @@
     box-sizing: border-box;
 }
 
+/* Skip to content link (Accessibility) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-primary);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    z-index: 10001;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+}
+
+/* Global focus-visible styles for keyboard navigation (Accessibility) */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
 }
 
 body {
@@ -334,7 +364,11 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 12px;
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger span {
@@ -527,6 +561,7 @@ body {
     top: 10%;
     right: 10%;
     animation: pulse 8s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 .hero-glow-2 {
@@ -536,6 +571,7 @@ body {
     bottom: 20%;
     left: 5%;
     animation: pulse 10s ease-in-out infinite reverse;
+    will-change: transform, opacity;
 }
 
 @keyframes pulse {
@@ -550,16 +586,16 @@ body {
 }
 
 .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 720px;
 }
 
 .hero-badge {
@@ -581,14 +617,17 @@ body {
     background: var(--success);
     border-radius: 50%;
     animation: badge-pulse 2s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes badge-pulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+        transform: scale(1.8);
+        opacity: 0.5;
     }
 }
 
@@ -631,6 +670,7 @@ body {
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
+    justify-content: center;
 }
 
 .hero-stats {
@@ -699,6 +739,7 @@ body {
     filter: blur(40px);
     opacity: 0.5;
     animation: avatarGlow 4s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes avatarGlow {
@@ -729,6 +770,7 @@ body {
     height: 320px;
     animation: orbitRotate 20s linear infinite;
     z-index: 10;
+    will-change: transform;
 }
 
 @keyframes orbitRotate {
@@ -750,6 +792,7 @@ body {
     color: var(--accent-primary);
     box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
     animation: orbitCounterRotate 20s linear infinite;
+    will-change: transform;
 }
 
 @keyframes orbitCounterRotate {
@@ -1064,7 +1107,6 @@ body {
 /* Hero Responsive */
 @media (max-width: 992px) {
     .hero .container {
-        grid-template-columns: 1fr;
         text-align: center;
     }
 
@@ -1079,10 +1121,6 @@ body {
 
     .hero-stats {
         justify-content: center;
-    }
-
-    .hero-visual {
-        display: none;
     }
 
     .scroll-indicator {
@@ -1112,7 +1150,7 @@ body {
     }
 
     .code-content {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         padding: 10px;
         height: calc(15 * 1.6em + 20px);
     }
@@ -1137,6 +1175,7 @@ body {
     display: flex;
     width: max-content;
     animation: marquee 30s linear infinite;
+    will-change: transform;
 }
 
 .marquee-content {
@@ -1215,6 +1254,19 @@ body {
     grid-template-columns: 1.2fr 1fr;
     gap: 4rem;
     align-items: start;
+}
+
+.about-avatar {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-avatar img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
 }
 
 .about-text .lead {
@@ -1317,6 +1369,10 @@ body {
 
     .about-features {
         grid-template-columns: 1fr;
+    }
+
+    .about-skills .code-window {
+        display: none;
     }
 }
 
@@ -1935,7 +1991,7 @@ body {
     color: var(--accent-primary);
 }
 
-.contact-item h4 {
+.contact-item h3 {
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
 }
@@ -1992,7 +2048,8 @@ body {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
+    outline: 2px solid var(--accent-primary);
+    outline-offset: -1px;
     border-color: var(--accent-primary);
 }
 
@@ -2915,7 +2972,7 @@ body {
 }
 
 .btn-sm {
-    padding: 0.6rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
 }
 
@@ -2978,8 +3035,8 @@ body {
     color: white;
 }
 
-.footer-links h4,
-.footer-services h4 {
+.footer-links h3,
+.footer-services h3 {
     font-family: var(--font-display);
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -3211,6 +3268,9 @@ body {
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: all var(--transition-fast);
+    border: none;
+    padding: 0;
+    appearance: none;
 }
 
 .slider-dots .dot.active {
@@ -3986,11 +4046,12 @@ body {
     background: linear-gradient(135deg, #22c55e, #16a34a);
     color: white;
     animation: badge-pulse-sale 2s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes badge-pulse-sale {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
-    50% { box-shadow: 0 0 12px 4px rgba(34, 197, 94, 0.2); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.9; }
 }
 
 .badge-limited {
@@ -4435,7 +4496,7 @@ body {
 }
 
 .pricing-table .th-badge {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: #f59e0b;
 }
 
@@ -4582,7 +4643,7 @@ body {
     flex-shrink: 0;
 }
 
-.faq-question-static h4 {
+.faq-question-static h3 {
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.4;
@@ -4942,5 +5003,26 @@ body {
 .tech-marquee .tech-item {
     color: var(--accent-primary);
     font-weight: 500;
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .marquee-track {
+        animation: none;
+    }
 }
 

@@ -748,6 +748,22 @@ section { padding: 100px 0; }
 }
 
 @media (max-width: 768px) {
+    .demo-banner {
+        position: relative;
+    }
+    .package-info-banner {
+        position: relative;
+        top: 0;
+    }
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .hero {
+        margin-top: 60px;
+    }
     .demo-content { flex-direction: column; gap: 6px; }
     .demo-text { display: none; }
 }

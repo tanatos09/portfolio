@@ -265,8 +265,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile menu toggle
     hamburger.addEventListener('click', () => {
+        const isActive = navLinks.classList.contains('active');
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+        hamburger.setAttribute('aria-label', isActive ? 'Otevřít navigaci' : 'Zavřít navigaci');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -274,6 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Otevřít navigaci');
             document.body.style.overflow = '';
         });
     });
@@ -1011,6 +1016,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function initGSAPAnimations() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
         
+        // Respect prefers-reduced-motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         gsap.registerPlugin(ScrollTrigger);
 
         // Hero text reveal
