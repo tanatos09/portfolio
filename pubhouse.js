@@ -1,15 +1,16 @@
-// Hospůdka na Kurtech - Traditional Czech Pub Website JS
-// STANDARD Package - Gallery, Tabs, and Map Integration
+// PubHouse - Traditional Czech Pub Website JS
+// FIREMNÍ WEB Package - Gallery, Tabs, Map Integration
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Mobile Menu Toggle
+    // Mobile Menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
     }
     
@@ -19,11 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 navLinks.classList.remove('active');
+                hamburger?.classList.remove('active');
             }
         });
     });
@@ -35,12 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const targetTab = this.getAttribute('data-tab');
-            
-            // Remove active class from all tabs and contents
             tabBtns.forEach(b => b.classList.remove('active'));
             menuContents.forEach(c => c.classList.remove('active'));
-            
-            // Add active class to clicked tab and corresponding content
             this.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
@@ -57,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImageIndex = 0;
     const images = Array.from(galleryItems).map(item => item.getAttribute('data-img'));
     
-    // Open lightbox
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', function() {
             currentImageIndex = index;
@@ -67,12 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close lightbox
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
+        if (e.target === lightbox) closeLightbox();
     });
     
     function closeLightbox() {
@@ -80,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     }
     
-    // Navigate lightbox
     lightboxPrev.addEventListener('click', function(e) {
         e.stopPropagation();
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
@@ -97,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxImg.src = images[currentImageIndex];
     }
     
-    // Keyboard navigation for lightbox
     document.addEventListener('keydown', function(e) {
         if (lightbox.classList.contains('active')) {
             if (e.key === 'Escape') closeLightbox();
@@ -115,19 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 100) {
-            navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        if (window.pageYOffset > 50) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
         } else {
-            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            navbar.style.boxShadow = 'none';
         }
     });
     
     // Scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -137,13 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    document.querySelectorAll('.menu-item, .event-card, .gallery-item, .info-card').forEach(el => {
+    document.querySelectorAll('.menu-item, .event-card, .gallery-item, .contact-card, .about-feature').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
         observer.observe(el);
     });
     
-    console.log('Hospůdka na Kurtech website loaded successfully!');
+    console.log('PubHouse website loaded successfully!');
 });

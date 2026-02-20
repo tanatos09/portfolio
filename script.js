@@ -507,17 +507,17 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://github.com/tanatos09/ticketpass'
         },
         pubhouse: {
-            title: 'Hospůdka na Kurtech',
+            title: 'PubHouse',
             category: 'Prezentační web',
             year: '2026',
             status: 'Dokončeno',
-            description: 'Moderní webová prezentace pro restauraci s důrazem na atmosféru pivnice a uživatelskou přívětivost.',
-            challenge: 'Vytvořit web, který přenese atmosféru pivnice do digitálního prostředí a přiláká nové zákazníky.',
+            description: 'Moderní webová prezentace pro restauraci s důrazem na atmosféru a uživatelskou přívětivost.',
+            challenge: 'Vytvořit web, který přenese atmosféru restaurace do digitálního prostředí a přiláká nové zákazníky.',
             solution: 'Čistý design s důrazem na fotografie interiéru, přehledné menu a jednoduchou navigaci.',
             results: ['Zvýšení povědomí o restauraci', 'Online menu s cenami', 'Kontaktní formulář pro rezervace'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
             features: ['Online menu', 'Galerie interiéru', 'Kontaktní formulář', 'Responzivní design'],
-            link: 'https://github.com/tanatos09/HospudkaNaKurtech'
+            link: 'https://github.com/tanatos09/PubHouse'
         },
         motogarage: {
             title: 'Motogarage',
@@ -534,12 +534,12 @@ document.addEventListener('DOMContentLoaded', () => {
             images: ['img/motogarage/mg1.png', 'img/motogarage/mg2.png', 'img/motogarage/mg3.png']
         },
         pubhouse: {
-            title: 'Hospůdka na Kurtech',
+            title: 'PubHouse',
             category: 'Prezentační web',
             year: '2026',
             status: 'Dokončeno',
             description: 'Moderní webová prezentace pro restauraci s galerií a online menu.',
-            challenge: 'Vytvořit web, který přenese atmosféru pivnice do digitálního prostředí a přiláká nové zákazníky.',
+            challenge: 'Vytvořit web, který přenese atmosféru restaurace do digitálního prostředí a přiláká nové zákazníky.',
             solution: 'Čistý design s důrazem na fotografie interiéru, přehledné menu a jednoduchou navigaci.',
             results: ['Zvýšení povědomí o restauraci', 'Online menu s cenami', 'Kontaktní formulář pro rezervace'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],

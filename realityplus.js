@@ -1,225 +1,272 @@
-// Reality Plus - Real Estate Agency Website JS
-// PLUS Package - Advanced Features & Interactivity
+// =============================================
+// Reality Plus - Premium Real Estate Website
+// WEB NA MÍRU Showcase
+// =============================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Mobile Menu
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ─── Mobile Menu ───
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (hamburger) {
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     }
-    
-    // Smooth Scrolling
+
+    // ─── Scroll-based Navbar ───
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // ─── Smooth Scroll ───
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(anchor.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                navLinks?.classList.remove('active');
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
-    
-    // Stats Counter Animation
-    const statsNumbers = document.querySelectorAll('.stat-number');
-    const observeStats = new IntersectionObserver((entries) => {
+
+    // ─── Stats Counter Animation ───
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let statsAnimated = false;
+
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target);
+        const duration = 2000;
+        const start = performance.now();
+
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+            el.textContent = Math.floor(target * eased);
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = target;
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = parseInt(entry.target.getAttribute('data-target'));
-                animateCounter(entry.target, target);
-                observeStats.unobserve(entry.target);
+            if (entry.isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                statNumbers.forEach((el, i) => {
+                    setTimeout(() => animateCounter(el), i * 200);
+                });
             }
         });
-    }, { threshold: 0.5 });
-    
-    statsNumbers.forEach(stat => observeStats.observe(stat));
-    
-    function animateCounter(element, target) {
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target.toLocaleString('cs-CZ');
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current).toLocaleString('cs-CZ');
-            }
-        }, 30);
-    }
-    
-    // Property Filters
+    }, { threshold: 0.3 });
+
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // ─── Property Filter ───
     const filterBtns = document.querySelectorAll('.filter-btn');
     const propertyCards = document.querySelectorAll('.property-card');
-    
+
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            const filter = this.getAttribute('data-filter');
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
             propertyCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease';
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'fadeInUp 0.4s ease forwards';
                 } else {
-                    card.style.display = 'none';
+                    card.classList.add('hidden');
                 }
             });
         });
     });
-    
-    // Favorite Button Toggle
+
+    // ─── Favorite Button Toggle ───
     document.querySelectorAll('.favorite-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const icon = this.querySelector('i');
-            icon.classList.toggle('far');
-            icon.classList.toggle('fas');
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            if (btn.classList.contains('active')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+            }
         });
     });
-    
-    // Mortgage Calculator
+
+    // ─── Mortgage Calculator ───
     const calculateBtn = document.getElementById('calculateBtn');
     if (calculateBtn) {
-        calculateBtn.addEventListener('click', function() {
+        calculateBtn.addEventListener('click', () => {
             const amount = parseFloat(document.getElementById('loanAmount').value);
-            const years = parseInt(document.getElementById('loanYears').value);
+            const years = parseFloat(document.getElementById('loanYears').value);
             const rate = parseFloat(document.getElementById('interestRate').value);
-            
+
+            if (!amount || !years || !rate) {
+                alert('Prosím vyplňte všechna pole.');
+                return;
+            }
+
             const monthlyRate = rate / 100 / 12;
-            const numPayments = years * 12;
-            
-            const monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
-                                 (Math.pow(1 + monthlyRate, numPayments) - 1);
-            
-            const totalPayment = monthlyPayment * numPayments;
-            const totalInterest = totalPayment - amount;
-            
-            document.getElementById('monthlyPayment').textContent = 
-                monthlyPayment.toLocaleString('cs-CZ', { maximumFractionDigits: 0 }) + ' Kč';
-            document.getElementById('totalPayment').textContent = 
-                totalPayment.toLocaleString('cs-CZ', { maximumFractionDigits: 0 }) + ' Kč';
-            document.getElementById('totalInterest').textContent = 
-                totalInterest.toLocaleString('cs-CZ', { maximumFractionDigits: 0 }) + ' Kč';
+            const totalMonths = years * 12;
+            const monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+                           (Math.pow(1 + monthlyRate, totalMonths) - 1);
+            const total = monthly * totalMonths;
+            const interest = total - amount;
+
+            document.getElementById('monthlyPayment').textContent =
+                Math.round(monthly).toLocaleString('cs-CZ') + ' Kč';
+            document.getElementById('totalPayment').textContent =
+                Math.round(total).toLocaleString('cs-CZ') + ' Kč';
+            document.getElementById('totalInterest').textContent =
+                Math.round(interest).toLocaleString('cs-CZ') + ' Kč';
+
+            // Animate results
+            document.querySelectorAll('.result-item strong').forEach(el => {
+                el.style.animation = 'none';
+                el.offsetHeight; // reflow
+                el.style.animation = 'fadeInUp 0.5s ease forwards';
+            });
         });
+
+        // Auto-calculate on load
+        calculateBtn.click();
     }
-    
-    // Testimonials Slider
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.testimonial-dots .dot');
-    let currentTestimonial = 0;
-    
-    function showTestimonial(index) {
-        testimonialCards.forEach(card => card.classList.remove('active'));
+
+    // ─── Testimonials Slider ───
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let autoSlide;
+
+    function goToSlide(index) {
+        testimonials.forEach(card => card.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
-        
-        testimonialCards[index].classList.add('active');
-        dots[index].classList.add('active');
+
+        currentSlide = index;
+        testimonials[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
     }
-    
-    dots.forEach((dot, index) => {
+
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % testimonials.length);
+    }
+
+    dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
-            currentTestimonial = index;
-            showTestimonial(index);
+            goToSlide(i);
+            resetAutoSlide();
         });
     });
-    
-    // Auto-rotate testimonials
-    setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        showTestimonial(currentTestimonial);
-    }, 5000);
-    
-    // Scroll to Top Button
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 5000);
+    }
+
+    if (testimonials.length > 0) {
+        autoSlide = setInterval(nextSlide, 5000);
+    }
+
+    // ─── Scroll to Top ───
     const scrollTopBtn = document.getElementById('scrollTop');
     if (scrollTopBtn) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
+            if (window.scrollY > 600) {
+                scrollTopBtn.classList.add('visible');
             } else {
-                scrollTopBtn.classList.remove('active');
+                scrollTopBtn.classList.remove('visible');
             }
         });
-        
+
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-    
-    // Form Handling
+
+    // ─── Contact Form ───
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            const checkbox = contactForm.querySelector('input[type="checkbox"]');
+            if (!checkbox.checked) {
+                alert('Prosím potvrďte souhlas se zpracováním osobních údajů.');
+                return;
+            }
+
             alert('Děkujeme za vaši zprávu! Ozveme se vám co nejdříve.');
-            this.reset();
+            contactForm.reset();
         });
     }
-    
-    // Newsletter Form
+
+    // ─── Newsletter Form ───
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+        newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Děkujeme za přihlášení k odběru novinek!');
-            this.reset();
-        });
-    }
-    
-    // Property Search
-    const propertySearch = document.querySelector('.property-search');
-    if (propertySearch) {
-        propertySearch.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Vyhledávání nemovitostí - tato funkce je ukázková.');
-        });
-    }
-    
-    // Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Děkujeme za přihlášení k odběru novinek!');
+                newsletterForm.reset();
             }
         });
-    }, observerOptions);
-    
-    // Observe elements
-    const animatedElements = document.querySelectorAll('.property-card, .service-card, .team-member, .blog-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Navbar Scroll Effect
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-        } else {
-            navbar.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    console.log('Reality Plus website loaded successfully!');
+    }
+
+    // ─── Property Search Form ───
+    const searchForm = document.querySelector('.property-search');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Vyhledávání... (funkce bude dostupná v ostrém provozu)');
+        });
+    }
+
+    // ─── Scroll Animations ───
+    const animateElements = document.querySelectorAll(
+        '.property-card, .service-card, .team-member, .blog-card, .contact-card, .feature-box, .stat-item'
+    );
+
+    animateElements.forEach(el => el.classList.add('animate-in'));
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 80);
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    animateElements.forEach(el => scrollObserver.observe(el));
+
 });

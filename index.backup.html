@@ -49,10 +49,6 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="btn btn-nav magnetic-btn">Kontakt</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Přepnout téma">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </button>
             <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -227,7 +223,7 @@
                     <div class="about-features">
                         <div class="feature">
                             <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                             </div>
                             <div>
                                 <strong>Rychlé dodání</strong>
@@ -334,6 +330,9 @@
                 
                 <!-- VIZITKA -->
                 <div class="package-card glass">
+                    <div class="package-badge-row">
+                        <span class="badge badge-sale">🔥 AKCE</span>
+                    </div>
                     <div class="package-header">
                         <span class="package-name">VIZITKA</span>
                         <div class="package-price">
@@ -445,7 +444,8 @@
 
             <!-- Možnosti rozšíření -->
             <div class="custom-project-banner glass reveal" style="margin-top: 3rem; padding: 2rem; border-radius: 16px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.05)); border: 1px solid rgba(168, 85, 247, 0.2);">
-                <h3 style="margin-top: 0; margin-bottom: 1.5rem;">Přidejte do svého webu:</h3>
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Přidejte do svého webu cokoliv:</h3>
+                <p style="margin-top: 0; margin-bottom: 1.5rem; opacity: 0.7; font-size: 0.9rem;">Ke každému balíčku si můžete přikoupit další funkce. Záleží jen na vaší fantazii — pokud to jde naprogramovat, udělám to.</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                     <div>
                         <strong style="display: block; margin-bottom: 0.5rem;">Další stránka</strong>
@@ -462,6 +462,14 @@
                     <div>
                         <strong style="display: block; margin-bottom: 0.5rem;">Měsíční údržba</strong>
                         <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">od 500 Kč/měsíc</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Admin panel</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">+3 000 – 5 000 Kč</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">A cokoliv dalšího…</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Cena dle rozsahu</p>
                     </div>
                 </div>
             </div>
@@ -487,7 +495,7 @@
                 <!-- Reference 1 - MotoGarage -->
                 <article class="reference-card glass reveal">
                     <div class="reference-image">
-                        <img src="img/motogarage/mg1.png" alt="Motogarage - web pro autoservis" class="project-img">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=400&fit=crop" alt="Motogarage - web pro autoservis" class="project-img">
                     </div>
                     <div class="reference-content">
                         <h3>Motogarage</h3>
@@ -499,14 +507,14 @@
                     </div>
                 </article>
 
-                <!-- Reference 2 - Hospůdka -->
+                <!-- Reference 2 - PubHouse -->
                 <article class="reference-card glass featured reveal">
                     <div class="reference-image">
-                        <img src="img/pubhouse/ph1.png" alt="Hospůdka na Kurtech - web pro restauraci" class="project-img">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop" alt="PubHouse - web pro restauraci" class="project-img">
                     </div>
                     <div class="reference-content">
-                        <h3>Hospůdka na Kurtech</h3>
-                        <p class="reference-desc">Web pro hospodu — jídelníček, galerie, kontakt a úvodní informace</p>
+                        <h3>PubHouse</h3>
+                        <p class="reference-desc">Web pro restauraci — jídelníček, galerie, kontakt a úvodní informace</p>
                         <div class="reference-tech">
                             <strong>Technologie:</strong> HTML5, CSS3, JavaScript, Galerie
                         </div>
@@ -517,7 +525,7 @@
                 <!-- Reference 3 - RealityPlus -->
                 <article class="reference-card glass reveal">
                     <div class="reference-image">
-                        <img src="img/realityplus/rp1.jpg" alt="Reality Plus - web pro realitní kancelář" class="project-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop" alt="Reality Plus - web pro realitní kancelář" class="project-img">
                     </div>
                     <div class="reference-content">
                         <h3>Reality Plus</h3>
@@ -783,7 +791,6 @@
                         <li><a href="#process">Jak to funguje</a></li>
                         <li><a href="#packages">Služby</a></li>
                         <li><a href="#projects">Ukázky</a></li>
-                        <li><a href="#testimonials">Reference</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
