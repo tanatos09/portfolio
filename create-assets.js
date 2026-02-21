@@ -28,7 +28,7 @@ async function createAssets() {
         '<rect width="1200" height="630" fill="#0a0a0b"/>' +
         '<text x="600" y="260" font-family="Arial,sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#ffffff">Tomas Frank</text>' +
         '<text x="600" y="350" font-family="Arial,sans-serif" font-size="36" text-anchor="middle" fill="#6366f1">Jednoduche weby pro male podnikatele</text>' +
-        '<text x="600" y="420" font-family="Arial,sans-serif" font-size="28" text-anchor="middle" fill="#8b8b94">tomasfrank.cz</text>' +
+        '<text x="600" y="420" font-family="Arial,sans-serif" font-size="28" text-anchor="middle" fill="#8b8b94">franktomas.cz</text>' +
         '</svg>';
     
     await sharp(Buffer.from(ogSvg))

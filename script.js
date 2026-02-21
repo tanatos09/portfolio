@@ -811,8 +811,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
+        // Custom validation helper
+        function validateForm() {
+            let isValid = true;
+            // Clear previous errors
+            contactForm.querySelectorAll('.form-group.has-error').forEach(g => g.classList.remove('has-error'));
+
+            const name = contactForm.querySelector('#name');
+            const email = contactForm.querySelector('#email');
+            const gdpr = contactForm.querySelector('#gdpr');
+
+            if (!name.value.trim()) {
+                name.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            }
+            if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                email.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            }
+            if (!gdpr.checked) {
+                gdpr.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            }
+
+            // Scroll to first error
+            if (!isValid) {
+                const firstError = contactForm.querySelector('.form-group.has-error');
+                if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return isValid;
+        }
+
+        // Clear error on input
+        contactForm.querySelectorAll('input, select, textarea').forEach(field => {
+            const event = field.type === 'checkbox' ? 'change' : 'input';
+            field.addEventListener(event, () => {
+                const group = field.closest('.form-group');
+                if (group) group.classList.remove('has-error');
+            });
+        });
+
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            if (!validateForm()) return;
 
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
@@ -841,10 +883,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                if (response.ok) {
+                const data = await response.json().catch(() => null);
+
+                if (response.ok || (data && data.success)) {
                     formStatus.style.display = 'block';
                     formStatus.className = 'form-status form-status-success';
                     formStatus.innerHTML = '✅ Zpráva byla úspěšně odeslána! Ozvu se vám do 24 hodin.';
+                    contactForm.reset();
+                } else if (data && data.message && data.message.toLowerCase().includes('confirm')) {
+                    // FormSubmit first-time activation
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'form-status form-status-success';
+                    formStatus.innerHTML = '✅ Zpráva byla přijata! Formulář se právě aktivuje — další zprávy budou doručeny okamžitě.';
                     contactForm.reset();
                 } else {
                     throw new Error('Chyba odesílání');
@@ -943,80 +993,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start typing after preloader
         setTimeout(typeCode, 2000);
     }
-
-    // ========================================
-    // Easter Egg - Enhanced Konami Code
-    // ========================================
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let konamiIndex = 0;
-
-    // Create easter egg overlay
-    const easterEggOverlay = document.createElement('div');
-    easterEggOverlay.className = 'easter-egg-overlay';
-    easterEggOverlay.innerHTML = `
-        <div class="easter-egg-content">
-            <h2>🎮 Achievement Unlocked!</h2>
-            <p>Našel jsi tajný kód! Jsi opravdový geek 🚀</p>
-            <p style="font-size: 3rem; margin-top: 1rem;">⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️🅱️🅰️</p>
-            <button class="btn btn-primary" style="margin-top: 2rem;">Zavřít</button>
-        </div>
-    `;
-    document.body.appendChild(easterEggOverlay);
-    
-    easterEggOverlay.querySelector('button').addEventListener('click', () => {
-        easterEggOverlay.classList.remove('active');
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === konamiCode[konamiIndex]) {
-            konamiIndex++;
-            if (konamiIndex === konamiCode.length) {
-                // Easter egg activated!
-                easterEggOverlay.classList.add('active');
-                
-                // Confetti effect
-                for (let i = 0; i < 100; i++) {
-                    createConfetti();
-                }
-                
-                konamiIndex = 0;
-            }
-        } else {
-            konamiIndex = 0;
-        }
-    });
-
-    function createConfetti() {
-        const confetti = document.createElement('div');
-        const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#22c55e', '#f59e0b'];
-        confetti.style.cssText = `
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: ${colors[Math.floor(Math.random() * colors.length)]};
-            left: ${Math.random() * 100}vw;
-            top: -10px;
-            z-index: 10002;
-            border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
-            pointer-events: none;
-            animation: confettiFall ${2 + Math.random() * 2}s linear forwards;
-        `;
-        document.body.appendChild(confetti);
-        
-        setTimeout(() => confetti.remove(), 4000);
-    }
-
-    // Add confetti animation
-    const confettiStyle = document.createElement('style');
-    confettiStyle.textContent = `
-        @keyframes confettiFall {
-            to {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(confettiStyle);
 
     // ========================================
     // GSAP Scroll Animations

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Konfigurace
 $to_email = 'franktomas@seznam.cz'; // Váš e-mail
-$from_email = 'noreply@tomasfrank.cz'; // E-mail odesílatele
+$from_email = 'noreply@franktomas.cz'; // E-mail odesílatele
 
 // Získání a sanitizace dat z formuláře
 $name = isset($_POST['name']) ? trim(strip_tags($_POST['name'])) : '';
@@ -141,7 +141,7 @@ $html_message = "
             </div>
         </div>
         <div class='footer'>
-            Tento e-mail byl odeslán z kontaktního formuláře na tomasfrank.cz
+            Tento e-mail byl odeslán z kontaktního formuláře na franktomas.cz
         </div>
     </div>
 </body>
@@ -164,7 +164,7 @@ $message
 Čas odeslání: " . date('d.m.Y H:i:s') . "
 
 ---
-Tento e-mail byl odeslán z kontaktního formuláře na tomasfrank.cz
+Tento e-mail byl odeslán z kontaktního formuláře na franktomas.cz
 ";
 
 // Hlavičky e-mailu
