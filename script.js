@@ -334,10 +334,20 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1
     };
 
+    // Only hide elements that are below the viewport
+    // (elements in viewport stay visible for fast Speed Index)
+    revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top > window.innerHeight) {
+            el.classList.add('reveal-hidden');
+        }
+    });
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                entry.target.classList.remove('reveal-hidden');
                 revealObserver.unobserve(entry.target);
             }
         });

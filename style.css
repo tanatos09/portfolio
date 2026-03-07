@@ -561,7 +561,6 @@ body {
     top: 10%;
     right: 10%;
     animation: pulse 8s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 .hero-glow-2 {
@@ -571,7 +570,35 @@ body {
     bottom: 20%;
     left: 5%;
     animation: pulse 10s ease-in-out infinite reverse;
-    will-change: transform, opacity;
+}
+
+/* Mobile: disable expensive GPU effects */
+@media (max-width: 768px) {
+    .hero-glow {
+        display: none;
+    }
+    .hero-avatar-glow {
+        display: none;
+    }
+    .hero-grid {
+        display: none;
+    }
+    .hero-gradient {
+        opacity: 0.5;
+    }
+    .glass {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .navbar.scrolled {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(10, 10, 11, 0.95);
+    }
+    .orbit-icon {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
 
 @keyframes pulse {
@@ -617,7 +644,6 @@ body {
     background: var(--success);
     border-radius: 50%;
     animation: badge-pulse 2s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 @keyframes badge-pulse {
@@ -739,7 +765,6 @@ body {
     filter: blur(40px);
     opacity: 0.5;
     animation: avatarGlow 4s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 @keyframes avatarGlow {
@@ -770,7 +795,6 @@ body {
     height: 320px;
     animation: orbitRotate 20s linear infinite;
     z-index: 10;
-    will-change: transform;
 }
 
 @keyframes orbitRotate {
@@ -792,7 +816,6 @@ body {
     color: var(--accent-primary);
     box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
     animation: orbitCounterRotate 20s linear infinite;
-    will-change: transform;
 }
 
 @keyframes orbitCounterRotate {
@@ -1085,17 +1108,16 @@ body {
     }
 }
 
-/* Animations */
+/* Animations - hero content visible immediately for fast FCP */
 .animate-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 0.8s ease forwards;
+    opacity: 1;
+    transform: none;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+.delay-1 { animation-delay: 0s; }
+.delay-2 { animation-delay: 0s; }
+.delay-3 { animation-delay: 0s; }
+.delay-4 { animation-delay: 0s; }
 
 @keyframes slideUp {
     to {
@@ -1175,7 +1197,6 @@ body {
     display: flex;
     width: max-content;
     animation: marquee 30s linear infinite;
-    will-change: transform;
 }
 
 .marquee-content {
@@ -3246,24 +3267,29 @@ a.contact-item:hover {
 /* ========================================
    Reveal Animations
 ======================================== */
+/* Default: content visible (for Lighthouse / no-JS) */
 .reveal {
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* JS adds .reveal-hidden to elements below viewport */
+.reveal.reveal-hidden {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* Staggered reveals */
-.reveal:nth-child(1) { transition-delay: 0.1s; }
-.reveal:nth-child(2) { transition-delay: 0.2s; }
-.reveal:nth-child(3) { transition-delay: 0.3s; }
-.reveal:nth-child(4) { transition-delay: 0.4s; }
-.reveal:nth-child(5) { transition-delay: 0.5s; }
-.reveal:nth-child(6) { transition-delay: 0.6s; }
+.reveal.reveal-hidden:nth-child(1) { transition-delay: 0.1s; }
+.reveal.reveal-hidden:nth-child(2) { transition-delay: 0.2s; }
+.reveal.reveal-hidden:nth-child(3) { transition-delay: 0.3s; }
+.reveal.reveal-hidden:nth-child(4) { transition-delay: 0.4s; }
+.reveal.reveal-hidden:nth-child(5) { transition-delay: 0.5s; }
+.reveal.reveal-hidden:nth-child(6) { transition-delay: 0.6s; }
 
 /* ========================================
    Utilities
@@ -4051,7 +4077,6 @@ a.contact-item:hover {
     background: linear-gradient(135deg, #22c55e, #16a34a);
     color: white;
     animation: badge-pulse-sale 2s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 @keyframes badge-pulse-sale {
@@ -5011,6 +5036,21 @@ a.contact-item:hover {
 }
 
 /* ========================================
+   Content Visibility for below-fold sections
+======================================== */
+.about,
+.process,
+.packages,
+.projects,
+.faq,
+.cta-section,
+.contact,
+.footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
+
+/* ========================================
    Reduced Motion
 ======================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -5021,7 +5061,8 @@ a.contact-item:hover {
         scroll-behavior: auto !important;
     }
 
-    .reveal {
+    .reveal,
+    .reveal.reveal-hidden {
         opacity: 1;
         transform: none;
     }
