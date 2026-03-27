@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
             results: ['Moderní prezentace nemovitostí', 'Admin správa', 'Pokročilá SEO optimalizace'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
             features: ['Správa nemovitostí', 'Galerie', 'Admin panel', 'Responzivní design'],
-            link: '#',
+            link: 'https://franktomas.cz/realityplus.html',
             images: ['img/realityplus/rp1.jpg', 'img/realityplus/rp2.jpg', 'img/realityplus/rp3.jpg', 'img/realityplus/rp4.jpg']
         },
         ticketpass: {
@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
             results: ['Rychlé dodání', 'Nízká cena', 'Spokojený klient'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
             features: ['Přehled služeb', 'Galerie realizací', 'Kontaktní formulář', 'SEO optimalizace'],
-            link: '#',
+            link: 'https://franktomas.cz/motogarage.html',
             images: ['img/motogarage/mg1.png', 'img/motogarage/mg2.png', 'img/motogarage/mg3.png']
         },
         pubhouse: {
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
             results: ['Zvýšení povědomí o restauraci', 'Online menu s cenami', 'Kontaktní formulář pro rezervace'],
             tech: ['HTML5', 'CSS3', 'JavaScript'],
             features: ['Online menu', 'Galerie interiéru', 'Kontaktní formulář', 'Responzivní design'],
-            link: '#',
+            link: 'https://franktomas.cz/pubhouse.html',
             images: ['img/pubhouse/ph1.png', 'img/pubhouse/ph2.png', 'img/pubhouse/ph3.png']
         }
     };
