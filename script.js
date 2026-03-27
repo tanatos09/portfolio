@@ -336,9 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Only hide elements that are below the viewport
     // (elements in viewport stay visible for fast Speed Index)
-    revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top > window.innerHeight) {
+    // Batch reads first (avoid forced reflow per element)
+    const revealRects = Array.from(revealElements).map(el => el.getBoundingClientRect().top);
+    revealElements.forEach((el, i) => {
+        if (revealRects[i] > window.innerHeight) {
             el.classList.add('reveal-hidden');
         }
     });
