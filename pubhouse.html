@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PubHouse - Tradiční česká restaurace a hospoda v Hodoníně. Domácí kuchyně, čerstvé pivo a skvělá atmosféra.">
-    <meta name="keywords" content="hospoda, restaurace, pivo, hodonín, domácí kuchyně, česká kuchyně">
+    <meta name="description" content="PubHouse - Tradiční česká restaurace a hospoda v Hodoníně. Domácí kuchyňě, čerstvé pivo a skvělá atmosféra.">
+    <meta name="keywords" content="hospoda, restaurace, pivo, hodonín, domácí kuchyňě, česká kuchyňě">
     <meta name="author" content="PubHouse">
     <meta name="robots" content="index, follow">
-    <title>PubHouse | Restaurace Hodonín</title>
+    <title>PubHouse | Restaurace Hodonín — ukázka webu</title>
     <link rel="canonical" href="https://franktomas.cz/pubhouse.html">
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://franktomas.cz/pubhouse.html">
+    <meta property="og:title" content="PubHouse | Restaurace Hodonín">
+    <meta property="og:description" content="Ukázka balíčku FIREMNÍ WEB — web pro restauraci s jídelníčkem, galerií a kontaktem.">
+    <meta property="og:image" content="https://franktomas.cz/img/pubhouse/pb3.webp">
+    <meta property="og:locale" content="cs_CZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PubHouse | Restaurace Hodonín">
+    <meta name="twitter:description" content="Ukázka balíčku FIREMNÍ WEB — web pro restauraci.">
     
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +30,9 @@
         .lightbox.active { display: flex; align-items: center; justify-content: center; }
         .lightbox-content { max-width: 90%; max-height: 90%; position: relative; }
         .lightbox-content img { width: 100%; height: auto; display: block; border-radius: 12px; }
-        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 36px; font-weight: bold; cursor: pointer; z-index: 10; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 50%; transition: all 0.3s ease; }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 36px; font-weight: bold; cursor: pointer; z-index: 10; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 50%; transition: all 0.3s ease; border: none; padding: 0; }
         .lightbox-close:hover { background: rgba(255,255,255,0.2); }
-        .lightbox-prev, .lightbox-next { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 28px; padding: 16px; user-select: none; background: rgba(0,0,0,0.4); border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .lightbox-prev, .lightbox-next { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 28px; padding: 16px; user-select: none; background: rgba(0,0,0,0.4); border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: none; }
         .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.2); }
         .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
     </style>
@@ -82,7 +92,7 @@
                 <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#contact" class="nav-cta">Rezervace</a></li>
             </ul>
-            <button class="hamburger" aria-label="Menu">
+            <button class="hamburger" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -91,6 +101,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <main>
     <header id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -159,7 +170,7 @@
                 </div>
                 <div class="about-image-wrapper">
                     <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=700&fit=crop" alt="Interiér hospůdky">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=700&fit=crop" alt="Interiér hospůdky PubHouse" width="600" height="700" loading="lazy">
                     </div>
                     <div class="about-badge">
                         <span class="badge-num">10+</span>
@@ -351,29 +362,29 @@
             </div>
             
             <div class="gallery-grid">
-                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" alt="Interiér hospody" loading="lazy">
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii hlavního sálu">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" alt="Hlavní sál restaurace PubHouse" width="800" height="600" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-label">Hlavní sál</span>
                         <span class="gallery-zoom">🔍</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" alt="Bar" loading="lazy">
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii baru">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" alt="Bar restaurace PubHouse" width="800" height="600" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-label">Náš bar</span>
                         <span class="gallery-zoom">🔍</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" alt="Jídlo" loading="lazy">
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii jídla">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" alt="Jídlo z kuchyňě restaurace PubHouse" width="800" height="600" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-label">Z naší kuchyně</span>
                         <span class="gallery-zoom">🔍</span>
                     </div>
                 </div>
-                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" alt="Sezení" loading="lazy">
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii venkovního posezení">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" alt="Venkovní posezení restaurace PubHouse" width="800" height="600" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-label">Venkovní posezení</span>
                         <span class="gallery-zoom">🔍</span>
@@ -384,12 +395,12 @@
     </section>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <span class="lightbox-prev">&#10094;</span>
-        <span class="lightbox-next">&#10095;</span>
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Galerie obrázků">
+        <button class="lightbox-close" aria-label="Zavřít galerii">&times;</button>
+        <button class="lightbox-prev" aria-label="Předchozí obrázek">&#10094;</button>
+        <button class="lightbox-next" aria-label="Další obrázek">&#10095;</button>
         <div class="lightbox-content">
-            <img src="about:blank" alt="" role="presentation">
+            <img src="about:blank" alt="Zvětšený obrázek z galerie" role="presentation">
         </div>
     </div>
 
@@ -433,13 +444,15 @@
                         height="100%" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy">
+                        loading="lazy"
+                        title="Mapa restaurace PubHouse v Hodoníně">
                     </iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
