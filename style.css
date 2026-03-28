@@ -5036,6 +5036,24 @@ a.contact-item:hover {
 }
 
 /* ========================================
+<<<<<<< HEAD
+=======
+   Content Visibility for below-fold sections
+======================================== */
+.about,
+.process,
+.packages,
+.projects,
+.faq,
+.cta-section,
+.contact,
+.footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
+
+/* ========================================
+>>>>>>> c2c076937732a901f21eaa8ae94eca1f18e27059
    Reduced Motion
 ======================================== */
 @media (prefers-reduced-motion: reduce) {

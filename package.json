@@ -21,7 +21,10 @@
   "devDependencies": {
     "csso-cli": "^4.0.2",
     "html-minifier-terser": "^7.2.0",
+<<<<<<< HEAD
     "puppeteer": "^24.40.0",
+=======
+>>>>>>> c2c076937732a901f21eaa8ae94eca1f18e27059
     "sharp": "^0.34.5",
     "terser": "^5.46.0"
   }
