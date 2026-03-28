@@ -963,47 +963,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // Smooth scroll for anchor links
+    // Smooth scroll — handled natively by CSS scroll-behavior: smooth
+    // No JS preventDefault() needed (improves crawlability for SEO)
     // ========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
 
-    // ========================================
-    // Typing effect for code window (optional)
-    // ========================================
-    const codeContent = document.querySelector('.code-content code');
-    if (codeContent) {
-        const originalHTML = codeContent.innerHTML;
-        codeContent.innerHTML = '';
-        let i = 0;
-        
-        function typeCode() {
-            if (i < originalHTML.length) {
-                if (originalHTML.substring(i).startsWith('<')) {
-                    const tagEnd = originalHTML.indexOf('>', i) + 1;
-                    codeContent.innerHTML += originalHTML.substring(i, tagEnd);
-                    i = tagEnd;
-                } else {
-                    codeContent.innerHTML += originalHTML.charAt(i);
-                    i++;
-                }
-                setTimeout(typeCode, 10);
-            }
-        }
-
-        // Start typing after preloader
-        setTimeout(typeCode, 2000);
-    }
+    // Typing effect handled by initCodeAnimation() above (IntersectionObserver)
 
     // ========================================
     // GSAP Scroll Animations
@@ -1102,26 +1066,30 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
 
-        // Parallax effect on hero glow
-        gsap.to('.hero-glow-1', {
-            y: -100,
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: 1
-            }
-        });
+        // Parallax effect on hero glow (only if elements exist)
+        if (document.querySelector('.hero-glow-1')) {
+            gsap.to('.hero-glow-1', {
+                y: -100,
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+        }
 
-        gsap.to('.hero-glow-2', {
-            y: -50,
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: 1
-            }
-        });
+        if (document.querySelector('.hero-glow-2')) {
+            gsap.to('.hero-glow-2', {
+                y: -50,
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+        }
 
         // Skill bars animation
         gsap.utils.toArray('.skill-card').forEach((card, i) => {

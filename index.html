@@ -205,7 +205,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo" title="Tomáš Frank - Tvorba webových stránek">TF<span class="accent">.</span></a>
+            <a href="/" class="logo" title="Tomáš Frank - Tvorba webových stránek" aria-label="Tomáš Frank — úvodní stránka">TF<span class="accent">.</span></a>
             <ul class="nav-links" id="nav-links" aria-label="Hlavní navigace">
                 <li><a href="#about" title="Přejít na sekci O mně">O mně</a></li>
                 <li><a href="#packages" title="Přejít na seznam služeb">Služby</a></li>
@@ -227,6 +227,8 @@
         <div class="hero-bg">
             <div class="hero-gradient"></div>
             <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+            <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
         </div>
         <div class="container">
             <div class="hero-content">
@@ -644,7 +646,7 @@
             <div class="section-header">
                 <span class="section-tag">FAQ</span>
                 <h2>Často kladené otázky</h2>
-                <p class="section-desc">Odpovědi na nejčastější dotazy. Nenašli jste odpověď? <a href="#contact" style="color: var(--accent-primary);" aria-label="Přejít na kontaktní formulář - Napište mi">Napište mi!</a></p>
+                <p class="section-desc">Odpovědi na nejčastější dotazy. Nenašli jste odpověď? <a href="#contact" style="color: var(--accent-primary);" title="Přejít na kontaktní formulář" aria-label="Přejít na kontaktní formulář - Napište mi">Napište mi!</a></p>
             </div>
             
             <div class="faq-grid">
@@ -816,8 +818,8 @@
                         <div class="form-group">
                             <label for="project">Typ projektu <span class="required">*</span></label>
                             <select id="project" name="project" required>
-                                <option value="">Vyberte typ projektu...</option>
-                                <option value="vizitka" selected>VIZITKA (od 5 000 Kč)</option>
+                                <option value="" selected>Vyberte typ projektu...</option>
+                                <option value="vizitka">VIZITKA (od 5 000 Kč)</option>
                                 <option value="firemni">FIREMNÍ WEB (od 15 000 Kč)</option>
                                 <option value="namiru">WEB NA MÍRU (od 22 000 Kč)</option>
                                 <option value="nevim">Ještě nevím – chci konzultaci</option>
@@ -857,7 +859,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="/" class="logo" title="Tomáš Frank - Tvorba webů">TF<span class="accent">.</span></a>
+                    <a href="/" class="logo" title="Tomáš Frank - Tvorba webů" aria-label="Tomáš Frank — úvodní stránka">TF<span class="accent">.</span></a>
                     <p>Webový vývojář pro malé podnikatele a živnostníky.<br>Jednoduché, levné a funkční weby.</p>
 
                 </div>
