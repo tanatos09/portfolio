@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PubHouse - Tradiční česká restaurace a hospoda v Hodoníně. Domácí kuchyňě, čerstvé pivo a skvělá atmosféra.">
+    <meta name="keywords" content="hospoda, restaurace, pivo, hodonín, domácí kuchyňě, česká kuchyňě">
+    <meta name="author" content="PubHouse">
+    <meta name="robots" content="index, follow">
+    <title>PubHouse | Restaurace Hodonín — ukázka webu</title>
+    <link rel="canonical" href="https://franktomas.cz/pubhouse.html">
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://franktomas.cz/pubhouse.html">
+    <meta property="og:title" content="PubHouse | Restaurace Hodonín">
+    <meta property="og:description" content="Ukázka balíčku FIREMNÍ WEB — web pro restauraci s jídelníčkem, galerií a kontaktem.">
+    <meta property="og:image" content="https://franktomas.cz/img/pubhouse/pb3.webp">
+    <meta property="og:locale" content="cs_CZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PubHouse | Restaurace Hodonín">
+    <meta name="twitter:description" content="Ukázka balíčku FIREMNÍ WEB — web pro restauraci.">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .lightbox { display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); }
+        .lightbox.active { display: flex; align-items: center; justify-content: center; }
+        .lightbox-content { max-width: 90%; max-height: 90%; position: relative; }
+        .lightbox-content img { width: 100%; height: auto; display: block; border-radius: 12px; }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 36px; font-weight: bold; cursor: pointer; z-index: 10; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 50%; transition: all 0.3s ease; border: none; padding: 0; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-prev, .lightbox-next { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 28px; padding: 16px; user-select: none; background: rgba(0,0,0,0.4); border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border: none; }
+        .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
+    </style>
+
+    <link rel="stylesheet" href="pubhouse.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "PubHouse | Restaurace Hodonín",
+        "description": "PubHouse - Tradiční česká restaurace a hospoda v Hodoníně. Domácí kuchyně, čerstvé pivo a skvělá atmosféra.",
+        "url": "https://franktomas.cz/pubhouse.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Tomáš Frank — Tvorba webových stránek",
+            "url": "https://franktomas.cz"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Frank",
+            "url": "https://franktomas.cz"
+        },
+        "inLanguage": "cs"
+    }
+    </script>
+</head>
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <div class="demo-content">
+            <span class="demo-label">⭐ UKÁZKOVÝ WEB</span>
+            <p class="demo-text">Toto je ukázka balíčku FIREMNÍ WEB</p>
+            <a href="index.html#packages" class="demo-cta">Chci podobný web →</a>
+        </div>
+    </div>
+
+    <!-- Package Info -->
+    <div class="package-info-banner">
+        <div class="container">
+            <span class="package-badge">📦 Balíček FIREMNÍ WEB — 15 000 Kč</span>
+            <p class="package-details">4–8 stránek • Admin panel • Fotogalerie • Google mapa • Rozšířené SEO</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo" aria-label="PubHouse - přejít na úvod">
+                <span class="logo-icon">🍺</span>
+                <span class="logo-text">Pub<span class="logo-accent">House</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Domů</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#events">Akce</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact" class="nav-cta">Rezervace</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+    <header id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">🍖 Tradiční česká restaurace v Hodoníně</span>
+                <h1>Kde se vaří <span class="text-accent">s láskou</span><br>a čepuje s&nbsp;péčí</h1>
+                <p class="hero-subtitle">Domácí kuchyně, čerstvé točené pivo a přátelská atmosféra. Právě u nás najdete vše, co k dobré restauraci patří.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">
+                        <span>Prohlédnout menu</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-ghost">Rezervovat stůl</a>
+                </div>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="hf-icon">🍺</span>
+                        <span class="hf-text">6 druhů<br>točeného piva</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hf-icon">🍖</span>
+                        <span class="hf-text">Domácí<br>kuchyně</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hf-icon">👥</span>
+                        <span class="hf-text">Kapacita<br>80 míst</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag">🏠 O nás</span>
+                    <h2>Vítejte v restauraci<br><span class="text-accent">PubHouse</span></h2>
+                    <p class="lead">Přinášíme nový koncept tradiční hospody — čerstvé suroviny, moderní přístup a atmosféra, ve které se cítíte jako doma.</p>
+                    <p>Naše menu zahrnuje klasické české speciality připravované podle tradičních receptů. Používáme výhradně čerstvé suroviny od místních dodavatelů z jižní Moravy.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="af-icon">✅</span>
+                            <div>
+                                <h4>Čerstvé suroviny</h4>
+                                <p>Od místních dodavatelů</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <span class="af-icon">✅</span>
+                            <div>
+                                <h4>Rodinná atmosféra</h4>
+                                <p>Přátelské prostředí pro všechny</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <span class="af-icon">✅</span>
+                            <div>
+                                <h4>Živá hudba</h4>
+                                <p>Pravidelné kulturní akce</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=700&fit=crop" alt="Interiér hospůdky PubHouse" width="600" height="700" loading="lazy">
+                    </div>
+                    <div class="about-badge">
+                        <span class="badge-num">10+</span>
+                        <span class="badge-text">let tradice</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🍽️ Menu</span>
+                <h2>Naše nabídka</h2>
+                <p class="section-desc">Výběr z klasických českých specialit připravovaných s láskou</p>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="meals">🍖 Hlavní jídla</button>
+                <button class="tab-btn" data-tab="soups">🍲 Polévky</button>
+                <button class="tab-btn" data-tab="drinks">🍺 Nápoje</button>
+            </div>
+            
+            <div class="menu-content active" id="meals">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Vepřový řízek</h3>
+                            <span class="price">159 Kč</span>
+                        </div>
+                        <p>S bramborem a domácím salátem</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Svíčková na smetaně</h3>
+                            <span class="price">189 Kč</span>
+                        </div>
+                        <p>S houskovým knedlíkem a brusinkami</p>
+                    </div>
+                    <div class="menu-item popular">
+                        <span class="popular-badge">⭐ Oblíbené</span>
+                        <div class="item-header">
+                            <h3>Smažený sýr</h3>
+                            <span class="price">139 Kč</span>
+                        </div>
+                        <p>S hranolky a tatarskou omáčkou</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Guláš</h3>
+                            <span class="price">149 Kč</span>
+                        </div>
+                        <p>S houskovým knedlíkem</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Kuřecí prsa na grilu</h3>
+                            <span class="price">169 Kč</span>
+                        </div>
+                        <p>S grilovanou zeleninou a rýží</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Vepřová pečeně</h3>
+                            <span class="price">179 Kč</span>
+                        </div>
+                        <p>Se zelím a knedlíkem</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-content" id="soups">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Hovězí vývar s nudlemi</h3>
+                            <span class="price">49 Kč</span>
+                        </div>
+                        <p>Tradiční česká polévka</p>
+                    </div>
+                    <div class="menu-item popular">
+                        <span class="popular-badge">⭐ Oblíbené</span>
+                        <div class="item-header">
+                            <h3>Kulajda</h3>
+                            <span class="price">59 Kč</span>
+                        </div>
+                        <p>Smetanová polévka s houbami a koprem</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Česnečka</h3>
+                            <span class="price">55 Kč</span>
+                        </div>
+                        <p>S krutony a sýrem</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-content" id="drinks">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Pilsner Urquell 0,5l</h3>
+                            <span class="price">49 Kč</span>
+                        </div>
+                        <p>Točené pivo</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Radegast 0,5l</h3>
+                            <span class="price">45 Kč</span>
+                        </div>
+                        <p>Točené pivo</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Kofola 0,5l</h3>
+                            <span class="price">35 Kč</span>
+                        </div>
+                        <p>Točená</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Víno bílé/červené 0,2l</h3>
+                            <span class="price">39 Kč</span>
+                        </div>
+                        <p>Sudové víno z Moravy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎉 Akce</span>
+                <h2>Co se u nás chystá</h2>
+                <p class="section-desc">Pravidelné akce a speciální události</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Únor</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Živá hudba — Moravanka</h3>
+                        <p>Tradiční moravská dechovka od 18:00. Vstup zdarma!</p>
+                        <span class="event-tag">🎵 Hudba</span>
+                    </div>
+                </div>
+                <div class="event-card featured">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">Únor</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Zabijačkové hody</h3>
+                        <p>Tradiční zabijačkové speciality celý víkend. Přijďte ochutnat!</p>
+                        <span class="event-tag">🍖 Speciální menu</span>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">Každý</span>
+                        <span class="month">Pátek</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Páteční guláš</h3>
+                        <p>Každý pátek speciální cena na všechny druhy guláše — jen 99 Kč</p>
+                        <span class="event-tag">🔥 Akce</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📸 Galerie</span>
+                <h2>Prohlédněte si naši hospůdku</h2>
+                <p class="section-desc">Kliknutím na obrázek si ho zvětšíte</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii hlavního sálu">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" alt="Hlavní sál restaurace PubHouse" width="800" height="600" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Hlavní sál</span>
+                        <span class="gallery-zoom">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii baru">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" alt="Bar restaurace PubHouse" width="800" height="600" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Náš bar</span>
+                        <span class="gallery-zoom">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii jídla">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" alt="Jídlo z kuchyňě restaurace PubHouse" width="800" height="600" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Z naší kuchyně</span>
+                        <span class="gallery-zoom">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" role="button" tabindex="0" aria-label="Zvětšit fotografii venkovního posezení">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" alt="Venkovní posezení restaurace PubHouse" width="800" height="600" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Venkovní posezení</span>
+                        <span class="gallery-zoom">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Galerie obrázků">
+        <button class="lightbox-close" aria-label="Zavřít galerii">&times;</button>
+        <button class="lightbox-prev" aria-label="Předchozí obrázek">&#10094;</button>
+        <button class="lightbox-next" aria-label="Další obrázek">&#10095;</button>
+        <div class="lightbox-content">
+            <img src="about:blank" alt="Zvětšený obrázek z galerie" role="presentation">
+        </div>
+    </div>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📞 Kontakt</span>
+                <h2>Přijďte k nám nebo&nbsp;rezervujte stůl</h2>
+                <p class="section-desc">Těšíme se na vaši návštěvu</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <span class="cc-icon">📍</span>
+                        <h4>Adresa</h4>
+                        <p>Hlavní 125<br>695 01 Hodonín</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="cc-icon">📞</span>
+                        <h4>Telefon</h4>
+                        <p><a href="tel:+420518123456">+420 518 123 456</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="cc-icon">✉️</span>
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@pubhouse.cz">info@pubhouse.cz</a></p>
+                    </div>
+                    <div class="contact-card highlight">
+                        <span class="cc-icon">🕐</span>
+                        <h4>Otevírací doba</h4>
+                        <p>Po – Čt: 11:00 – 23:00<br>Pá – So: 11:00 – 01:00<br>Ne: 11:00 – 22:00</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.776!2d17.1248!3d48.8488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUwJzU1LjciTiAxN8KwMDcnMjkuMyJF!5e0!3m2!1scs!2scz!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Mapa restaurace PubHouse v Hodoníně">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🍺 PubHouse</span>
+                    <p>Tradiční česká restaurace v srdci Hodonína. Dobré pivo, domácí kuchyně a přátelská atmosféra.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigace</h4>
+                    <div class="footer-links">
+                        <a href="#home">Domů</a>
+                        <a href="#about">O nás</a>
+                        <a href="#menu">Menu</a>
+                        <a href="#events">Akce</a>
+                        <a href="#gallery">Galerie</a>
+                        <a href="#contact">Kontakt</a>
+                    </div>
+                </div>
+                <div class="footer-hours">
+                    <h4>Otevírací doba</h4>
+                    <p>Po – Čt: 11:00 – 23:00</p>
+                    <p>Pá – So: 11:00 – 01:00</p>
+                    <p>Ne: 11:00 – 22:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PubHouse. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="pubhouse.js"></script>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč. Rychlé dodání, férové ceny, bez měsíčních poplatků.">
+    <meta name="keywords" content="tvorba webů, webové stránky, web pro firmu, webová vizitka, web Hodonín, levný web, web pro živnostníky">
+    <meta name="author" content="Tomáš Frank">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Czech">
+    <meta name="revisit-after" content="14 days">
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tomasfrank.cz">
+    <meta property="og:title" content="Tomáš Frank | Weby pro malé firmy a živnostníky">
+    <meta property="og:description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč. Rychlé dodání, férové ceny, bez měsíčních poplatků.">
+    <meta property="og:image" content="https://tomasfrank.cz/img/og-image.jpg">
+    <meta property="og:image:alt" content="Tomáš Frank - Web Design">
+    <meta property="og:locale" content="cs_CZ">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tomasfrank.cz">
+    <meta name="twitter:title" content="Tomáš Frank | Weby pro malé firmy a živnostníky">
+    <meta name="twitter:description" content="Tvorba webových stránek pro živnostníky a malé firmy. Jednoduché weby a vizitky od 5 000 Kč.">
+    <meta name="twitter:image" content="https://tomasfrank.cz/img/og-image.jpg">
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Tomáš Frank | Weby pro malé firmy a živnostníky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP for scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">TF<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">O mně</a></li>
+                <li><a href="#packages">Služby</a></li>
+                <li><a href="#projects">Ukázky</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn btn-nav magnetic-btn">Kontakt</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge animate-in">
+                    <span class="pulse"></span>
+                    <span class="availability-text">🔥 Tento měsíc ještě <strong>3 weby se slevou za 5 000 Kč</strong> (běžně 8 000 Kč)</span>
+                </div>
+                <h1 class="hero-title animate-in delay-1">
+                    <span class="line">Web, který vám</span>
+                    <span class="line gradient-text">přivede zákazníky.</span>
+                </h1>
+                <p class="hero-description animate-in delay-2">
+                    Vytvářím jednoduché weby pro <strong>živnostníky a malé firmy</strong>.<br>
+                    <span class="highlight">Žádné složitosti</span> — jen funkční stránky, které zákazníkům ukáží, co děláte.<br>
+                    Hotovo za <span class="highlight">5–10 dní</span>. Bez měsíčních poplatků.<br>
+                    Od <strong class="price-highlight"><s style="opacity:.5;font-weight:400">8 000 Kč</s> 5 000 Kč</strong>.
+                </p>
+                <div class="hero-buttons animate-in delay-3">
+                    <a href="#contact" class="btn btn-primary btn-glow magnetic-btn">
+                        <span>Nezávazná konzultace zdarma</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary magnetic-btn">
+                        Podívat se na ukázky
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-in delay-2">
+                <div class="hero-avatar-wrapper">
+                    <div class="hero-avatar-glow"></div>
+                    <img src="img/avatar.jpg" alt="Tomáš Frank" class="hero-avatar">
+                    <div class="hero-avatar-ring"></div>
+                    <!-- Orbit icons -->
+                    <div class="orbit-icons">
+                        <div class="orbit-icon orbit-1" title="HTML">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div class="orbit-icon orbit-2" title="CSS">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <div class="orbit-icon orbit-3" title="JavaScript">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <div class="orbit-icon orbit-4" title="React">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-tabs">
+                            <div class="code-tab active" data-tab="html">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e44d26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <span>webside.html</span>
+                                <button class="code-tab-close">×</button>
+                            </div>
+                            <div class="code-tab" data-tab="css">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2965f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                                <span>webside.css</span>
+                                <button class="code-tab-close">×</button>
+                            </div>
+                            <div class="code-tab" data-tab="js">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f7df1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path><polyline points="8 16 12 12 16 16"></polyline>
+                                </svg>
+                                <span>webside.js</span>
+                                <button class="code-tab-close">×</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-panels">
+                        <div class="code-panel active" data-panel="html">
+                            <div class="code-wrapper">
+                                <div class="code-line-numbers"></div>
+                                <pre class="code-content"><code></code></pre>
+                            </div>
+                        </div>
+                        <div class="code-panel" data-panel="css">
+                            <div class="code-wrapper">
+                                <div class="code-line-numbers"></div>
+                                <pre class="code-content"><code></code></pre>
+                            </div>
+                        </div>
+                        <div class="code-panel" data-panel="js">
+                            <div class="code-wrapper">
+                                <div class="code-line-numbers"></div>
+                                <pre class="code-content"><code></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scrollujte dolů</span>
+        </div>
+    </header>
+
+    <!-- Tech Stack Marquee -->
+    <section class="tech-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Responzivní design</span>
+                <span class="tech-item">SEO optimalizace</span>
+                <span class="tech-item">Rychlý a bezpečný</span>
+                <span class="tech-item">Bez měsíčních poplatků</span>
+            </div>
+            <div class="marquee-content">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Responzivní design</span>
+                <span class="tech-item">SEO optimalizace</span>
+                <span class="tech-item">Rychlý a bezpečný</span>
+                <span class="tech-item">Bez měsíčních poplatků</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">O mně</span>
+                <h2>Weby rychle, dostupně a bez zbytečností</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="lead">
+                        Jsem webový vývojář pro <strong>malé firmy a živnostníky</strong>. Zaměřuji se na jednoduché, funkční weby — rychle, férově a bez skrytých poplatků.
+                    </p>
+                    
+                    <!-- Highlighted product box -->
+                    <div class="about-highlight-box glass" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="font-size: 1.5rem;">⭐</span>
+                            <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent-primary);">JEDNODUCHÝ WEB za <s style="opacity:.5;font-weight:400">8 000 Kč</s> 5 000 Kč</h3>
+                        </div>
+                        <p style="margin: 0; opacity: 0.9;">
+                            Moje nejprodávanější služba. Jednoduchá webová vizitka pro živnostníky — hotovo za <strong>7–10 dní</strong>, bez měsíčních poplatků, bez údržby. Ideální pro ty, kdo potřebují být online rychle a levně.
+                        </p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Proč si vybrat právě mě?</h3>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div>
+                                <strong>Rychlé dodání</strong>
+                                <span style="display: block; font-size: 0.85rem; opacity: 0.7;">7–10 dní a máte hotovo</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <div>
+                                <strong>Férová cena</strong>
+                                <span style="display: block; font-size: 0.85rem; opacity: 0.7;">Jasná cena bez skrytých poplatků</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <div>
+                                <strong>Žádná údržba</strong>
+                                <span style="display: block; font-size: 0.85rem; opacity: 0.7;">Statický web, žádné aktualizace</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </div>
+                            <div>
+                                <strong>Úpravy za 500 Kč</strong>
+                                <span style="display: block; font-size: 0.85rem; opacity: 0.7;">Potřebujete změnu? Žádný problém.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills reveal">
+                    <h3>Pracuji s moderními technologiemi</h3>
+                    <p style="opacity: 0.85; line-height: 1.6; margin-bottom: 1.5rem;">
+                        HTML, CSS, JavaScript a React — to je všechno, co potřebuji, aby váš web vypadal skvěle, fungoval rychle a přinášel vám zákazníky. Žádná zbytečná složitost, jen čisté a profesionální řešení.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📋 POSTUP</span>
+                <h2>Jak spolupráce funguje?</h2>
+                <p class="section-desc">Od první zprávy k hotovému webu za 4 jednoduché kroky</p>
+            </div>
+            
+            <div class="process-grid reveal">
+                <div class="process-step glass">
+                    <div class="step-number">1</div>
+                    <h3>Nezávazná konzultace</h3>
+                    <p>Napíšete mi, co potřebujete. Do 24 hodin se ozvu a probereme váš projekt — zdarma a bez závazku.</p>
+                    <span class="step-time">⏱️ 15 minut</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">2</div>
+                    <h3>Návrh a kalkulace</h3>
+                    <p>Pošlu vám konkrétní nabídku s přesnou cenou a termínem dodání. Odsouhlasíte, až když budete spokojeni.</p>
+                    <span class="step-time">⏱️ Do 24 hodin</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">3</div>
+                    <h3>Tvorba webu</h3>
+                    <p>Po odsouhlasení začnu pracovat. Průběžně vám posílám ukázky a zapracovávám vaše připomínky.</p>
+                    <span class="step-time">⏱️ 5–14 dní</span>
+                </div>
+                <div class="process-step glass">
+                    <div class="step-number">4</div>
+                    <h3>Předání a spuštění</h3>
+                    <p>Web vám předám, vysvětlím vše potřebné a pomohu se spuštěním. Platíte až po dokončení.</p>
+                    <span class="step-time">✅ Hotovo!</span>
+                </div>
+            </div>
+            
+            <div class="process-cta reveal">
+                <a href="#contact" class="btn btn-primary btn-glow magnetic-btn">
+                    Začít konzultací zdarma
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+﻿    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📦 SLUŽBY</span>
+                <h2>Tři jednoduché balíčky</h2>
+                <p class="section-desc">
+                    Vyberte si web podle vašich potřeb. Ceny jsou finální — bez skrytých poplatků.
+                </p>
+            </div>
+
+            <!-- PACKAGES GRID - 3 columns -->
+            <div class="packages-grid-three reveal">
+                
+                <!-- VIZITKA -->
+                <div class="package-card glass">
+                    <div class="package-badge-row">
+                        <span class="badge badge-sale">🔥 AKCE</span>
+                    </div>
+                    <div class="package-header">
+                        <span class="package-name">VIZITKA</span>
+                        <div class="package-price">
+                            <span class="price-old">8 000</span>
+                            <span class="price-amount">5 000</span>
+                            <span class="price-currency">Kč</span>
+                        </div>
+                        <span class="package-subtitle">Akční cena — zbývají 3 místa</span>
+                    </div>
+                    
+                    <div class="package-body">
+                        <p class="package-desc">Jednoduchá profesionální prezentace pro živnostníky. Zaplatíte jednou a máte hotovo.</p>
+                        
+                        <ul class="package-features">
+                            <li class="included">✓ <strong>1–3 stránky</strong></li>
+                            <li class="included">✓ Responzivní design (mobil, tablet, PC)</li>
+                            <li class="included">✓ Kontaktní formulář</li>
+                            <li class="included">✓ Základní SEO</li>
+                            <li class="included">✓ SSL certifikát</li>
+                        </ul>
+
+                        <p class="package-upsell">💡 Potřebujete víc? Ke každému balíčku si můžete přikoupit další služby na míru — admin panel, galerii, animace a cokoliv dalšího.</p>
+                        
+                        <div class="package-delivery">
+                            <span>⏱️ Dodání: <strong>5–7 dní</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="package-footer">
+                        <a href="#contact" class="btn btn-primary btn-glow btn-full">Objednat za 5 000 Kč</a>
+                        <p class="availability-note">✓ Ideální pro živnostníky</p>
+                    </div>
+                </div>
+
+                <!-- FIREMNÍ WEB -->
+                <div class="package-card package-featured glass">
+                    <div class="package-badge-row">
+                        <span class="badge badge-hot">⭐ DOPORUČUJI</span>
+                    </div>
+                    <div class="package-header">
+                        <span class="package-name">FIREMNÍ WEB</span>
+                        <div class="package-price">
+                            <span class="price-amount">15 000</span>
+                            <span class="price-currency">Kč</span>
+                        </div>
+                        <span class="package-subtitle">Pro firmy s více službami</span>
+                    </div>
+                    
+                    <div class="package-body">
+                        <p class="package-desc">Kompletní web s admin panelem — měňte obsah sami, bez technických znalostí.</p>
+                        
+                        <ul class="package-features">
+                            <li class="included">✓ <strong>4–8 stránek</strong></li>
+                            <li class="included">✓ Vše z VIZITKy +</li>
+                            <li class="included">✓ Admin panel (lehký interface)</li>
+                            <li class="included">✓ Galerie obrázků</li>
+                            <li class="included">✓ Google mapa</li>
+                            <li class="included">✓ Rozšířené SEO</li>
+                        </ul>
+
+                        <p class="package-upsell">💡 Potřebujete víc? Ke každému balíčku si můžete přikoupit další služby na míru — e-shop modul, rezervace, newsletter a cokoliv dalšího.</p>
+                        
+                        <div class="package-delivery">
+                            <span>⏱️ Dodání: <strong>10–14 dní</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="package-footer">
+                        <a href="#contact" class="btn btn-primary btn-glow btn-full">Kontaktovat kvůli nabídce</a>
+                        <p class="availability-note">✓ Ideální pro malé firmy</p>
+                    </div>
+                </div>
+
+                <!-- WEB NA MÍRU -->
+                <div class="package-card glass">
+                    <div class="package-header">
+                        <span class="package-name">WEB NA MÍRU</span>
+                        <div class="package-price">
+                            <span class="price-range">od 22 000</span>
+                            <span class="price-currency">Kč</span>
+                        </div>
+                        <span class="package-subtitle">Vaše individuální řešení</span>
+                    </div>
+                    
+                    <div class="package-body">
+                        <p class="package-desc">E-shopy, rezervační systémy, webové aplikace — cokoliv, co potřebujete. Cena podle rozsahu.</p>
+                        
+                        <ul class="package-features">
+                            <li class="included">✓ <strong>Neomezený obsah</strong></li>
+                            <li class="included">✓ Libovolný design a funkce</li>
+                            <li class="included">✓ Pokročilé technologie</li>
+                            <li class="included">✓ Integrace s vašimi systémy</li>
+                            <li class="included">✓ Dlouhodobá podpora</li>
+                        </ul>
+
+                        <p class="package-upsell">💡 Řešení kompletně na míru — společně navrhneme funkce přesně podle vašich potřeb.</p>
+                        
+                        <div class="package-delivery">
+                            <span>⏱️ Dodání: <strong>Individuálně dle rozsahu</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="package-footer">
+                        <a href="#contact" class="btn btn-secondary btn-full">Popsat váš projekt</a>
+                        <p class="availability-note">✓ Pro firmy se specifickými potřebami</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Možnosti rozšíření -->
+            <div class="custom-project-banner glass reveal" style="margin-top: 3rem; padding: 2rem; border-radius: 16px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.05)); border: 1px solid rgba(168, 85, 247, 0.2);">
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Přidejte do svého webu cokoliv:</h3>
+                <p style="margin-top: 0; margin-bottom: 1.5rem; opacity: 0.7; font-size: 0.9rem;">Ke každému balíčku si můžete přikoupit další funkce. Záleží jen na vaší fantazii — pokud to jde naprogramovat, udělám to.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Další stránka</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">+500 – 1 500 Kč</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Animace a efekty</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">+2 000 – 6 000 Kč</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Newsletter integrace</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">+1 500 Kč</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Měsíční údržba</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">od 500 Kč/měsíc</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">Admin panel</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">+3 000 – 5 000 Kč</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem;">A cokoliv dalšího…</strong>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Cena dle rozsahu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+﻿
+
+﻿
+
+    <!-- Projects / References Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎨 UKÁZKY</span>
+                <h2>Ukázky mé práce</h2>
+                <p class="section-desc">
+                    Podívejte se, jak můžou vaše stránky vypadat.
+                </p>
+            </div>
+            
+            <div class="reference-grid">
+                <!-- Reference 1 - MotoGarage -->
+                <article class="reference-card glass reveal">
+                    <div class="reference-image">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=400&fit=crop" alt="Motogarage - web pro autoservis" class="project-img">
+                    </div>
+                    <div class="reference-content">
+                        <h3>Motogarage</h3>
+                        <p class="reference-desc">Web pro autoservis — jednoduché prezentace služeb s kontaktním formulářem</p>
+                        <div class="reference-tech">
+                            <strong>Technologie:</strong> HTML5, CSS3, JavaScript, Responzivní design
+                        </div>
+                        <a href="motogarage.html" target="_blank" class="btn btn-outline btn-sm">Podívat se na web</a>
+                    </div>
+                </article>
+
+                <!-- Reference 2 - PubHouse -->
+                <article class="reference-card glass featured reveal">
+                    <div class="reference-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop" alt="PubHouse - web pro restauraci" class="project-img">
+                    </div>
+                    <div class="reference-content">
+                        <h3>PubHouse</h3>
+                        <p class="reference-desc">Web pro restauraci — jídelníček, galerie, kontakt a úvodní informace</p>
+                        <div class="reference-tech">
+                            <strong>Technologie:</strong> HTML5, CSS3, JavaScript, Galerie
+                        </div>
+                        <a href="pubhouse.html" target="_blank" class="btn btn-primary btn-sm">Podívat se na web</a>
+                    </div>
+                </article>
+
+                <!-- Reference 3 - RealityPlus -->
+                <article class="reference-card glass reveal">
+                    <div class="reference-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop" alt="Reality Plus - web pro realitní kancelář" class="project-img">
+                    </div>
+                    <div class="reference-content">
+                        <h3>Reality Plus</h3>
+                        <p class="reference-desc">Web pro realitní kancelář — seznam nemovitostí, filtry, a přehled služeb</p>
+                        <div class="reference-tech">
+                            <strong>Technologie:</strong> HTML5, CSS3, JavaScript, Pokročilé UI
+                        </div>
+                        <a href="realityplus.html" target="_blank" class="btn btn-outline btn-sm">Podívat se na web</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+﻿    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">❓ FAQ</span>
+                <h2>Často kladené otázky</h2>
+                <p class="section-desc">Odpovědi na nejčastější dotazy. Nenašli jste odpověď? <a href="#contact" style="color: var(--accent-primary);">Napište mi!</a></p>
+            </div>
+            
+            <div class="faq-grid">
+                <!-- FAQ 1 -->
+                <div class="faq-item glass reveal">
+                    <div class="faq-question-static">
+                        <span class="faq-icon-static"></span>
+                        <h4>Proč nemá VIZITKA admin panel?</h4>
+                    </div>
+                    <div class="faq-answer-visible">
+                        <p><strong>Záměrně.</strong> Admin panel znamená složitost, bezpečnostní rizika a pravidelnou údržbu.</p>
+                        <details class="faq-details">
+                            <summary>Číst více</summary>
+                            <div class="faq-details-content">
+                                <p>VIZITKA je bleskově rychlá, bezpečná a nevyžaduje žádnou údržbu. Nepotřebuje aktualizace, nehrozí hackerské útoky přes zranitelnosti CMS.</p>
+                                <p>Potřebujete změnit text nebo fotku? Napíšete mi, opravím to za <strong>500 Kč</strong> (10–20 minut práce). Většina klientů mění obsah 1–2× ročně.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item glass reveal">
+                    <div class="faq-question-static">
+                        <span class="faq-icon-static"></span>
+                        <h4>Jaký je rozdíl mezi balíčky?</h4>
+                    </div>
+                    <div class="faq-answer-visible">
+                        <p><strong>VIZITKA (5 000 Kč — akce, běžně 8 000 Kč)</strong> – 1–3 stránky, ideální pro živnostníky. Ke každému balíčku si můžete přikoupit další služby na míru.</p>
+                        <details class="faq-details">
+                            <summary>Zobrazit všechny balíčky</summary>
+                            <div class="faq-details-content">
+                                <p><strong>FIREMNÍ WEB (15 000 Kč)</strong><br>4–8 stránek, admin panel pro vlastní úpravy, galerie, rozšířené SEO. Ideální pro malé firmy.</p>
+                                <p><strong>WEB NA MÍRU (od 22 000 Kč)</strong><br>Neomezený obsah, vlastní design, pokročilé technologie, integrace systémů. E-shopy, rezervační systémy, webové aplikace.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item glass reveal">
+                    <div class="faq-question-static">
+                        <span class="faq-icon-static"></span>
+                        <h4>Jaké jsou termíny dodání?</h4>
+                    </div>
+                    <div class="faq-answer-visible">
+                        <p><strong>VIZITKA: 5–7 dní.</strong> FIREMNÍ WEB: 10–14 dní. WEB NA MÍRU: individuálně.</p>
+                        <details class="faq-details">
+                            <summary>Přesné termíny</summary>
+                            <div class="faq-details-content">
+                                <p><strong>VIZITKA:</strong> 5–7 dní</p>
+                                <p><strong>FIREMNÍ WEB:</strong> 10–14 dní</p>
+                                <p><strong>WEB NA MÍRU:</strong> Individuálně dle rozsahu (2–6 týdnů)</p>
+                                <p>Termín závisí na rychlosti dodání podkladů (texty, fotky).</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 - Colik stojí příplatky -->
+                <div class="faq-item glass reveal">
+                    <div class="faq-question-static">
+                        <span class="faq-icon-static"></span>
+                        <h4>Kolik stojí příplatky?</h4>
+                    </div>
+                    <div class="faq-answer-visible">
+                        <p><strong>Další stránka:</strong> 500–1 500 Kč. <strong>Animace:</strong> 2 000–6 000 Kč. <strong>Údržba:</strong> od 500 Kč/měsíc.</p>
+                        <details class="faq-details">
+                            <summary>Kompletní ceník příplatků</summary>
+                            <div class="faq-details-content">
+                                <p>Další stránka: <strong>+500 – 1 500 Kč</strong></p>
+                                <p>Animace webu: <strong>+2 000 – 6 000 Kč</strong></p>
+                                <p>Newsletter integrace: <strong>+1 500 Kč</strong></p>
+                                <p>Měsíční údržba: <strong>od 500 Kč/měsíc</strong></p>
+                                <p><em>Všechny ceny jsou konečné. Žádné skryté poplatky.</em></p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 - Jak probíhá platba -->
+                <div class="faq-item glass reveal">
+                    <div class="faq-question-static">
+                        <span class="faq-icon-static"></span>
+                        <h4>Jak probíhá platba?</h4>
+                    </div>
+                    <div class="faq-answer-visible">
+                        <p><strong>VIZITKA:</strong> platba po dokončení nebo 50% záloha. <strong>Větší projekty:</strong> 50% záloha.</p>
+                        <details class="faq-details">
+                            <summary>Platební podmínky</summary>
+                            <div class="faq-details-content">
+                                <p><strong>VIZITKA:</strong> Možnost platby po dokončení nebo 50% záloha (dle dohody).</p>
+                                <p><strong>FIREMNÍ WEB:</strong> 50% záloha při zahájení, zbytek po dokončení a předání webu.</p>
+                                <p><strong>WEB NA MÍRU:</strong> Platba podle milestones (etap projektu).</p>
+                                <p><em>Platba převodem na účet, vystavím fakturu. Žádné skryté poplatky.</em></p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass reveal">
+                <h2>Pojďme rozjet váš byznys online</h2>
+                <p>Konzultace je zdarma a nezávazná<br>Během 15 minut probereme váš projekt, navrhnu řešení a do 24 hodin pošlu nabídku s přesnou cenou</p>
+                <a href="#contact" class="btn btn-primary btn-glow btn-lg magnetic-btn">
+                    Domluvit bezplatnou konzultaci
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <span class="section-tag">📞 KONTAKT</span>
+                    <h2>Domluvme si nezávaznou konzultaci</h2>
+                    <p>Vyplňte formulář a do 24 hodin se vám ozvu. Probereme váš projekt a já vám pošlu konkrétní nabídku — bez zavázání.</p>
+                    
+                    <div class="contact-benefits">
+                        <div class="benefit-item">✓ Konzultace zdarma</div>
+                        <div class="benefit-item">✓ Odpověď do 24 hodin</div>
+                        <div class="benefit-item">✓ Bez závazku</div>
+                        <div class="benefit-item">✓ Férová cena bez skrytých poplatků</div>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item glass">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h4>📍 Lokalita</h4>
+                                <p>Hodonín a okolí (osobní schůzky možné)</p>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/tomasfrank/" target="_blank" rel="noopener" class="contact-item glass">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </div>
+                            <div>
+                                <h4>💼 LinkedIn</h4>
+                                <p>in/tomasfrank</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper glass reveal">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/franktomas@seznam.cz" method="POST">
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_subject" value="Nová poptávka z webu">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_next" value="">
+
+                        <div class="form-header">
+                            <h3>Objednat JEDNODUCHÝ WEB</h3>
+                            <p>Vyplňte údaje a já se vám ozvu do 24 hodin</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Jméno a příjmení <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Vaše jméno a příjmení">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="vas@email.cz">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project">Typ projektu <span class="required">*</span></label>
+                                <select id="project" name="project" required>
+                                    <option value="vizitka" selected>VIZITKA (5 000 Kč — sleva) ✅</option>
+                                    <option value="firemni">FIREMNÍ WEB (15 000 Kč)</option>
+                                    <option value="namiru">WEB NA MÍRU (od 22 000 Kč)</option>
+                                    <option value="nevim">Ještě nevím – chci konzultaci</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Rozpočet</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Vyberte...</option>
+                                    <option value="do-10">Do 10 000 Kč</option>
+                                    <option value="10-20">10 000–20 000 Kč</option>
+                                    <option value="20-30">20 000–30 000 Kč</option>
+                                    <option value="30+">30 000+ Kč</option>
+                                    <option value="unsure">Zatím nevím</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Zpráva</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Popište váš projekt... (nepovinné)"></textarea>
+                        </div>
+                        <div class="form-group form-checkbox">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="gdpr" name="gdpr" required>
+                                <span class="checkmark"></span>
+                                <span>Souhlasím se zpracováním osobních údajů <span class="required">*</span></span>
+                            </label>
+                            <p class="gdpr-note">* Vaše údaje (jméno, e-mail) použiji pouze pro zodpovězení vaší poptávky. Nebudou sdíleny s třetími stranami ani využity k marketingovým účelům.</p>
+                        </div>
+
+                        <!-- Status messages -->
+                        <div class="form-status" id="formStatus" style="display:none;"></div>
+
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">
+                            <span>Odeslat zprávu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                        <p class="form-note">Odpovídám do 24 hodin. Žádný spam, jen konkrétní odpověď.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">TF<span class="accent">.</span></a>
+                    <p>Webový vývojář pro malé firmy a živnostníky.<br>Vytvářím weby, které přinášejí zákazníky.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tomasfrank/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigace</h4>
+                    <ul>
+                        <li><a href="#about">O mně</a></li>
+                        <li><a href="#process">Jak to funguje</a></li>
+                        <li><a href="#packages">Služby</a></li>
+                        <li><a href="#projects">Ukázky</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Balíčky</h4>
+                    <ul>
+                        <li><a href="#packages">VIZITKA (5 000 Kč — akce)</a></li>
+                        <li><a href="#packages">FIREMNÍ WEB (15 000 Kč)</a></li>
+                        <li><a href="#packages">WEB NA MÍRU (od 22 000 Kč)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tomáš Frank. Všechna práva vyhrazena.</p>
+                <p class="footer-made">Pracuji po celé ČR • Osobní schůzky možné v Hodoníně a okolí</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="#contact" class="btn btn-primary btn-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            Konzultace zdarma
+        </a>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
