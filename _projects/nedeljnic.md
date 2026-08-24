@@ -5,16 +5,16 @@ slug: nedeljnic
 status: VE VÝVOJI
 icon: terminal
 order: 1
-lead: Hlavní projekt tohohle deníku. Stavím ho, rozebírám a dokumentuju od začátku.
-current_problem: Ukázkový stav. Sem přijde konkrétní problém, který zrovna řeším.
+lead: Blbost, která má na pár hodin zabavit velké množství lidí.
+current_problem: Jednotlivé levely a hlášky.
 tech:
-  - Python
-  - Django
-demo: true
+  - React
+  - TypeScript
+  - Node.js
+  - Express
+  - Prisma
+  - PostgreSQL
+demo: false
 ---
 
-Toto je **demo stránka projektu**. Není to skutečný popis vývoje.
-
-nedeljnic je hlavní projekt blogu. Sem budou patřit retrospektivní články o tom, jak vznikal, a potom průběžné zápisky podle toho, co se zrovna láme.
-
-Když přibude nový článek s `project: nedeljnic` ve front matter, objeví se dole sám.
+Začalo to jako jednoduchý nápad. Vypadá to jednoduše. To je na tom to nebezpečné. Čím dál se dostaneš, tím víc začneš přemýšlet, proč to vlastně děláš.

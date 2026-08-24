@@ -5,13 +5,9 @@ slug: kvalita
 status: PRÁCE
 icon: factory
 order: 3
-lead: Není to software. Je to prostor pro problémy z výroby, měření, metrologie, reklamací a řízení kvality.
-current_problem: Ukázkový stav. Sem patří aktuální problém z haly, ne z editoru.
-demo: true
+lead: Výroba, měření, reklamace a další radosti kvalitáře.
+current_problem: Snažím se dát dohromady věci, které měly být dávno nastavené. Značení materiálu a metrologie
+demo: false
 ---
 
-Toto je **demo stránka**.
-
-Kvalita tady není projekt v gitu. Je to práce. Reklamace, měření, 8D, spory o toleranci a věci, které se nedají vyřešit dalším frameworkem.
-
-Když o tom napíšu článek v kategorii Kvalita, patří sem myšlenkově. Pokud bude dávat smysl ho svázat i technicky, použije se `project: kvalita`.
+Kvalita není projekt v Gitu. Je to výroba, měření, reklamace, tolerance, dodavatelé, 8D a problémy, které nejdou vyřešit dalším frameworkem. Některé stojí za to řešit. Jiné se táhnou tak dlouho, až už nikdo neví proč.

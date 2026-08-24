@@ -5,16 +5,11 @@ slug: qualityalibi
 status: VE VÝVOJI
 icon: gear
 order: 2
-lead: Metrologický systém. První modul dlouhodobějšího projektu QualityAlibi.
-current_problem: Návrh databáze měřidel, kalibrace a historie měřidel.
+lead: Nástroj, který kryje záda kvalitářům
+current_problem: Vybírám technologie a dávám dohromady první návrh.
 tech:
-  - Python
-  - Django
-demo: true
+  - Nemám ještě tušení
+demo: false
 ---
 
-Toto je **demo stránka projektu**.
-
-QualityAlibi má být metrologický systém. Na blogu nebude hlavní linka, ale bude se tu objevovat. Typicky věci kolem evidence měřidel, kalibrací a historie.
-
-Články s `project: qualityalibi` se sem napojí automaticky.
+Zatím nemám ani repozitář. Jen myšlenku, pár poznámek a problém, který mě už nějakou dobu sere. Teď hledám technologie, ze kterých z toho postavím něco použitelného.
