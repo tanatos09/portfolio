@@ -1,14 +1,14 @@
 ---
 layout: default
-title: S čím dělám
+title: Na čem dělám
 permalink: /projects/
 description: Aktuální projekty a oblasti, kterým se věnuju.
 ---
 
 <article class="page">
   <header class="page__header">
-    <h1 class="page__title">S čím dělám</h1>
-    <p class="page__lead">Ne portfolio. To, na čem teď fakt sedím.</p>
+    <h1 class="page__title">Na čem dělám</h1>
+    <p class="page__lead">Ne portfolio. To, u čeho teď fakt sedím.</p>
   </header>
 
   <div class="wrap">

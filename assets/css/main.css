@@ -579,37 +579,25 @@ h4 {
   border-radius: 0 0 0.6rem 0.6rem;
 }
 
-.quote {
-  background: var(--color-bg-alt);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-7) 0;
+.intro {
+  max-width: var(--width-prose);
 }
 
-.quote__inner {
-  display: grid;
-  gap: var(--space-3);
-  align-items: center;
+.intro p {
+  margin: 0 0 1rem;
 }
 
-.quote__mark {
-  font-family: var(--font-mono);
-  color: var(--color-accent);
-  font-size: 3rem;
-  line-height: 0.6;
+.intro__more {
+  margin: var(--space-5) 0 0;
 }
 
-.quote__text {
-  margin: 0;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-style: italic;
-  max-width: 40rem;
+.intro__more a {
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-.quote__attr {
-  margin: 0;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+.intro__more a:hover {
+  color: var(--color-accent-dark);
 }
 
 .site-footer {
@@ -919,15 +907,6 @@ h4 {
   .project-list,
   .site-footer__grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .quote__inner {
-    grid-template-columns: auto 1fr auto;
-    gap: var(--space-5);
-  }
-
-  .quote__attr {
-    justify-self: end;
   }
 }
 
