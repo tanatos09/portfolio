@@ -1,0 +1,9 @@
+<article class="note-card">
+  <p class="note-card__kicker">Poznámka{% if include.note.number %} #{{ include.note.number }}{% endif %}</p>
+  <h3 class="note-card__title">
+    <a href="{{ include.note.url | relative_url }}">{{ include.note.title }}</a>
+  </h3>
+  <p class="note-card__excerpt">{{ include.note.excerpt | default: include.note.content | strip_html | strip | truncate: 180 }}</p>
+  <p class="note-card__meta">{% include date.html date=include.note.date %}</p>
+  <span class="note-card__mark" aria-hidden="true"></span>
+</article>

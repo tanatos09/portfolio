@@ -1,0 +1,6 @@
+{% if page.reading_time %}
+{{ page.reading_time }} min čtení
+{% else %}
+{% assign words = page.content | number_of_words %}
+{{ words | divided_by: 180 | plus: 1 }} min čtení
+{% endif %}

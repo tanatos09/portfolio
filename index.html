@@ -1,0 +1,56 @@
+---
+layout: default
+title: Tomáš Frank
+description: Stavím věci. Řeším problémy. Píšu o tom. Osobní technický vývojový deník.
+permalink: /
+---
+
+<section class="hero" aria-label="Pracovní stůl">
+  <img src="{{ '/assets/images/hero.webp' | relative_url }}" alt="Pracovní stůl se dvěma monitory, výkresy a měřidly." width="1536" height="1024" fetchpriority="high" decoding="async">
+</section>
+
+<div class="wrap">
+  <h1 class="tagline">Stavím věci. Řeším problémy. Píšu o tom<span>.</span></h1>
+</div>
+
+<section class="section" aria-labelledby="latest-heading">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="latest-heading">Nejnovější články</h2>
+    </div>
+    {% include filters.html %}
+    <div class="article-grid" data-article-list>
+      {% for post in site.posts limit: 6 %}
+        {% include article-card.html post=post %}
+      {% endfor %}
+    </div>
+    <p class="empty-filter" data-empty hidden>V této kategorii tu teď nic není.</p>
+    <p class="section__more">
+      <a class="btn" href="{{ '/blog/' | relative_url }}">Zobrazit další články</a>
+    </p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="now-heading">
+  <div class="wrap">
+    <h2 id="now-heading">Na čem dělám</h2>
+    <div class="now-grid">
+      {% assign projects = site.projects | sort: "order" %}
+      {% for project in projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+      {% assign latest_note = site.notes | sort: "date" | reverse | first %}
+      {% if latest_note %}
+        {% include note-card.html note=latest_note %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="quote" aria-label="Citát">
+  <div class="wrap quote__inner">
+    <span class="quote__mark" aria-hidden="true">“</span>
+    <p class="quote__text">{{ site.quote }}</p>
+    <p class="quote__attr">— {{ site.quote_attr }}</p>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div>
+      <p class="site-footer__name">Tomáš Frank</p>
+      <p class="site-footer__tag">{{ site.tagline }}</p>
+    </div>
+
+    <div>
+      <h2 class="site-footer__heading">Rychlé odkazy</h2>
+      <ul class="site-footer__list">
+        <li><a href="{{ '/about/' | relative_url }}">O mně</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}">S čím dělám</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/kontakt/' | relative_url }}">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="site-footer__heading">Kategorie</h2>
+      <ul class="site-footer__list">
+        {% for cat in site.blog_categories %}
+        <li><a href="{{ '/blog/' | relative_url }}?kategorie={{ cat.slug }}">{{ cat.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="site-footer__heading">Poslední poznámka</h2>
+      {% assign latest_note = site.notes | sort: "date" | reverse | first %}
+      {% if latest_note %}
+      <p class="site-footer__note">
+        {% if latest_note.number %}#{{ latest_note.number }} — {% endif %}
+        <a href="{{ latest_note.url | relative_url }}">{{ latest_note.title }}</a>
+      </p>
+      <p><a class="text-link" href="{{ '/notes/' | relative_url }}">Všechny poznámky →</a></p>
+      {% else %}
+      <p class="site-footer__note">Zatím tu žádná není.</p>
+      {% endif %}
+
+      <div class="origin">
+        <span class="origin__stain" aria-hidden="true"></span>
+        <p>{{ site.footer_note }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap site-footer__bottom">
+    <p>© {{ site.time | date: '%Y' }} Tomáš Frank</p>
+    <p>Žádné cookies. Žádný tracking. Jen obsah.</p>
+  </div>
+</footer>

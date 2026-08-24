@@ -1,0 +1,37 @@
+{% assign post = include.post %}
+{% assign cat_slug = post.category | slugify %}
+{% case post.category %}
+  {% when "Programování" %}{% assign cat_slug = "programovani" %}
+  {% when "Kvalita" %}{% assign cat_slug = "kvalita" %}
+  {% when "Kvalita × IT" %}{% assign cat_slug = "kvalita-it" %}
+  {% when "Projekty" %}{% assign cat_slug = "projekty" %}
+  {% when "Poznámky" %}{% assign cat_slug = "poznamky" %}
+{% endcase %}
+<article class="article-card" data-category="{{ cat_slug }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+  <a class="article-card__image" href="{{ post.url | relative_url }}">
+    {% if post.image %}
+    <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" width="640" height="400" loading="lazy">
+    {% endif %}
+  </a>
+  <div class="article-card__body">
+    <p class="article-card__meta">
+      {% include date.html date=post.date %}
+      <span aria-hidden="true"> • </span>
+      <span class="article-card__cat">{{ post.category }}</span>
+    </p>
+    <h3 class="article-card__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <p class="article-card__excerpt">{{ post.excerpt | strip_html | strip | truncate: 140 }}</p>
+    <p class="article-card__read">
+      <a href="{{ post.url | relative_url }}">
+        {% assign words = post.content | number_of_words %}
+        {% if post.reading_time %}
+          {{ post.reading_time }} min čtení →
+        {% else %}
+          {{ words | divided_by: 180 | plus: 1 }} min čtení →
+        {% endif %}
+      </a>
+    </p>
+  </div>
+</article>

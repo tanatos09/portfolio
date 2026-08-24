@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="page">
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% if page.lead %}
+    <p class="page__lead">{{ page.lead }}</p>
+    {% endif %}
+  </header>
+  {% include demo-banner.html %}
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

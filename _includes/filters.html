@@ -1,0 +1,18 @@
+<div class="toolbar">
+  <div class="filters">
+    <span class="filters__label">Zobrazit:</span>
+    <div class="filters__pills" role="group" aria-label="Filtrovat podle kategorie">
+      <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">Vše</button>
+      {% for cat in site.blog_categories %}
+      <button type="button" class="filter-pill" data-filter="{{ cat.slug }}" aria-pressed="false">{{ cat.name }}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <label class="sort">
+    <span class="sort__label">Řazení</span>
+    <select data-sort>
+      <option value="newest">Nejnovější</option>
+      <option value="oldest">Nejstarší</option>
+    </select>
+  </label>
+</div>

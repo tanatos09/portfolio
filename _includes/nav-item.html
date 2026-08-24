@@ -1,0 +1,15 @@
+{%- assign item_url = include.url | relative_url -%}
+{%- assign current = page.url -%}
+{%- assign is_active = false -%}
+{%- if include.match -%}
+  {%- if current == include.url -%}
+    {%- assign is_active = true -%}
+  {%- elsif current contains include.match -%}
+    {%- assign is_active = true -%}
+  {%- endif -%}
+{%- elsif current == include.url -%}
+  {%- assign is_active = true -%}
+{%- endif -%}
+<li>
+  <a href="{{ item_url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ include.label }}</a>
+</li>

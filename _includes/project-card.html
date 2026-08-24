@@ -1,0 +1,22 @@
+{% assign project = include.project %}
+<article class="project-card">
+  <div class="project-card__top">
+    <span class="project-card__icon" aria-hidden="true">
+      {% if project.icon == "gear" %}⚙{% elsif project.icon == "factory" %}▣{% else %}&gt;_{% endif %}
+    </span>
+    {% include status.html status=project.status %}
+  </div>
+  <h3 class="project-card__title">
+    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+  </h3>
+  <p class="project-card__excerpt">{{ project.lead | default: project.excerpt | strip_html | strip }}</p>
+  {% if project.current_problem %}
+  <p class="project-card__now">
+    <strong>Aktuálně řeším:</strong>
+    {{ project.current_problem }}
+  </p>
+  {% endif %}
+  <p class="project-card__link">
+    <a href="{{ project.url | relative_url }}">Zobrazit detail →</a>
+  </p>
+</article>

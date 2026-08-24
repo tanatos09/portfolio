@@ -1,0 +1,84 @@
+title: Tomáš Frank
+description: Stavím věci. Řeším problémy. Píšu o tom. Osobní technický vývojový deník.
+url: https://franktomas.cz
+baseurl: ""
+lang: cs
+locale: cs_CZ
+timezone: Europe/Prague
+future: true
+encoding: UTF-8
+
+author:
+  name: Tomáš Frank
+  email: franktomas@seznam.cz
+
+permalink: /blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+include:
+  - CNAME
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - .ruby-version
+
+blog_categories:
+  - name: Programování
+    slug: programovani
+  - name: Kvalita
+    slug: kvalita
+  - name: Kvalita × IT
+    slug: kvalita-it
+  - name: Projekty
+    slug: projekty
+  - name: Poznámky
+    slug: poznamky
+
+tagline: Stavím věci. Řeším problémy. Píšu o tom.
+quote: Kvalita bez dat je jen názor. Software bez uživatele je jen koníček.
+quote_attr: T. F.
+footer_note: Vyráběno někde mezi výrobní halou a hospodou na jižní Moravě.

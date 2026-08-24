@@ -1,0 +1,3 @@
+{% if include.status %}
+<span class="status{% if include.status == 'PRÁCE' %} status--work{% endif %}">{{ include.status }}</span>
+{% endif %}

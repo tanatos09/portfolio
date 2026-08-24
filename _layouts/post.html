@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% include demo-banner.html %}
+
+<article class="article">
+  {% if page.image %}
+  <figure class="article__cover">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="1400" height="780">
+  </figure>
+  {% endif %}
+
+  <header class="article__header">
+    <p class="article__meta">
+      {% include date.html date=page.date %}
+      <span aria-hidden="true"> · </span>
+      {% capture cat_slug %}{% include category-slug.html category=page.category %}{% endcapture %}
+      <a class="article__cat" href="{{ '/blog/' | relative_url }}?kategorie={{ cat_slug | strip }}">{{ page.category }}</a>
+      {% if page.project %}
+      <span aria-hidden="true"> · </span>
+      <a href="{{ '/projects/' | relative_url }}{{ page.project }}/">{{ page.project }}</a>
+      {% endif %}
+    </p>
+    <h1 class="article__title">{{ page.title }}</h1>
+    <p class="article__read">{% include reading-time.html %}</p>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+
+{% if page.project %}
+  {% assign related = site.posts | where: "project", page.project | where_exp: "post", "post.url != page.url" | slice: 0, 3 %}
+  {% if related.size > 0 %}
+  <aside class="related">
+    <h2 class="related__title">Další z projektu {{ page.project }}</h2>
+    <div class="article-grid article-grid--compact">
+      {% for post in related %}
+        {% include article-card.html post=post %}
+      {% endfor %}
+    </div>
+  </aside>
+  {% endif %}
+{% endif %}

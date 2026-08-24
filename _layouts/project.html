@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{% include demo-banner.html %}
+
+<article class="project-page">
+  <header class="project-page__header">
+    <p class="project-page__kicker">S čím dělám</p>
+    <div class="project-page__title-row">
+      <h1 class="project-page__title">{{ page.title }}</h1>
+      {% include status.html status=page.status %}
+    </div>
+    {% if page.lead %}
+    <p class="project-page__lead">{{ page.lead }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.current_problem %}
+  <section class="project-block">
+    <h2>Aktuálně řeším</h2>
+    <p>{{ page.current_problem }}</p>
+  </section>
+  {% endif %}
+
+  {% if page.tech %}
+  <section class="project-block">
+    <h2>Technologie</h2>
+    <p class="tech-line">{{ page.tech | join: " · " }}</p>
+  </section>
+  {% endif %}
+
+  {% assign related = site.posts | where: "project", page.slug %}
+  {% if related.size == 0 %}
+    {% assign related = site.posts | where: "project", page.title %}
+  {% endif %}
+  {% if related.size > 0 %}
+  <section class="related">
+    <h2 class="related__title">Související články</h2>
+    <div class="article-grid">
+      {% for post in related %}
+        {% include article-card.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>
