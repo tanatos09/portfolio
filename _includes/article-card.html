@@ -5,7 +5,6 @@
   {% when "Kvalita" %}{% assign cat_slug = "kvalita" %}
   {% when "Kvalita × IT" %}{% assign cat_slug = "kvalita-it" %}
   {% when "Projekty" %}{% assign cat_slug = "projekty" %}
-  {% when "Poznámky" %}{% assign cat_slug = "poznamky" %}
 {% endcase %}
 <article class="article-card" data-category="{{ cat_slug }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
   <a class="article-card__image" href="{{ post.url | relative_url }}">

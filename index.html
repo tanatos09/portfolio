@@ -20,8 +20,13 @@ permalink: /
     </div>
     {% include filters.html %}
     <div class="article-grid" data-article-list>
-      {% for post in site.posts limit: 6 %}
-        {% include article-card.html post=post %}
+      {% assign feed = site.posts | concat: site.notes | sort: "date" | reverse %}
+      {% for item in feed limit: 6 %}
+        {% if item.collection == "notes" %}
+          {% include note-card.html note=item %}
+        {% else %}
+          {% include article-card.html post=item %}
+        {% endif %}
       {% endfor %}
     </div>
     <p class="empty-filter" data-empty hidden>V této kategorii tu teď nic není.</p>

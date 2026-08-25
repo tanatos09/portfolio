@@ -37,7 +37,9 @@ reading_time: 8
 ---
 ```
 
-Kategorie: `Programování`, `Kvalita`, `Kvalita × IT`, `Projekty`, `Poznámky`.
+Kategorie článků: `Programování`, `Kvalita`, `Kvalita × IT`, `Projekty`.
+
+Filtr **Poznámky** na blogu / homepage bere kolekci `_notes/`, ne kategorii článku.
 
 `project` je volitelné a musí sedět na `slug` projektu.
 
@@ -51,9 +53,13 @@ layout: note
 title: "Název"
 number: "019"
 date: 2026-08-24
-excerpt: "Pár vět."
+excerpt: |
+  **Tučný řádek**
+  další řádek náhledu.
 ---
 ```
+
+V `excerpt:` u poznámek funguje odřádkování a `**tučný text**` (jen v náhledu poznámek).
 
 ## Nový projekt
 

@@ -1,9 +1,23 @@
-<article class="note-card">
+<article class="note-card" data-category="poznamky" data-date="{{ include.note.date | date: '%Y-%m-%d' }}">
   <p class="note-card__kicker">Poznámka{% if include.note.number %} #{{ include.note.number }}{% endif %}</p>
   <h3 class="note-card__title">
     <a href="{{ include.note.url | relative_url }}">{{ include.note.title }}</a>
   </h3>
-  <p class="note-card__excerpt">{{ include.note.excerpt | default: include.note.content | strip_html | strip | truncate: 180 }}</p>
+  <div class="note-card__excerpt">
+    {% if include.note.excerpt and include.note.excerpt != blank %}
+      {% assign excerpt_lines = include.note.excerpt | strip | split: "
+" %}
+      {% for line in excerpt_lines %}
+        {% unless forloop.first %}<br>{% endunless %}
+        {% assign excerpt_line = line | strip %}
+        {% if excerpt_line != "" %}
+          {{ excerpt_line | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {{ include.note.content | strip_html | strip | truncate: 420 }}
+    {% endif %}
+  </div>
   <p class="note-card__meta">{% include date.html date=include.note.date %}</p>
   <span class="note-card__mark" aria-hidden="true"></span>
 </article>

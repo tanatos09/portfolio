@@ -16,8 +16,13 @@ description: Články z vývoje, kvality a věcí mezi tím.
       <h2 id="blog-heading" class="visually-hidden">Články</h2>
       {% include filters.html %}
       <div class="article-grid" data-article-list>
-      {% for post in site.posts %}
-        {% include article-card.html post=post %}
+      {% assign feed = site.posts | concat: site.notes | sort: "date" | reverse %}
+      {% for item in feed %}
+        {% if item.collection == "notes" %}
+          {% include note-card.html note=item %}
+        {% else %}
+          {% include article-card.html post=item %}
+        {% endif %}
       {% endfor %}
     </div>
     <p class="empty-filter" data-empty hidden>V této kategorii tu teď nic není.</p>

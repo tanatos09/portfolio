@@ -34,7 +34,7 @@
     var pills = section.querySelectorAll("[data-filter]");
     var sortSelect = section.querySelector("[data-sort]");
     var empty = section.querySelector("[data-empty]");
-    var cards = Array.prototype.slice.call(list.querySelectorAll(".article-card"));
+    var cards = Array.prototype.slice.call(list.querySelectorAll(".article-card, .note-card"));
 
     function apply() {
       cards.sort(function (a, b) {
