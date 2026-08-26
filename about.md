@@ -3,11 +3,9 @@ layout: page
 title: O mně
 permalink: /about/
 description: Kdo je Tomáš Frank a proč tenhle deník existuje.
-lead: Ne životopis. Spíš vysvětlení, jak jsem se sem dostal.
+lead: Soustruh, kontrola kvality, pak programování. Pořád jsem někde mezi výrobní halou a počítačem — a tenhle web je místo, kde tu cestu zapisuju.
 demo: false
 ---
-
-
 
 ## Kde jsem začal
 
@@ -52,5 +50,3 @@ Do budoucna bych chtěl méně hledat chyby ve výrobě a víc rozhodovat o tom,
 Ať už jde o proces, systém nebo software.
 
 Právě někde mezi výrobou, kvalitou a programováním se totiž cítím nejlíp.
-
-A tenhle web je místo, kde tu cestu zaznamenávám.

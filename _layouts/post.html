@@ -30,16 +30,21 @@ layout: default
   </div>
 </article>
 
+{% include series-nav.html %}
+
 {% if page.project %}
-  {% assign related = site.posts | where: "project", page.project | where_exp: "post", "post.url != page.url" | slice: 0, 3 %}
-  {% if related.size > 0 %}
-  <aside class="related">
-    <h2 class="related__title">Další z projektu {{ page.project }}</h2>
-    <div class="article-grid article-grid--compact">
-      {% for post in related %}
-        {% include article-card.html post=post %}
-      {% endfor %}
-    </div>
-  </aside>
+  {% assign series = site.posts | where: "project", page.project %}
+  {% if series.size > 2 %}
+    {% assign related = series | where_exp: "post", "post.url != page.url" | sort: "date" | reverse | slice: 0, 3 %}
+    {% if related.size > 0 %}
+    <aside class="related">
+      <h2 class="related__title">Další z projektu {{ page.project }}</h2>
+      <div class="article-grid article-grid--compact">
+        {% for post in related %}
+          {% include article-card.html post=post %}
+        {% endfor %}
+      </div>
+    </aside>
+    {% endif %}
   {% endif %}
 {% endif %}

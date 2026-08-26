@@ -36,7 +36,17 @@ permalink: /
   </div>
 </section>
 
-<section class="section section--alt" aria-labelledby="now-heading">
+<section class="section section--alt" aria-labelledby="intro-heading">
+  <div class="wrap intro">
+    <h2 id="intro-heading">Výroba × kvalita × software</h2>
+    <p>Zapisuju, co zrovna stavím a kde to drhne. Spíš průběh než hotové portfolio.</p>
+    <p class="intro__more">
+      <a href="{{ '/about/' | relative_url }}">→ Kdo za tím stojí</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="now-heading">
   <div class="wrap">
     <h2 id="now-heading">Na čem dělám</h2>
     <div class="now-grid">
@@ -44,21 +54,12 @@ permalink: /
       {% for project in projects %}
         {% include project-card.html project=project %}
       {% endfor %}
-      {% assign latest_note = site.notes | sort: "date" | reverse | first %}
-      {% if latest_note %}
-        {% include note-card.html note=latest_note %}
+      {% if site.notes.size > 1 %}
+        {% assign latest_note = site.notes | sort: "date" | reverse | first %}
+        {% if latest_note %}
+          {% include note-card.html note=latest_note %}
+        {% endif %}
       {% endif %}
     </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="intro-heading">
-  <div class="wrap intro">
-    <h2 id="intro-heading">Výroba × kvalita × software</h2>
-    <p>Začal jsem u soustruhu, prošel kontrolou a kvalitou a nakonec jsem se dostal k programování.</p>
-    <p>Dneska se pohybuju někde mezi výrobní halou a počítačem a baví mě stavět věci, které řeší skutečné problémy.</p>
-    <p class="intro__more">
-      <a href="{{ '/about/' | relative_url }}">→ Více o mně</a>
-    </p>
   </div>
 </section>

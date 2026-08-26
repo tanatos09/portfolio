@@ -73,8 +73,6 @@ blog_categories:
     slug: kvalita
   - name: Kvalita × IT
     slug: kvalita-it
-  - name: Projekty
-    slug: projekty
   - name: Poznámky
     slug: poznamky
 

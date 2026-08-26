@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "5× proč kvalitář nemá co dělat"
-number: "0001"
+number: "1"
 date: 2026-08-25
 excerpt: |
   **Proč nemá co dělat?**

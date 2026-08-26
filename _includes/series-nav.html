@@ -1,0 +1,47 @@
+{% if page.project %}
+  {% assign series = site.posts | where: "project", page.project | sort: "date" %}
+  {% if series.size > 1 %}
+    {% assign prev_post = nil %}
+    {% assign next_post = nil %}
+    {% assign found_current = false %}
+    {% assign series_position = 0 %}
+    {% for post in series %}
+      {% if found_current %}
+        {% if next_post == nil %}
+          {% assign next_post = post %}
+        {% endif %}
+      {% elsif post.url == page.url %}
+        {% assign found_current = true %}
+        {% assign series_position = forloop.index %}
+      {% else %}
+        {% assign prev_post = post %}
+      {% endif %}
+    {% endfor %}
+    {% if series_position > 0 %}
+    <nav class="series-nav" aria-label="Série projektu {{ page.project }}">
+      <p class="series-nav__label">
+        Série
+        <a href="{{ '/projects/' | relative_url }}{{ page.project }}/">{{ page.project }}</a>
+        <span aria-hidden="true"> · </span>
+        {{ series_position }}/{{ series.size }}
+      </p>
+      <div class="series-nav__links">
+        {% if prev_post %}
+        <a class="series-nav__item series-nav__item--prev" href="{{ prev_post.url | relative_url }}">
+          <span class="series-nav__dir">← Předchozí</span>
+          <span class="series-nav__title">{{ prev_post.title }}</span>
+        </a>
+        {% else %}
+        <span class="series-nav__item series-nav__item--empty" aria-hidden="true"></span>
+        {% endif %}
+        {% if next_post %}
+        <a class="series-nav__item series-nav__item--next" href="{{ next_post.url | relative_url }}">
+          <span class="series-nav__dir">Další →</span>
+          <span class="series-nav__title">{{ next_post.title }}</span>
+        </a>
+        {% endif %}
+      </div>
+    </nav>
+    {% endif %}
+  {% endif %}
+{% endif %}

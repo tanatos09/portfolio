@@ -19,7 +19,15 @@
       <h2 class="site-footer__heading">Kategorie</h2>
       <ul class="site-footer__list">
         {% for cat in site.blog_categories %}
-        <li><a href="{{ '/blog/' | relative_url }}?kategorie={{ cat.slug }}">{{ cat.name }}</a></li>
+          {% if cat.slug == "poznamky" %}
+            {% assign cat_count = site.notes.size %}
+          {% else %}
+            {% assign cat_posts = site.posts | where: "category", cat.name %}
+            {% assign cat_count = cat_posts.size %}
+          {% endif %}
+          {% if cat_count > 0 %}
+          <li><a href="{{ '/blog/' | relative_url }}?kategorie={{ cat.slug }}">{{ cat.name }}</a></li>
+          {% endif %}
         {% endfor %}
       </ul>
     </div>

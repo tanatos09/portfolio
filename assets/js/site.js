@@ -31,10 +31,24 @@
 
   function initFilters(list, category, sort) {
     var section = list.closest("section") || document;
-    var pills = section.querySelectorAll("[data-filter]");
+    var pills = Array.prototype.slice.call(section.querySelectorAll("[data-filter]"));
     var sortSelect = section.querySelector("[data-sort]");
     var empty = section.querySelector("[data-empty]");
     var cards = Array.prototype.slice.call(list.querySelectorAll(".article-card, .note-card"));
+
+    pills.forEach(function (pill) {
+      var filter = pill.getAttribute("data-filter");
+      if (filter === "all") return;
+      var hasCards = cards.some(function (card) {
+        return card.getAttribute("data-category") === filter;
+      });
+      pill.hidden = !hasCards;
+    });
+
+    var activePill = pills.find(function (pill) {
+      return pill.getAttribute("data-filter") === category && !pill.hidden;
+    });
+    if (!activePill) category = "all";
 
     function apply() {
       cards.sort(function (a, b) {
@@ -59,6 +73,7 @@
       pill.classList.toggle("is-active", isActive);
       pill.setAttribute("aria-pressed", isActive ? "true" : "false");
       pill.addEventListener("click", function () {
+        if (pill.hidden) return;
         category = pill.getAttribute("data-filter");
         pills.forEach(function (p) {
           var on = p === pill;
