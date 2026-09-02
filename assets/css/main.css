@@ -369,6 +369,19 @@ h4 {
   display: none;
 }
 
+/* Poznámky jen ve filtru Poznámky — ne ve Vše */
+[data-article-list] .note-card {
+  display: none;
+}
+
+[data-article-list][data-active-filter="poznamky"] .note-card {
+  display: flex;
+}
+
+[data-article-list][data-active-filter="poznamky"] .article-card {
+  display: none;
+}
+
 .article-card__image {
   display: block;
   aspect-ratio: 16 / 10;
@@ -621,6 +634,19 @@ h4 {
 
 .intro__more a:hover {
   color: var(--color-accent-dark);
+}
+
+.projects-intro {
+  max-width: var(--width-prose);
+  margin-bottom: 2rem;
+}
+
+.projects-intro p {
+  margin: 0 0 0.75rem;
+}
+
+.projects-intro p:last-child {
+  margin-bottom: 0;
 }
 
 .site-footer {
@@ -926,6 +952,10 @@ h4 {
 
 .prose blockquote p {
   margin: 0;
+}
+
+.prose blockquote p + p {
+  margin-top: 0.45rem;
 }
 
 .prose code {

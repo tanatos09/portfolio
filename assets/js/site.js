@@ -51,6 +51,8 @@
     if (!activePill) category = "all";
 
     function apply() {
+      list.setAttribute("data-active-filter", category);
+
       cards.sort(function (a, b) {
         var da = a.getAttribute("data-date");
         var db = b.getAttribute("data-date");
@@ -59,7 +61,11 @@
 
       var visibleCount = 0;
       cards.forEach(function (card) {
-        var match = category === "all" || card.getAttribute("data-category") === category;
+        var cardCategory = card.getAttribute("data-category");
+        var match =
+          category === "all"
+            ? cardCategory !== "poznamky"
+            : cardCategory === category;
         card.hidden = !match;
         list.appendChild(card);
         if (match) visibleCount += 1;

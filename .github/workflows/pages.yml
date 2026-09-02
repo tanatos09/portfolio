@@ -3,6 +3,9 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    # Denní rebuild po půlnoci v Europe/Prague (cca 03:00/02:00 místního času).
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 permissions:

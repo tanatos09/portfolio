@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tomáš Frank
-description: Stavím věci. Řeším problémy. Píšu o tom. Osobní technický vývojový deník.
+description: Výroba, kód a věci mezi tím. Osobní deník — ne portfolio hotových věcí.
 permalink: /
 ---
 
@@ -10,7 +10,7 @@ permalink: /
 </section>
 
 <div class="wrap">
-  <h1 class="tagline">Stavím věci. Řeším problémy. Píšu o tom<span>.</span></h1>
+  <h1 class="tagline">Jedna noha ve výrobě. Druhá u klávesnice<span>.</span></h1>
 </div>
 
 <section class="section" aria-labelledby="latest-heading">
@@ -20,13 +20,13 @@ permalink: /
     </div>
     {% include filters.html %}
     <div class="article-grid" data-article-list>
-      {% assign feed = site.posts | concat: site.notes | sort: "date" | reverse %}
+      {% assign feed = site.posts | sort: "date" | reverse %}
       {% for item in feed limit: 6 %}
-        {% if item.collection == "notes" %}
-          {% include note-card.html note=item %}
-        {% else %}
-          {% include article-card.html post=item %}
-        {% endif %}
+        {% include article-card.html post=item %}
+      {% endfor %}
+      {% assign notes = site.notes | sort: "date" | reverse %}
+      {% for note in notes %}
+        {% include note-card.html note=note %}
       {% endfor %}
     </div>
     <p class="empty-filter" data-empty hidden>V této kategorii tu teď nic není.</p>
@@ -39,7 +39,8 @@ permalink: /
 <section class="section section--alt" aria-labelledby="intro-heading">
   <div class="wrap intro">
     <h2 id="intro-heading">Výroba × kvalita × software</h2>
-    <p>Zapisuju, co zrovna stavím a kde to drhne. Spíš průběh než hotové portfolio.</p>
+    <p>Kód vzniká u počítače, problémy ve výrobě a nápady většinou u piva. Zapisuju, co stavím — a kde to zase drhne.</p>
+    <p>Práce v kvalitě, projekty v kódu. Spíš deník než návod.</p>
     <p class="intro__more">
       <a href="{{ '/about/' | relative_url }}">→ Kdo za tím stojí</a>
     </p>
@@ -54,12 +55,6 @@ permalink: /
       {% for project in projects %}
         {% include project-card.html project=project %}
       {% endfor %}
-      {% if site.notes.size > 1 %}
-        {% assign latest_note = site.notes | sort: "date" | reverse | first %}
-        {% if latest_note %}
-          {% include note-card.html note=latest_note %}
-        {% endif %}
-      {% endif %}
     </div>
   </div>
 </section>

@@ -10,10 +10,9 @@ Když chceš napsat, napiš.
 
 [franktomas@seznam.cz](mailto:franktomas@seznam.cz)
 
-Práce, programování, kvalita, projekty
-nebo jen něco, co ti vrtá hlavou. Napiš.
+Práce, programování, kvalita, projekty — nebo jen něco, co ti vrtá hlavou.
 
-
+Odpovídám, když zrovna nejsem ve výrobě nebo u něčeho, co se rozbilo čtvrt hodiny před koncem směny. Obvykle to není dlouho.
 
 ## Kde mě najdeš
 

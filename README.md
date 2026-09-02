@@ -13,12 +13,19 @@ bundle exec jekyll serve
 
 Otevři [http://127.0.0.1:4000](http://127.0.0.1:4000).
 
+Budoucí články (datum v budoucnosti) se lokálně nezobrazí. Náhled před vydáním:
+
+```bash
+bundle exec jekyll serve --future
+```
+
 ## Publikace
 
 1. Pushni repo na GitHub.
 2. V Settings → Pages nastav Source na **GitHub Actions**.
 3. Workflow `.github/workflows/pages.yml` postaví Jekyll a nasadí `_site`.
 4. V `_config.yml` je `url: https://franktomas.cz`. Když poběžíš na `username.github.io/repo`, doplň `baseurl`.
+5. Články s budoucím datem se na webu nezobrazí. Workflow jednou denně znovu postaví web, takže článek vyjde v den uvedeném v `date` (půlnoc `Europe/Prague`). Stačí ho pushnout dopředu.
 
 ---
 
@@ -36,7 +43,7 @@ layout: post
 title: "Název článku"
 date: 2026-08-26
 category: "Programování"
-project: nedeljnic
+project: nedelejnic
 excerpt: "Krátký popis pro karty a sociální sítě."
 image: "/assets/images/posts/soubor.webp"
 image_alt: "Popis obrázku pro přístupnost."
@@ -89,7 +96,7 @@ Filtr **Poznámky** na blogu / homepage bere kolekci `_notes/`, ne kategorii čl
 
 ### `project`
 
-Hodnota musí sedět na `slug` projektu v `_projects/` (např. `nedeljnic`, `qualityalibi`, `kvalita`).
+Hodnota musí sedět na `slug` projektu v `_projects/` (např. `nedelejnic`, `qualityalibi`, `kvalita`).
 
 Bez `project:` se článek neobjeví v „Související články“ na stránce projektu a u článku nebude odkaz na projekt.
 
@@ -147,8 +154,8 @@ URL: `/projects/nazev/` (z názvu souboru / `permalink`).
 ```yaml
 ---
 layout: project
-title: nedeljnic
-slug: nedeljnic
+title: nedělejnic
+slug: nedelejnic
 status: VE VÝVOJI
 icon: terminal
 order: 1
@@ -182,9 +189,9 @@ demo: false
 ```yaml
 links:
   - label: GitHub
-    url: https://github.com/tanatos09/nedeljnic
+    url: https://github.com/tanatos09/NedelejNic
   - label: Demo
-    url: https://nedeljnic.example
+    url: https://github.com/tanatos09/NedelejNic
 ```
 
 Články s `project: <slug>` se na detailu projektu vypíšou jako „Související články“.

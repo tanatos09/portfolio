@@ -1,11 +1,11 @@
 title: Tomáš Frank
-description: Stavím věci. Řeším problémy. Píšu o tom. Osobní technický vývojový deník.
+description: Výroba, kód a věci mezi tím. Osobní deník — ne portfolio hotových věcí.
 url: https://franktomas.cz
 baseurl: ""
 lang: cs
 locale: cs_CZ
 timezone: Europe/Prague
-future: true
+future: false
 encoding: UTF-8
 
 author:
