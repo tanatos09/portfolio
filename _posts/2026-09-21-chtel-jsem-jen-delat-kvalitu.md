@@ -28,6 +28,8 @@ Kořenové analýzy, vstupní a mezioperační kontroly, hodnocení dodavatelů 
 
 ## Semafor, co nikoho nezastaví
 
+![Semafor pro označení stavu materiálu](/assets/images/posts/semafor.webp)
+
 Tak jsem začal odspoda. Značení stavu materiálu.
 
 Princip byl v podstatě semafor. Zelená v pořádku, žlutá čeká na kontrolu, červená stop. Myslel jsem si, že tohle snad nemůže nikdo pokazit.
