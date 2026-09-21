@@ -6,11 +6,13 @@ date: 2026-09-21
 category: "Kvalita × IT"
 project: qualityalibi
 excerpt: "První díl o tom, jak vzniká projekt, který jsem si na začátku vůbec neplánoval napsat. Zatím žádná aplikace. Zatím jenom trubka, páska a jeden dolisovaný výrobek."
-image: "/assets/images/posts/qualityalibi.webp"
+image: "/assets/images/posts/semafor.webp"
 image_alt: "Pracovní stůl s notebookem, dokumentací a měřidly."
 reading_time: 6
 demo: false
------------
+---
+
+--------
 
 Nastoupil jsem do nové práce s tím, že budu dělat kvalitu.
 
@@ -27,8 +29,6 @@ Kořenové analýzy, vstupní a mezioperační kontroly, hodnocení dodavatelů 
 ---
 
 ## Semafor, co nikoho nezastaví
-
-![Semafor pro označení stavu materiálu](/assets/images/posts/semafor.webp)
 
 Tak jsem začal odspoda. Značení stavu materiálu.
 
