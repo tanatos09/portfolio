@@ -1,7 +1,8 @@
 ---
+
 layout: post
 title: "Chtěl jsem dělat kvalitu. Nikdo mi neřekl, že to znamená chodit po hale s páskou."
-date: 2028-08-31
+date: 2026-09-21
 category: "Kvalita × IT"
 project: qualityalibi
 excerpt: "První díl o tom, jak vzniká projekt, který jsem si na začátku vůbec neplánoval napsat. Zatím žádná aplikace. Zatím jenom trubka, páska a jeden dolisovaný výrobek."
@@ -9,7 +10,7 @@ image: "/assets/images/posts/qualityalibi.webp"
 image_alt: "Pracovní stůl s notebookem, dokumentací a měřidly."
 reading_time: 6
 demo: false
----
+-----------
 
 Nastoupil jsem do nové práce s tím, že budu dělat kvalitu.
 
@@ -31,17 +32,17 @@ Tak jsem začal odspoda. Značení stavu materiálu.
 
 Princip byl v podstatě semafor. Zelená v pořádku, žlutá čeká na kontrolu, červená stop. Myslel jsem si, že tohle snad nemůže nikdo pokazit.
 
-Byl jsem naivní. To se mi od té doby už moc nestává.
+Byl jsem naivní. Časem mě to přešlo.
 
-Řešil jsem tehdy trubku, ze které se měl vyrábět díl s maximální ovalitou kolem jednoho milimetru. Na samotné trubce jsem naměřil přes dva. Takže vstupní materiál byl sám o sobě horší, než jak měl vypadat hotový výrobek, a z tohohle se prostě nedalo vyrobit nic použitelného.
+Řešil jsem tehdy trubku, ze které se měl vyrábět díl s maximální ovalitou kolem jednoho milimetru. Na samotné trubce jsem naměřil přes dva milimetry. Takže vstupní materiál byl sám o sobě horší, než jak měl vypadat hotový výrobek, a z tohohle se prostě nedalo vyrobit nic použitelného.
 
 Označil jsem to jako šrot a v duchu si odškrtl první vyřešenou věc.
 
 Druhý den jsem přišel a páska byla roztržená. Materiál byl ve výrobě.
 
-Abych byl fér, nebyl to úplně zlý úmysl — podle normy pro samotnou trubku byl materiál technicky v pořádku, jenom norma na nakoupený materiál a požadavky na hotový výrobek nejsou vždycky ta samá věc. Koupíš levnější trubku, která svojí normě vyhovuje, a pak z ní nedokážeš vyrobit díl v toleranci. Což znamená, že jsi vlastně jenom levně koupil problém, akorát sis toho zatím nevšiml.
+Abych byl fér, nikdo to nejspíš neudělal schválně — podle normy pro samotnou trubku byl materiál technicky v pořádku, jenže norma pro nakoupený materiál a požadavky na hotový výrobek nejsou vždycky to samé. Koupíš levnější trubku, která svojí normě vyhovuje, a pak z ní nedokážeš vyrobit díl v toleranci. Což znamená, že jsi vlastně jenom levně koupil problém, akorát sis toho zatím nevšiml.
 
-Měl jsem tou dobou několik tun materiálu, který podle plánu měl jít do karantény. Jenže na několik tun materiálu potřebuješ i několik tun místa, a to už je detail, který vás nikdo na začátku neřekne.
+Měl jsem tou dobou několik tun materiálu, který podle plánu měl jít do karantény. Jenže na několik tun materiálu potřebuješ i několik tun místa. A tohle vám většinou do plánu nikdo nenapíše.
 
 Takže jsem najednou neřešil jenom značení, ale i to, kam s tím vůbec dát.
 
@@ -57,15 +58,17 @@ Našel jsem paní, co to dělala, ukázal jí problém a domluvili jsme se, že 
 
 Když jsem se vrátil, výrobek byl smontovaný.
 
-Stál jsem tam s páskou v ruce a přemýšlel, jestli mám halucinace, nebo jestli se to fakt stalo tak rychle.
+Stál jsem tam s páskou v ruce a přemýšlel, jestli mám zase halucinace z chlastu. Přitom jsem si byl celkem jistý, že jsem tentokrát nic nepil.
 
-Tak proč jste mě kurva volali. Jestli jste chtěli vědět, že tam je problém, gratuluju, našli jsme ho. Jestli jste chtěli, aby se vyřešil, tak jsme právě udělali přesný opak, protože ten konkrétní kus je teď hotový a jediné, co z něj zbývá vyřešit, je proč se to stalo — a to už nikoho moc nezajímalo.
+Tak proč jste mě kurva volali. Jestli jste chtěli vědět, že tam je problém, tak dobře — našli jsme ho. Jestli jste chtěli, aby se vyřešil, tak jsme právě udělali přesný opak. Kus je smontovaný, problém je pryč z očí a jediné, co teď můžeme řešit, je, proč vůbec vznikl. A to už najednou nikoho moc nezajímá.
 
-Aby toho nebylo málo, ještě jsem dostal vynadáno, když jsem hlásil, že se to opraví ráno, protože paní kvůli tomu měla přijít o dvě hodiny dřív, a to jsou normohodiny.
+Aby toho nebylo málo, ještě jsem dostal vynadáno za to, že se oprava bude dělat až ráno. Výrobek už totiž ten den nestihl dokončit a dvě hodiny práce na něm tak zůstaly na další den.
 
-Vysvětlil jsem, že nejsem vedoucí té paní a nebudu chodit po hale a řešit lidem, kdy mají přijít do práce, protože to fakt není moje práce. Moje práce byla najít problém a zjistit příčinu.
+Což byla zvláštní situace. Já jsem ten problém našel, upozornil na něj a domluvil opravu. Výrobek pokazil někdo jiný, ale pojeb jsem dostal já, protože jsem řekl, že se to opraví až ráno.
 
-Jenže mezi tím vším je jeden drobný, ale docela zásadní detail — odpovědnost a pravomoc nejsou vždycky ta samá věc. A u mě jsou od sebe vzdálené asi jako já od olympijské medaile.
+Vysvětlil jsem, že nejsem vedoucí výroby a opravdu nemůžu rozhodovat o tom, kdo kvůli tomu zůstane déle nebo co se bude dělat další den. Mojí prací bylo najít problém, označit ho a zjistit, proč vznikl.
+
+Odpovědnost a pravomoc totiž nejsou vždycky ta samá věc. A u mě jsou od sebe vzdálené asi jako já od olympijské medaile.
 
 ---
 
